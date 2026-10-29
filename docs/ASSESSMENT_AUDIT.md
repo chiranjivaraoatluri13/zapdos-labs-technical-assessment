@@ -15,7 +15,7 @@ Checked against the supplied CV Engineer Candidate Brief (v1, 14 October 2026). 
 | Precision, recall, duplicates and misses | Current cached before/after comparisons committed under `eval/results/*comparison_20261028.json`. No regression on identical detections; lower recall than the historical M2 result is disclosed. |
 | Single-command inference and setup instructions | `run.py --video ... --zones ... --cpu-only --save-video --out ...`. Windows downloader falls back to copying when symlinks are unavailable. Separate CPU working-environment pins added. Fresh installation of those pins was not independently rebuilt. |
 | Design note ≤1 page | `DESIGN.md` is the canonical 475-word Markdown deliverable. Superseded M2 PDF archived outside the project to avoid conflicting designs. |
-| README 1–2 pages with arithmetic, run, results, attribution | README condensed around current results; detailed history/audit moved here and RESULTS.md. Final page count depends on renderer; inspect the submission rendering. |
+| README 1–2 pages with arithmetic, run, results, attribution | README condensed around current results; detailed implementation history is retained here. Historical narrative and its broad reproduction script were removed during submission cleanup; underlying experiment JSON records remain in eval/results/. Final page count depends on renderer; inspect the submission rendering. |
 | ≤3-minute screen recording and actual time spent | Owner still needs to supply a recording link and their actual hours. Test footage is not represented as a screen recording. |
 | Honest failure modes and scaling arithmetic | README/design distinguish detector misses, identity continuity, historical M2 performance, live-system gaps and measured CPU limits. |
 

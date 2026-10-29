@@ -56,11 +56,15 @@ Six-clip Windows benchmark: 81 seconds of video; Intel Core Ultra 7 256V (8 core
 
 Latest full tests: **93 passed, one skipped** (INT8 export unavailable). Run `python -m pytest tests -q` and `python scripts/verify_run.py runs/samples`. [Per-video timings and replay checks](eval/results/sample_review_20261028.json). Media validity does not establish alert correctness.
 
+## Completed stretch objective
+
+**Zone drift detection.** The pipeline compares the camera view with its saved reference, emits `camera_moved` after a persistent mismatch and pauses zone decisions until the view matches again. PPE detection continues. [Implementation](src/zapdos/view.py) and [tests](tests/test_view.py) cover movement, recovery, jitter and temporary occlusion. A [recorded re-angle experiment](eval/results/reangled_check.json) detected a 103-pixel zone-corner shift and alerted at 4.0 seconds; this was an induced camera transform, not a physical camera test.
+
 ## Where it is most likely wrong
 
 Small heads, hidden workers, glare and coveralls remain difficult: both additional-camera helmet violations were missed. A separate conveyor test alerted on machinery. In `01_single_mill`, the operator receives a new identity and another alert pair. Crowds and hidden-foot estimates can also give incorrect identities or zone decisions.
 
-I would review alerted and non-alerted tracks against independent labels from separate cameras. Real IR, full-shift false-alarm performance, live ingest and a completely fresh installation remain unverified. [Audit](docs/ASSESSMENT_AUDIT.md) · [Design note](docs/DESIGN.md).
+I would check alerted and non-alerted tracks against independent labels. IR, full-shift reliability, live ingest and a fresh installation remain unverified. [Design note](docs/DESIGN.md).
 
 ## What I used and time spent
 
