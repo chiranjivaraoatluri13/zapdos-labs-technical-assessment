@@ -70,3 +70,50 @@ The full twelve-candidate measurements and review notes remain in `eval/results/
 Exact source URLs/checksums are in `samples/review_manifest.json`, polygons/references in `samples/zones/`, and original selected source annotations in `samples/annotations/`. Dataset worker counts and descriptions are not substitutes for independently reviewed event labels.
 
 Source: [SteelBench / ThinkingHub PP](https://huggingface.co/datasets/ThinkingHub/PP), revision `2a927fb86450332942fb5f4ffac8a20700cd539a`, CC BY-NC 4.0. Videos, reference frames and annotations remain subject to that licence. Full source videos are fetched from the pinned dataset rather than committed.
+
+## Three recorded evaluation clips
+
+These are the three development clips in the README event-results table, separate from the five demonstrations above. The existing labels and sample evidence are committed; full source videos are downloaded locally.
+
+Download their source videos and detector weights once:
+
+```powershell
+python scripts/download_data.py
+```
+
+Complete the dependency/model setup above before inference. Each command below saves annotated video, detailed readings, events, snapshots, clips and timing under `runs/evaluation/<camera_id>/`, using the tested Intel GPU with 10 FPS sampling and idle skipping disabled.
+
+### sb_crm_workshop_0109
+
+[Existing labels](labels/sb_crm_workshop_0109.json) · [Zone configuration](zones/sb_crm_workshop_0109.json) · [Saved alert evidence](out/sb_crm_workshop_0109)
+
+```powershell
+python run.py --video clips/sb_crm_workshop_0109.mp4 --zones zones/sb_crm_workshop_0109.json --camera-id sb_crm_workshop_0109 --backend openvino --openvino-device GPU --process-fps 10 --no-idle-skip --save-video --log-readings --out runs/evaluation
+```
+
+### sb_red_lrs1_0007
+
+[Existing labels](labels/sb_red_lrs1_0007.json) · [Zone configuration](zones/sb_red_lrs1_0007.json) · [Saved alert evidence](out/sb_red_lrs1_0007)
+
+```powershell
+python run.py --video clips/sb_red_lrs1_0007.mp4 --zones zones/sb_red_lrs1_0007.json --camera-id sb_red_lrs1_0007 --backend openvino --openvino-device GPU --process-fps 10 --no-idle-skip --save-video --log-readings --out runs/evaluation
+```
+
+### sb_tippler_lowlight_0062
+
+[Existing labels](labels/sb_tippler_lowlight_0062.json) · [Zone configuration](zones/sb_tippler_lowlight_0062.json) · [Saved alert evidence](out/sb_tippler_lowlight_0062)
+
+```powershell
+python run.py --video clips/sb_tippler_lowlight_0062.mp4 --zones zones/sb_tippler_lowlight_0062.json --camera-id sb_tippler_lowlight_0062 --backend openvino --openvino-device GPU --process-fps 10 --no-idle-skip --save-video --log-readings --out runs/evaluation
+```
+
+For CPU execution, replace `--backend openvino --openvino-device GPU` with `--cpu-only`.
+
+After running all three, verify evidence and calculate a fresh event comparison against the existing annotations:
+
+```powershell
+python scripts/verify_run.py runs/evaluation
+python eval/events_eval.py --labels labels --out runs/evaluation --results runs/evaluation/event_scores.json
+```
+
+The recorded README scores predate the later identity/display fixes; a fresh run may differ. Annotation provenance and independent human verification remain as described in the README. This adds documented evaluation commands; `scripts/run_sample.py --all` continues to select the five demonstration clips.
