@@ -48,9 +48,9 @@ These three development clips include low-light footage. Values are copied from 
 
 | Clip | Labelled events | Alerts | True | False | Duplicates | Missed | Median delay (s) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| sb_crm_workshop_0109 | 8 | 8 | 7 | 0 | 0 | 1 | 1.52 |
-| sb_red_lrs1_0007 | 3 | 1 | 1 | 0 | 0 | 2 | 2.22 |
-| sb_tippler_lowlight_0062 | 3 | 3 | 3 | 0 | 0 | 0 | 3.32 |
+| [sb_crm_workshop_0109](TEST_VIDEOS.md#sb_crm_workshop_0109) | 8 | 8 | 7 | 0 | 0 | 1 | 1.52 |
+| [sb_red_lrs1_0007](TEST_VIDEOS.md#sb_red_lrs1_0007) | 3 | 1 | 1 | 0 | 0 | 2 | 2.22 |
+| [sb_tippler_lowlight_0062](TEST_VIDEOS.md#sb_tippler_lowlight_0062) | 3 | 3 | 3 | 0 | 0 | 0 | 3.32 |
 
 Workshop includes one alert marked ignored by the evaluator, so its alerts exceed true + false + duplicates by one. Across these development clips: 11/14 labelled events caught, precision 1.00 (ignoring that excluded alert), recall 0.786, zero scored false alerts and zero duplicates. Median delays use matched annotation onset times. [Recorded results](eval/results/bench_openvino_gpu.json); these are development-set scores, not new or independent validation.
 

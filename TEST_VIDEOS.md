@@ -75,6 +75,18 @@ Source: [SteelBench / ThinkingHub PP](https://huggingface.co/datasets/ThinkingHu
 
 These are the three development clips in the README event-results table, separate from the five demonstrations above. The existing labels and sample evidence are committed; full source videos are downloaded locally.
 
+### Recorded results and video links
+
+Full-inference OpenVINO GPU benchmark at 10 sampled FPS, scored against the existing annotations. These are historical development results, before the later identity/display fixes.
+
+| Clip and source video | Labelled events | Alerts | True | False | Duplicates | Missed | Median delay (s) | Saved results |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| [sb_crm_workshop_0109](https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_Work_Shop_20251115_002718_0109.mp4) | 8 | 8 | 7 | 0 | 0 | 1 | 1.52 | [Events](out/sb_crm_workshop_0109/events.jsonl) · [Clips](out/sb_crm_workshop_0109/clips) · [Snapshots](out/sb_crm_workshop_0109/snapshots) |
+| [sb_red_lrs1_0007](https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_RED_LRS-1_20251111_000204_0007.mp4) | 3 | 1 | 1 | 0 | 0 | 2 | 2.22 | [Events](out/sb_red_lrs1_0007/events.jsonl) · [Clips](out/sb_red_lrs1_0007/clips) · [Snapshots](out/sb_red_lrs1_0007/snapshots) |
+| [sb_tippler_lowlight_0062](https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_Tippler_3%264_19.1-19.2TEND_20251205_001622_0062.mp4) | 3 | 3 | 3 | 0 | 0 | 0 | 3.32 | [Events](out/sb_tippler_lowlight_0062/events.jsonl) · [Clips](out/sb_tippler_lowlight_0062/clips) · [Snapshots](out/sb_tippler_lowlight_0062/snapshots) |
+
+Workshop has one evaluator-ignored alert; its eight alerts comprise seven true and one ignored. Across these clips: 11/14 labelled events caught, precision 1.00, recall 0.786, zero scored false alerts and zero duplicates. Precision excludes the ignored alert. [Benchmark record](eval/results/bench_openvino_gpu.json) · [README results](README.md#recorded-event-evaluation) · [Existing annotations](labels). Annotation origin and independent human verification are not established; these figures do not represent a new manual review. Source-video links download full inputs; evidence clips show shorter alert windows.
+
 Download their source videos and detector weights once:
 
 ```powershell
@@ -85,6 +97,8 @@ Complete the dependency/model setup above before inference. Each command below s
 
 ### sb_crm_workshop_0109
 
+[Download original video](https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_Work_Shop_20251115_002718_0109.mp4)
+
 [Existing labels](labels/sb_crm_workshop_0109.json) · [Zone configuration](zones/sb_crm_workshop_0109.json) · [Saved alert evidence](out/sb_crm_workshop_0109)
 
 ```powershell
@@ -93,6 +107,8 @@ python run.py --video clips/sb_crm_workshop_0109.mp4 --zones zones/sb_crm_worksh
 
 ### sb_red_lrs1_0007
 
+[Download original video](https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_RED_LRS-1_20251111_000204_0007.mp4)
+
 [Existing labels](labels/sb_red_lrs1_0007.json) · [Zone configuration](zones/sb_red_lrs1_0007.json) · [Saved alert evidence](out/sb_red_lrs1_0007)
 
 ```powershell
@@ -100,6 +116,8 @@ python run.py --video clips/sb_red_lrs1_0007.mp4 --zones zones/sb_red_lrs1_0007.
 ```
 
 ### sb_tippler_lowlight_0062
+
+[Download original video](https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_Tippler_3%264_19.1-19.2TEND_20251205_001622_0062.mp4)
 
 [Existing labels](labels/sb_tippler_lowlight_0062.json) · [Zone configuration](zones/sb_tippler_lowlight_0062.json) · [Saved alert evidence](out/sb_tippler_lowlight_0062)
 
