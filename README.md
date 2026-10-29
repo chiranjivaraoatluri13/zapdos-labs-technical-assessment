@@ -1,14 +1,14 @@
 # CCTV safety events
 
+## Part 0: Cold Open
+
+**Q1. How many frames can you afford?** `8 / 0.025 = 320 FPS`, or **3.2 FPS per camera** across 100 cameras, assuming full batches and ignoring other overhead. Assuming frames can be skipped before decoding, inference is the bottleneck; decoding all 2,500 incoming FPS would exceed the 600 FPS decoder limit. At 1.4 m/s, a worker moves **0.44 m between samples**; assuming a 2 m-wide zone, expect roughly 4–5 observations, but brief crossings and small or occluded heads remain difficult. I would prioritize activity-aware sampling and high-risk cameras, then add edge boxes if more capacity is required.
+
+**Q2. How many false alarms?** `40 × 3 × 5 × 3,600 × 0.001 = 2,160` false no-helmet person-frames/hour, or **17,280 per 8-hour shift**, before temporal filtering. An 8-of-10 vote reduces independent random errors, but hoods, lighting and camera angles cause correlated errors; at 5 FPS, the first eight observations span at least 1.4 s. I would combine temporal confirmation, track-based deduplication, cooldowns, secondary checks and site-calibrated thresholds. Two false alerts per shift means **one per 160 camera-hours**; validate event-level false alerts and missed violations over multiple shifts.
+
+**Q3. Where is the person?** Test an estimated ground-contact point against the floor polygon, using visible feet or the bounding-box bottom-centre. My implementation distinguishes **visible, estimated and unknown** feet; recent full-body tracking supports short-term estimates, while unknown feet cannot start a zone alert. Temporal confirmation and separate entry/exit margins limit boundary flicker and prevent one noisy or occluded frame from ending an episode. My original calibrated 3D ground-mesh idea is **not implemented**: I chose 2D floor polygons for fixed CCTV because a mesh would require additional camera calibration, reconstruction and validation.
+
 Video → SH17 detection → ByteTrack → head-crop helmet classifier → persistent, deduplicated alerts. [Design](docs/DESIGN.md) · [Current audit](docs/ASSESSMENT_AUDIT.md) · [Historical M2 experiments](docs/RESULTS.md).
-
-## Part 0
-
-**Q1.** Detection: 8 / 0.025 = 320 frames/s, or **3.2 FPS/camera** across 100 cameras. Decode: 600 / 100 = 6 FPS/camera, so inference sets the sustainable sampled rate. Native streams need 2,500 decoded FPS: reduce camera/substream FPS first. At 1.4m/s, movement is **0.44m/sample**; assuming a 2m-wide zone, about 4–5 samples cover a crossing. Narrow zones and occlusion remain risky. A 1.5s helmet interval gives about five samples; readable heads matter more than repeated guesses. Change streams/sampling first; measure recall before shrinking input.
-
-**Q2.** 40 × 3 × 5 × 0.001 × 3,600 = **2,160 false person-frames/hour**. An 8-of-10 vote assumes independent errors; a hood or missed white helmet can stay wrong. The target is **0.00625 false alerts/camera-hour**. Use visibility gates, in-domain classification, episode deduplication and per-camera event validation. Zero alerts on a short clip does not establish that budget.
-
-**Q3.** Test bottom-centre, not whole-box overlap. Hidden feet use top plus decaying remembered height: an uncertain estimate. A 0.1-person-height boundary margin and 0.5s persistence reduce flicker. Camera-movement checks pause zones against a saved reference.
 
 ## Run
 
