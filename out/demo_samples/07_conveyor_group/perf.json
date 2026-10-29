@@ -1,0 +1,45 @@
+{
+  "input_res": "1920x1080",
+  "source_fps": 25.0,
+  "process_fps": 10,
+  "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+  "helmet_classifier": "onnxruntime-cpu",
+  "frames_decoded": 375,
+  "frames_processed": 150,
+  "wall_s": 4.72,
+  "video_s": 15.0,
+  "throughput_fps": 31.8,
+  "pipeline_ms_per_frame": 25.7,
+  "streams_at_process_fps": 3.89,
+  "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+  "source_coverage": 3.177,
+  "stages": {
+    "decode": {
+      "mean_ms": 5.4,
+      "p95_ms": 6.7
+    },
+    "detect": {
+      "mean_ms": 19.4,
+      "p95_ms": 22.1
+    },
+    "track": {
+      "mean_ms": 0.4,
+      "p95_ms": 0.6
+    },
+    "helmet": {
+      "mean_ms": 0.4,
+      "p95_ms": 1.2
+    },
+    "rules": {
+      "mean_ms": 0.1,
+      "p95_ms": 0.2
+    },
+    "media": {
+      "mean_ms": 5.4,
+      "p95_ms": 7.1
+    }
+  },
+  "run_id": "20261029T044949Z-b2adc7",
+  "idle_fps": null,
+  "frames_skipped": 0
+}

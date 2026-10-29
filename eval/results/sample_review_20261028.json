@@ -1,0 +1,1495 @@
+{
+  "candidates": [
+    {
+      "sample_id": "01_single_mill",
+      "clip_id": "clip_CRM_1&2_CRM_1-2_T_MILL_20251111_000115_0005",
+      "category": "one person",
+      "duration_s": 15.0,
+      "workers": 1,
+      "conditions": [
+        "clear"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CRM_1-2_T_MILL_20251111_000115_0005.mp4",
+      "status": "complete",
+      "event_count": 4,
+      "event_types": {
+        "zone_entry": 2,
+        "no_vest": 2
+      },
+      "media_verification": {
+        "cameras": 1,
+        "events": 4,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 3
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 375,
+        "frames_processed": 150,
+        "wall_s": 5.53,
+        "video_s": 15.0,
+        "throughput_fps": 27.1,
+        "pipeline_ms_per_frame": 27.8,
+        "streams_at_process_fps": 3.6,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 2.711,
+        "stages": {
+          "decode": {
+            "mean_ms": 5.9,
+            "p95_ms": 7.8
+          },
+          "detect": {
+            "mean_ms": 20.5,
+            "p95_ms": 24.3
+          },
+          "track": {
+            "mean_ms": 0.5,
+            "p95_ms": 0.7
+          },
+          "helmet": {
+            "mean_ms": 0.8,
+            "p95_ms": 1.6
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.2
+          },
+          "media": {
+            "mean_ms": 6.5,
+            "p95_ms": 8.9
+          }
+        },
+        "run_id": "20261029T044926Z-31910f",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": false,
+      "review_note": "Not recommended: the same operator appears under a new identity late in the clip and receives a second pair of alerts. Review occlusion and identity continuity.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    },
+    {
+      "sample_id": "02_single_mill_steam",
+      "clip_id": "clip_CRM_1&2_CRM_1-2_T_MILL_20251111_001524_0056",
+      "category": "one person / steam",
+      "duration_s": 6.0,
+      "workers": 1,
+      "conditions": [
+        "steam",
+        "dust"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CRM_1-2_T_MILL_20251111_001524_0056.mp4",
+      "status": "complete",
+      "event_count": 2,
+      "event_types": {
+        "zone_entry": 1,
+        "no_vest": 1
+      },
+      "media_verification": {
+        "cameras": 1,
+        "events": 2,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 2
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 150,
+        "frames_processed": 60,
+        "wall_s": 2.13,
+        "video_s": 6.0,
+        "throughput_fps": 28.2,
+        "pipeline_ms_per_frame": 27.6,
+        "streams_at_process_fps": 3.62,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 2.823,
+        "stages": {
+          "decode": {
+            "mean_ms": 6.2,
+            "p95_ms": 8.3
+          },
+          "detect": {
+            "mean_ms": 20.6,
+            "p95_ms": 24.9
+          },
+          "track": {
+            "mean_ms": 0.3,
+            "p95_ms": 0.5
+          },
+          "helmet": {
+            "mean_ms": 0.4,
+            "p95_ms": 1.2
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.1
+          },
+          "media": {
+            "mean_ms": 5.9,
+            "p95_ms": 7.0
+          }
+        },
+        "run_id": "20261029T044933Z-522d21",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": true,
+      "review_note": "Recommended single-person demo: one raw track and one person identity, with one zone alert and one vest alert. A gate partly covers the torso; inspect the evidence. Both clips have shortened lead-in because the source is only six seconds.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    },
+    {
+      "sample_id": "03_single_control",
+      "clip_id": "clip_Tippler_1&2_CP_IP_Cam_20251127_000004_0000",
+      "category": "one person",
+      "duration_s": 6.0,
+      "workers": 1,
+      "conditions": [
+        "clear"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_Tippler_1%262_CP_IP_Cam_20251127_000004_0000.mp4",
+      "status": "complete",
+      "event_count": 1,
+      "event_types": {
+        "no_vest": 1
+      },
+      "media_verification": {
+        "cameras": 1,
+        "events": 1,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 1
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 150,
+        "frames_processed": 60,
+        "wall_s": 2.26,
+        "video_s": 6.0,
+        "throughput_fps": 26.5,
+        "pipeline_ms_per_frame": 28.0,
+        "streams_at_process_fps": 3.57,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 2.653,
+        "stages": {
+          "decode": {
+            "mean_ms": 6.2,
+            "p95_ms": 7.0
+          },
+          "detect": {
+            "mean_ms": 20.5,
+            "p95_ms": 22.9
+          },
+          "track": {
+            "mean_ms": 0.6,
+            "p95_ms": 0.7
+          },
+          "helmet": {
+            "mean_ms": 0.6,
+            "p95_ms": 1.3
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.2
+          },
+          "media": {
+            "mean_ms": 6.1,
+            "p95_ms": 7.4
+          }
+        },
+        "run_id": "20261029T044935Z-886ab8",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": false,
+      "review_note": "Not recommended: worker arrives near the lower frame boundary, and dataset vest state is cannot_determine. Extra candidate tracks and truncated evidence make it a weaker demo.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    },
+    {
+      "sample_id": "04_single_load_side",
+      "clip_id": "clip_Tippler_1&2_WT-1_Load_Side_20260403_000330_0014",
+      "category": "one person",
+      "duration_s": 15.0,
+      "workers": 1,
+      "conditions": [
+        "clear"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_Tippler_1%262_WT-1_Load_Side_20260403_000330_0014.mp4",
+      "status": "complete",
+      "event_count": 2,
+      "event_types": {
+        "zone_entry": 1,
+        "no_vest": 1
+      },
+      "media_verification": {
+        "cameras": 1,
+        "events": 2,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 2
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 375,
+        "frames_processed": 150,
+        "wall_s": 5.03,
+        "video_s": 15.0,
+        "throughput_fps": 29.8,
+        "pipeline_ms_per_frame": 27.4,
+        "streams_at_process_fps": 3.65,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 2.98,
+        "stages": {
+          "decode": {
+            "mean_ms": 5.8,
+            "p95_ms": 7.2
+          },
+          "detect": {
+            "mean_ms": 19.9,
+            "p95_ms": 23.4
+          },
+          "track": {
+            "mean_ms": 0.6,
+            "p95_ms": 0.8
+          },
+          "helmet": {
+            "mean_ms": 1.0,
+            "p95_ms": 1.4
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.2
+          },
+          "media": {
+            "mean_ms": 5.9,
+            "p95_ms": 7.7
+          }
+        },
+        "run_id": "20261029T044938Z-792921",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": true,
+      "review_note": "Recommended industrial demo: the main worker produces one zone and one vest alert. A small secondary track at the right-hand machinery creates display clutter but no alert; helmets can read unknown when small. This is a known limitation, not a flawless scene.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    },
+    {
+      "sample_id": "05_single_empty_side",
+      "clip_id": "clip_Tippler_3&4_WT3_EMPTY-SIDE_20251205_000223_0009",
+      "category": "one person",
+      "duration_s": 5.0,
+      "workers": 1,
+      "conditions": [
+        "clear"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_Tippler_3%264_WT3_EMPTY-SIDE_20251205_000223_0009.mp4",
+      "status": "complete",
+      "event_count": 0,
+      "event_types": {},
+      "media_verification": {
+        "cameras": 1,
+        "events": 0,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 0
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 125,
+        "frames_processed": 50,
+        "wall_s": 1.81,
+        "video_s": 5.0,
+        "throughput_fps": 27.6,
+        "pipeline_ms_per_frame": 28.6,
+        "streams_at_process_fps": 3.5,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 2.755,
+        "stages": {
+          "decode": {
+            "mean_ms": 7.0,
+            "p95_ms": 8.5
+          },
+          "detect": {
+            "mean_ms": 20.4,
+            "p95_ms": 22.0
+          },
+          "track": {
+            "mean_ms": 0.8,
+            "p95_ms": 1.1
+          },
+          "helmet": {
+            "mean_ms": 0.2,
+            "p95_ms": 0.3
+          },
+          "rules": {
+            "mean_ms": 0.2,
+            "p95_ms": 0.3
+          },
+          "media": {
+            "mean_ms": 6.4,
+            "p95_ms": 7.6
+          }
+        },
+        "run_id": "20261029T044943Z-a6da46",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": false,
+      "review_note": "Not recommended for alert demonstration: nine raw tracks and no alerts on this short edge-of-frame worker. Keep it as a failure/abstention example.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    },
+    {
+      "sample_id": "06_industrial_rmhp",
+      "clip_id": "clip_RMHP_KPK-20-2_20251111_000315_0013",
+      "category": "industrial / three people",
+      "duration_s": 9.0,
+      "workers": 3,
+      "conditions": [
+        "clear"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_RMHP_KPK-20-2_20251111_000315_0013.mp4",
+      "status": "complete",
+      "event_count": 1,
+      "event_types": {
+        "zone_entry": 1
+      },
+      "media_verification": {
+        "cameras": 1,
+        "events": 1,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 0
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 225,
+        "frames_processed": 90,
+        "wall_s": 2.91,
+        "video_s": 9.0,
+        "throughput_fps": 31.0,
+        "pipeline_ms_per_frame": 26.3,
+        "streams_at_process_fps": 3.8,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 3.098,
+        "stages": {
+          "decode": {
+            "mean_ms": 5.2,
+            "p95_ms": 5.6
+          },
+          "detect": {
+            "mean_ms": 19.4,
+            "p95_ms": 22.3
+          },
+          "track": {
+            "mean_ms": 0.6,
+            "p95_ms": 0.8
+          },
+          "helmet": {
+            "mean_ms": 1.0,
+            "p95_ms": 1.7
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.2
+          },
+          "media": {
+            "mean_ms": 5.3,
+            "p95_ms": 6.6
+          }
+        },
+        "run_id": "20261029T044945Z-6d6f89",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": false,
+      "review_note": "Alternative industrial demo: one zone alert on a visible person in the belt-side aisle. Foreground glare saturates a worker, and distant or occluded PPE is often unknown; do not claim all violations are caught.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    },
+    {
+      "sample_id": "07_conveyor_group",
+      "clip_id": "clip_CRM_1&2_CONV#2_20251129_000842_0025",
+      "category": "industrial / three people",
+      "duration_s": 15.0,
+      "workers": 3,
+      "conditions": [
+        "dust",
+        "glare"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CONV%232_20251129_000842_0025.mp4",
+      "status": "complete",
+      "event_count": 1,
+      "event_types": {
+        "no_vest": 1
+      },
+      "media_verification": {
+        "cameras": 1,
+        "events": 1,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 0
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 375,
+        "frames_processed": 150,
+        "wall_s": 4.72,
+        "video_s": 15.0,
+        "throughput_fps": 31.8,
+        "pipeline_ms_per_frame": 25.7,
+        "streams_at_process_fps": 3.89,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 3.177,
+        "stages": {
+          "decode": {
+            "mean_ms": 5.4,
+            "p95_ms": 6.7
+          },
+          "detect": {
+            "mean_ms": 19.4,
+            "p95_ms": 22.1
+          },
+          "track": {
+            "mean_ms": 0.4,
+            "p95_ms": 0.6
+          },
+          "helmet": {
+            "mean_ms": 0.4,
+            "p95_ms": 1.2
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.2
+          },
+          "media": {
+            "mean_ms": 5.4,
+            "p95_ms": 7.1
+          }
+        },
+        "run_id": "20261029T044949Z-b2adc7",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": false,
+      "review_note": "Alternative industrial demo: one vest alert on an actual worker. Strong glare, small distant people and partial detection coverage reduce its usefulness for a complete tracking demonstration.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    },
+    {
+      "sample_id": "08_conveyor_low_light",
+      "clip_id": "clip_CRM_1&2_CONV#2_20251129_002522_0086",
+      "category": "bad lighting",
+      "duration_s": 6.0,
+      "workers": 2,
+      "conditions": [
+        "dust",
+        "low_light"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CONV%232_20251129_002522_0086.mp4",
+      "status": "complete",
+      "event_count": 2,
+      "event_types": {
+        "no_vest": 2
+      },
+      "media_verification": {
+        "cameras": 1,
+        "events": 2,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 2
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 150,
+        "frames_processed": 60,
+        "wall_s": 2.73,
+        "video_s": 6.0,
+        "throughput_fps": 22.0,
+        "pipeline_ms_per_frame": 28.4,
+        "streams_at_process_fps": 3.52,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 2.198,
+        "stages": {
+          "decode": {
+            "mean_ms": 6.6,
+            "p95_ms": 7.5
+          },
+          "detect": {
+            "mean_ms": 20.3,
+            "p95_ms": 22.3
+          },
+          "track": {
+            "mean_ms": 0.5,
+            "p95_ms": 0.8
+          },
+          "helmet": {
+            "mean_ms": 0.9,
+            "p95_ms": 1.5
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.2
+          },
+          "media": {
+            "mean_ms": 6.6,
+            "p95_ms": 8.4
+          }
+        },
+        "run_id": "20261029T044954Z-36479c",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": false,
+      "review_note": "Alternative low-light/glare demo: two vest alerts on worker boxes. People are small and lighting is uneven. No zone alert was emitted for the configured foreground demo area.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    },
+    {
+      "sample_id": "09_crowded_workshop",
+      "clip_id": "clip_CRM_WORK_SHOP_20260403_000215_0009",
+      "category": "many people",
+      "duration_s": 15.0,
+      "workers": 14,
+      "conditions": [
+        "clear"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_WORK_SHOP_20260403_000215_0009.mp4",
+      "status": "complete",
+      "event_count": 8,
+      "event_types": {
+        "zone_entry": 2,
+        "no_vest": 6
+      },
+      "media_verification": {
+        "cameras": 1,
+        "events": 8,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 8
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 375,
+        "frames_processed": 150,
+        "wall_s": 6.08,
+        "video_s": 15.0,
+        "throughput_fps": 24.7,
+        "pipeline_ms_per_frame": 30.7,
+        "streams_at_process_fps": 3.26,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 2.469,
+        "stages": {
+          "decode": {
+            "mean_ms": 5.4,
+            "p95_ms": 7.3
+          },
+          "detect": {
+            "mean_ms": 21.9,
+            "p95_ms": 25.1
+          },
+          "track": {
+            "mean_ms": 1.1,
+            "p95_ms": 1.8
+          },
+          "helmet": {
+            "mean_ms": 2.1,
+            "p95_ms": 3.2
+          },
+          "rules": {
+            "mean_ms": 0.2,
+            "p95_ms": 0.4
+          },
+          "media": {
+            "mean_ms": 7.6,
+            "p95_ms": 12.5
+          }
+        },
+        "run_id": "20261029T044957Z-0432bb",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": false,
+      "review_note": "Alternative crowd demo: eight alerts on visible worker regions. Crowding, hidden torsos, numerous raw tracks and possible identity fragmentation need review; alert count is not accuracy.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    },
+    {
+      "sample_id": "10_crowded_workshop_alt",
+      "clip_id": "clip_CRM_WORK_SHOP_20260403_002234_0090",
+      "category": "many people",
+      "duration_s": 15.0,
+      "workers": 8,
+      "conditions": [
+        "clear"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_WORK_SHOP_20260403_002234_0090.mp4",
+      "status": "complete",
+      "event_count": 7,
+      "event_types": {
+        "zone_entry": 1,
+        "no_vest": 6
+      },
+      "media_verification": {
+        "cameras": 1,
+        "events": 7,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 5
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 375,
+        "frames_processed": 150,
+        "wall_s": 6.05,
+        "video_s": 15.0,
+        "throughput_fps": 24.8,
+        "pipeline_ms_per_frame": 31.4,
+        "streams_at_process_fps": 3.18,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 2.48,
+        "stages": {
+          "decode": {
+            "mean_ms": 5.6,
+            "p95_ms": 7.8
+          },
+          "detect": {
+            "mean_ms": 23.1,
+            "p95_ms": 27.2
+          },
+          "track": {
+            "mean_ms": 0.9,
+            "p95_ms": 1.6
+          },
+          "helmet": {
+            "mean_ms": 1.6,
+            "p95_ms": 2.7
+          },
+          "rules": {
+            "mean_ms": 0.2,
+            "p95_ms": 0.3
+          },
+          "media": {
+            "mean_ms": 6.8,
+            "p95_ms": 9.1
+          }
+        },
+        "run_id": "20261029T045004Z-3ddd49",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": true,
+      "review_note": "Recommended crowd demo: one zone and six vest alerts, with evidence boxes on visible workers in the sampled alert images. Occlusion, possible ID changes and reflective clothing still need full human review. There are no per-person dataset PPE labels for this crowded clip.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    },
+    {
+      "sample_id": "11_hme_low_light_group",
+      "clip_id": "clip_HME_Work_Shop_20251111_000740_0030",
+      "category": "many people / bad lighting",
+      "duration_s": 12.0,
+      "workers": 9,
+      "conditions": [
+        "dust",
+        "low_light"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_HME_Work_Shop_20251111_000740_0030.mp4",
+      "status": "complete",
+      "event_count": 3,
+      "event_types": {
+        "no_vest": 3
+      },
+      "media_verification": {
+        "cameras": 1,
+        "events": 3,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 2
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 300,
+        "frames_processed": 120,
+        "wall_s": 14.67,
+        "video_s": 12.0,
+        "throughput_fps": 8.2,
+        "pipeline_ms_per_frame": 92.5,
+        "streams_at_process_fps": 1.08,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 0.818,
+        "stages": {
+          "decode": {
+            "mean_ms": 19.6,
+            "p95_ms": 34.6
+          },
+          "detect": {
+            "mean_ms": 62.3,
+            "p95_ms": 134.0
+          },
+          "track": {
+            "mean_ms": 3.8,
+            "p95_ms": 8.2
+          },
+          "helmet": {
+            "mean_ms": 6.1,
+            "p95_ms": 12.0
+          },
+          "rules": {
+            "mean_ms": 0.7,
+            "p95_ms": 2.8
+          },
+          "media": {
+            "mean_ms": 17.9,
+            "p95_ms": 38.4
+          }
+        },
+        "run_id": "20261029T045011Z-65fb7f",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": false,
+      "review_note": "Alternative crowd/lighting demo: three vest alerts. Many distant heads are unreadable; throughput fell to 8.2 FPS in this batch run, below the 10 FPS GPU target. Preserve this result rather than treating it as real-time success.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    },
+    {
+      "sample_id": "12_tippler_low_light",
+      "clip_id": "clip_Tippler_3&4_19.1-19.2TEND_20251205_000258_0011",
+      "category": "bad lighting / two people",
+      "duration_s": 8.0,
+      "workers": 2,
+      "conditions": [
+        "dust",
+        "low_light"
+      ],
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_Tippler_3%264_19.1-19.2TEND_20251205_000258_0011.mp4",
+      "status": "complete",
+      "event_count": 2,
+      "event_types": {
+        "zone_entry": 1,
+        "no_vest": 1
+      },
+      "media_verification": {
+        "cameras": 1,
+        "events": 2,
+        "failed_snapshots": 0,
+        "failed_clips": 0,
+        "truncated_clips": 2
+      },
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 200,
+        "frames_processed": 80,
+        "wall_s": 7.37,
+        "video_s": 8.0,
+        "throughput_fps": 10.8,
+        "pipeline_ms_per_frame": 74.3,
+        "streams_at_process_fps": 1.35,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 1.085,
+        "stages": {
+          "decode": {
+            "mean_ms": 17.6,
+            "p95_ms": 35.6
+          },
+          "detect": {
+            "mean_ms": 52.9,
+            "p95_ms": 99.5
+          },
+          "track": {
+            "mean_ms": 2.7,
+            "p95_ms": 10.1
+          },
+          "helmet": {
+            "mean_ms": 0.7,
+            "p95_ms": 3.5
+          },
+          "rules": {
+            "mean_ms": 0.4,
+            "p95_ms": 1.6
+          },
+          "media": {
+            "mean_ms": 16.4,
+            "p95_ms": 31.0
+          }
+        },
+        "run_id": "20261029T045027Z-57e91a",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "recommended": true,
+      "review_note": "Recommended dim-aisle demo: one zone and one vest alert on the aisle worker. The second worker is partly hidden and often unknown. Two evidence clips have shortened lead-in; no IR claim is made.",
+      "source_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6"
+    }
+  ],
+  "claim": "Demonstration selection, not accuracy scores",
+  "one_line_reproduction": [
+    {
+      "alias": "single_person",
+      "sample_id": "02_single_mill_steam",
+      "same_event_identity_and_timing": true,
+      "event_count": 2,
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 150,
+        "frames_processed": 60,
+        "wall_s": 2.3,
+        "video_s": 6.0,
+        "throughput_fps": 26.1,
+        "pipeline_ms_per_frame": 28.0,
+        "streams_at_process_fps": 3.57,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 2.611,
+        "stages": {
+          "decode": {
+            "mean_ms": 6.9,
+            "p95_ms": 7.9
+          },
+          "detect": {
+            "mean_ms": 19.8,
+            "p95_ms": 22.9
+          },
+          "track": {
+            "mean_ms": 0.5,
+            "p95_ms": 0.7
+          },
+          "helmet": {
+            "mean_ms": 0.7,
+            "p95_ms": 1.5
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.3
+          },
+          "media": {
+            "mean_ms": 7.9,
+            "p95_ms": 9.2
+          }
+        },
+        "run_id": "20261029T045857Z-7c8eef",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "provenance": {
+        "sample": "single_person",
+        "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CRM_1-2_T_MILL_20251111_001524_0056.mp4",
+        "video_sha256": "a52bbf51daca844343a9a1f4874406f54af8c96fd5a90185418727ed2331d2a7",
+        "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+        "code_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6",
+        "process_fps": 10,
+        "idle_skip": false,
+        "media_verification": {
+          "cameras": 1,
+          "events": 2,
+          "failed_snapshots": 0,
+          "failed_clips": 0,
+          "truncated_clips": 2
+        },
+        "note": "Media validity and demonstrations do not establish event accuracy."
+      }
+    },
+    {
+      "alias": "crowded",
+      "sample_id": "10_crowded_workshop_alt",
+      "same_event_identity_and_timing": true,
+      "event_count": 7,
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 375,
+        "frames_processed": 150,
+        "wall_s": 5.3,
+        "video_s": 15.0,
+        "throughput_fps": 28.3,
+        "pipeline_ms_per_frame": 26.5,
+        "streams_at_process_fps": 3.77,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 2.828,
+        "stages": {
+          "decode": {
+            "mean_ms": 5.3,
+            "p95_ms": 6.8
+          },
+          "detect": {
+            "mean_ms": 18.7,
+            "p95_ms": 21.7
+          },
+          "track": {
+            "mean_ms": 0.8,
+            "p95_ms": 1.4
+          },
+          "helmet": {
+            "mean_ms": 1.5,
+            "p95_ms": 2.5
+          },
+          "rules": {
+            "mean_ms": 0.2,
+            "p95_ms": 0.3
+          },
+          "media": {
+            "mean_ms": 6.9,
+            "p95_ms": 8.2
+          }
+        },
+        "run_id": "20261029T045900Z-667bac",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "provenance": {
+        "sample": "crowded",
+        "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_WORK_SHOP_20260403_002234_0090.mp4",
+        "video_sha256": "7ab063d33ed5eda8751c2b9972ff55ab6d8752ea461a13f2c50caeb00ff1172e",
+        "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+        "code_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6",
+        "process_fps": 10,
+        "idle_skip": false,
+        "media_verification": {
+          "cameras": 1,
+          "events": 7,
+          "failed_snapshots": 0,
+          "failed_clips": 0,
+          "truncated_clips": 5
+        },
+        "note": "Media validity and demonstrations do not establish event accuracy."
+      }
+    },
+    {
+      "alias": "industrial",
+      "sample_id": "04_single_load_side",
+      "same_event_identity_and_timing": true,
+      "event_count": 2,
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 375,
+        "frames_processed": 150,
+        "wall_s": 4.54,
+        "video_s": 15.0,
+        "throughput_fps": 33.1,
+        "pipeline_ms_per_frame": 24.3,
+        "streams_at_process_fps": 4.12,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 3.306,
+        "stages": {
+          "decode": {
+            "mean_ms": 4.9,
+            "p95_ms": 6.0
+          },
+          "detect": {
+            "mean_ms": 17.9,
+            "p95_ms": 20.9
+          },
+          "track": {
+            "mean_ms": 0.5,
+            "p95_ms": 0.7
+          },
+          "helmet": {
+            "mean_ms": 0.9,
+            "p95_ms": 1.3
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.2
+          },
+          "media": {
+            "mean_ms": 5.5,
+            "p95_ms": 6.5
+          }
+        },
+        "run_id": "20261029T045906Z-2763f9",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "provenance": {
+        "sample": "industrial",
+        "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_Tippler_1%262_WT-1_Load_Side_20260403_000330_0014.mp4",
+        "video_sha256": "6c057c8029c42126f9a3814d8b0705592f1d029177f35d336e4ff7d2da025fea",
+        "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+        "code_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6",
+        "process_fps": 10,
+        "idle_skip": false,
+        "media_verification": {
+          "cameras": 1,
+          "events": 2,
+          "failed_snapshots": 0,
+          "failed_clips": 0,
+          "truncated_clips": 2
+        },
+        "note": "Media validity and demonstrations do not establish event accuracy."
+      }
+    },
+    {
+      "alias": "low_light",
+      "sample_id": "12_tippler_low_light",
+      "same_event_identity_and_timing": true,
+      "event_count": 2,
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 200,
+        "frames_processed": 80,
+        "wall_s": 2.54,
+        "video_s": 8.0,
+        "throughput_fps": 31.5,
+        "pipeline_ms_per_frame": 25.0,
+        "streams_at_process_fps": 4.0,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 3.152,
+        "stages": {
+          "decode": {
+            "mean_ms": 5.7,
+            "p95_ms": 7.2
+          },
+          "detect": {
+            "mean_ms": 18.4,
+            "p95_ms": 22.1
+          },
+          "track": {
+            "mean_ms": 0.6,
+            "p95_ms": 0.9
+          },
+          "helmet": {
+            "mean_ms": 0.2,
+            "p95_ms": 1.0
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.2
+          },
+          "media": {
+            "mean_ms": 6.0,
+            "p95_ms": 7.7
+          }
+        },
+        "run_id": "20261029T045911Z-730501",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "provenance": {
+        "sample": "low_light",
+        "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_Tippler_3%264_19.1-19.2TEND_20251205_000258_0011.mp4",
+        "video_sha256": "b588cc7b31c6257ed31ecef41331b3ef743e8e21537adae4bfc68d43d2dafe51",
+        "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+        "code_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6",
+        "process_fps": 10,
+        "idle_skip": false,
+        "media_verification": {
+          "cameras": 1,
+          "events": 2,
+          "failed_snapshots": 0,
+          "failed_clips": 0,
+          "truncated_clips": 2
+        },
+        "note": "Media validity and demonstrations do not establish event accuracy."
+      }
+    }
+  ],
+  "final_owner_selection": [
+    "02_single_mill_steam",
+    "10_crowded_workshop_alt",
+    "12_tippler_low_light",
+    "01_single_mill",
+    "07_conveyor_group"
+  ],
+  "selection_note": "Five demonstrations selected by the owner after review of twelve runs. Known tracking and detection limitations are retained; this is not an independent accuracy benchmark.",
+  "final_five_reproduction": [
+    {
+      "alias": "single_person",
+      "sample_id": "02_single_mill_steam",
+      "event_count": 2,
+      "same_event_identity_and_timing": true,
+      "media_frame_counts_match_original": true,
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 150,
+        "frames_processed": 60,
+        "wall_s": 3.45,
+        "video_s": 6.0,
+        "throughput_fps": 17.4,
+        "pipeline_ms_per_frame": 42.6,
+        "streams_at_process_fps": 2.35,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 1.739,
+        "stages": {
+          "decode": {
+            "mean_ms": 9.6,
+            "p95_ms": 10.7
+          },
+          "detect": {
+            "mean_ms": 31.3,
+            "p95_ms": 36.7
+          },
+          "track": {
+            "mean_ms": 0.7,
+            "p95_ms": 1.1
+          },
+          "helmet": {
+            "mean_ms": 0.9,
+            "p95_ms": 2.3
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.4
+          },
+          "media": {
+            "mean_ms": 12.4,
+            "p95_ms": 14.6
+          }
+        },
+        "run_id": "20261029T052620Z-46fbf7",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "provenance": {
+        "sample": "single_person",
+        "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CRM_1-2_T_MILL_20251111_001524_0056.mp4",
+        "video_sha256": "a52bbf51daca844343a9a1f4874406f54af8c96fd5a90185418727ed2331d2a7",
+        "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+        "code_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6",
+        "process_fps": 10,
+        "idle_skip": false,
+        "media_verification": {
+          "cameras": 1,
+          "events": 2,
+          "failed_snapshots": 0,
+          "failed_clips": 0,
+          "truncated_clips": 2
+        },
+        "note": "Media validity and demonstrations do not establish event accuracy."
+      }
+    },
+    {
+      "alias": "crowded",
+      "sample_id": "10_crowded_workshop_alt",
+      "event_count": 7,
+      "same_event_identity_and_timing": true,
+      "media_frame_counts_match_original": true,
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 375,
+        "frames_processed": 150,
+        "wall_s": 8.68,
+        "video_s": 15.0,
+        "throughput_fps": 17.3,
+        "pipeline_ms_per_frame": 43.5,
+        "streams_at_process_fps": 2.3,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 1.727,
+        "stages": {
+          "decode": {
+            "mean_ms": 8.2,
+            "p95_ms": 10.5
+          },
+          "detect": {
+            "mean_ms": 31.2,
+            "p95_ms": 39.4
+          },
+          "track": {
+            "mean_ms": 1.4,
+            "p95_ms": 2.4
+          },
+          "helmet": {
+            "mean_ms": 2.4,
+            "p95_ms": 4.4
+          },
+          "rules": {
+            "mean_ms": 0.3,
+            "p95_ms": 0.5
+          },
+          "media": {
+            "mean_ms": 11.6,
+            "p95_ms": 15.1
+          }
+        },
+        "run_id": "20261029T052625Z-2dda64",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "provenance": {
+        "sample": "crowded",
+        "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_WORK_SHOP_20260403_002234_0090.mp4",
+        "video_sha256": "7ab063d33ed5eda8751c2b9972ff55ab6d8752ea461a13f2c50caeb00ff1172e",
+        "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+        "code_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6",
+        "process_fps": 10,
+        "idle_skip": false,
+        "media_verification": {
+          "cameras": 1,
+          "events": 7,
+          "failed_snapshots": 0,
+          "failed_clips": 0,
+          "truncated_clips": 5
+        },
+        "note": "Media validity and demonstrations do not establish event accuracy."
+      }
+    },
+    {
+      "alias": "low_light",
+      "sample_id": "12_tippler_low_light",
+      "event_count": 2,
+      "same_event_identity_and_timing": true,
+      "media_frame_counts_match_original": true,
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 200,
+        "frames_processed": 80,
+        "wall_s": 4.25,
+        "video_s": 8.0,
+        "throughput_fps": 18.8,
+        "pipeline_ms_per_frame": 42.1,
+        "streams_at_process_fps": 2.38,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 1.881,
+        "stages": {
+          "decode": {
+            "mean_ms": 9.1,
+            "p95_ms": 11.7
+          },
+          "detect": {
+            "mean_ms": 31.2,
+            "p95_ms": 39.7
+          },
+          "track": {
+            "mean_ms": 0.9,
+            "p95_ms": 1.5
+          },
+          "helmet": {
+            "mean_ms": 0.3,
+            "p95_ms": 1.5
+          },
+          "rules": {
+            "mean_ms": 0.6,
+            "p95_ms": 0.4
+          },
+          "media": {
+            "mean_ms": 10.1,
+            "p95_ms": 14.5
+          }
+        },
+        "run_id": "20261029T052635Z-28aece",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "provenance": {
+        "sample": "low_light",
+        "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_Tippler_3%264_19.1-19.2TEND_20251205_000258_0011.mp4",
+        "video_sha256": "b588cc7b31c6257ed31ecef41331b3ef743e8e21537adae4bfc68d43d2dafe51",
+        "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+        "code_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6",
+        "process_fps": 10,
+        "idle_skip": false,
+        "media_verification": {
+          "cameras": 1,
+          "events": 2,
+          "failed_snapshots": 0,
+          "failed_clips": 0,
+          "truncated_clips": 2
+        },
+        "note": "Media validity and demonstrations do not establish event accuracy."
+      }
+    },
+    {
+      "alias": "single_mill",
+      "sample_id": "01_single_mill",
+      "event_count": 4,
+      "same_event_identity_and_timing": true,
+      "media_frame_counts_match_original": true,
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 375,
+        "frames_processed": 150,
+        "wall_s": 7.94,
+        "video_s": 15.0,
+        "throughput_fps": 18.9,
+        "pipeline_ms_per_frame": 39.5,
+        "streams_at_process_fps": 2.53,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 1.889,
+        "stages": {
+          "decode": {
+            "mean_ms": 8.8,
+            "p95_ms": 10.5
+          },
+          "detect": {
+            "mean_ms": 29.1,
+            "p95_ms": 33.5
+          },
+          "track": {
+            "mean_ms": 0.6,
+            "p95_ms": 1.1
+          },
+          "helmet": {
+            "mean_ms": 0.9,
+            "p95_ms": 2.0
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.2
+          },
+          "media": {
+            "mean_ms": 9.4,
+            "p95_ms": 12.2
+          }
+        },
+        "run_id": "20261029T052640Z-90e544",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "provenance": {
+        "sample": "single_mill",
+        "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CRM_1-2_T_MILL_20251111_000115_0005.mp4",
+        "video_sha256": "8a51fa33b7061b7a56cbed3afcfac68a6f11588546e7cf936189432e4da7b405",
+        "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+        "code_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6",
+        "process_fps": 10,
+        "idle_skip": false,
+        "media_verification": {
+          "cameras": 1,
+          "events": 4,
+          "failed_snapshots": 0,
+          "failed_clips": 0,
+          "truncated_clips": 3
+        },
+        "note": "Media validity and demonstrations do not establish event accuracy."
+      }
+    },
+    {
+      "alias": "conveyor_group",
+      "sample_id": "07_conveyor_group",
+      "event_count": 1,
+      "same_event_identity_and_timing": true,
+      "media_frame_counts_match_original": true,
+      "perf": {
+        "input_res": "1920x1080",
+        "source_fps": 25.0,
+        "process_fps": 10,
+        "detector": "yolo8s_736x1280_openvino_model on openvino-gpu",
+        "helmet_classifier": "onnxruntime-cpu",
+        "frames_decoded": 375,
+        "frames_processed": 150,
+        "wall_s": 7.32,
+        "video_s": 15.0,
+        "throughput_fps": 20.5,
+        "pipeline_ms_per_frame": 39.0,
+        "streams_at_process_fps": 2.56,
+        "stream_capacity_basis": "stage-time estimate excluding media; not measured multi-camera capacity",
+        "source_coverage": 2.05,
+        "stages": {
+          "decode": {
+            "mean_ms": 8.5,
+            "p95_ms": 10.1
+          },
+          "detect": {
+            "mean_ms": 29.1,
+            "p95_ms": 34.2
+          },
+          "track": {
+            "mean_ms": 0.7,
+            "p95_ms": 1.2
+          },
+          "helmet": {
+            "mean_ms": 0.6,
+            "p95_ms": 1.9
+          },
+          "rules": {
+            "mean_ms": 0.1,
+            "p95_ms": 0.2
+          },
+          "media": {
+            "mean_ms": 9.1,
+            "p95_ms": 12.7
+          }
+        },
+        "run_id": "20261029T052649Z-d8d50a",
+        "idle_fps": null,
+        "frames_skipped": 0
+      },
+      "provenance": {
+        "sample": "conveyor_group",
+        "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CONV%232_20251129_000842_0025.mp4",
+        "video_sha256": "acb81aeaa7b497b933f46f5a6ba1461289565e8504fb61ce60c56b506f69f66d",
+        "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+        "code_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6",
+        "process_fps": 10,
+        "idle_skip": false,
+        "media_verification": {
+          "cameras": 1,
+          "events": 1,
+          "failed_snapshots": 0,
+          "failed_clips": 0,
+          "truncated_clips": 0
+        },
+        "note": "Media validity and demonstrations do not establish event accuracy."
+      }
+    }
+  ]
+}

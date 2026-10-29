@@ -1,0 +1,7 @@
+{
+  "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CRM_1-2_T_MILL_20251111_000115_0005.mp4",
+  "sha256": "8a51fa33b7061b7a56cbed3afcfac68a6f11588546e7cf936189432e4da7b405",
+  "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+  "review_note": "Owner-selected demonstration with a known limitation: the same operator appears under a new identity late in the clip and receives another zone/vest alert pair. Inspect identity continuity; do not claim zero duplicates from this unlabelled demonstration.",
+  "kind": "selected demonstration, not manual event labels"
+}

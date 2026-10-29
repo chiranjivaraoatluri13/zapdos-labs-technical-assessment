@@ -1,0 +1,32 @@
+{
+  "camera_id": "07_conveyor_group",
+  "frame_size": [
+    1920,
+    1080
+  ],
+  "reference": "07_conveyor_group.jpg",
+  "zones": [
+    {
+      "zone_id": "demo_review_area",
+      "note": "Illustrative demonstration polygon, not a site-approved restriction.",
+      "polygon": [
+        [
+          810,
+          620
+        ],
+        [
+          1230,
+          620
+        ],
+        [
+          1240,
+          1065
+        ],
+        [
+          810,
+          1065
+        ]
+      ]
+    }
+  ]
+}

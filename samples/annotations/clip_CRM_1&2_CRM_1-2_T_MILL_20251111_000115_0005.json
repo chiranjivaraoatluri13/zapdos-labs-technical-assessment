@@ -1,0 +1,82 @@
+{
+  "clip_id": "clip_CRM_1&2_CRM_1-2_T_MILL_20251111_000115_0005",
+  "annotator_id": "annotator_4",
+  "annotator_role": "tier_1",
+  "annotator_timestamp": "2026-04-12T17:03:18.568015",
+  "status": "submitted",
+  "source": "human",
+  "annotation_layer": 2,
+  "scene_type": "SA",
+  "num_workers": 1,
+  "dominant_actions": [
+    "F1"
+  ],
+  "overall_ppe_compliance": "compliant",
+  "visibility": "clear",
+  "visibility_conditions": [
+    "clear"
+  ],
+  "visible_equipment": "large steel coil, rolling mill, control panel, railings, conveyor system",
+  "persons": [
+    {
+      "person_id": "P1",
+      "position": "right",
+      "action_code": "F1",
+      "action_name": "idle.standing",
+      "taxonomy_layer": 1,
+      "physical_description": "worker in a blue checkered shirt, wearing a light-colored hard hat, medium build",
+      "free_text_description": "Worker standing near a control panel, observing the large steel coil being processed on the rolling mill. The worker remains in a stationary position, monitoring the equipment.",
+      "spatial_context": [
+        "ground_level",
+        "near_machinery"
+      ],
+      "ppe": {
+        "helmet": "worn",
+        "high_vis_vest": "not_worn",
+        "welding_protection": "not_applicable",
+        "harness": "not_applicable",
+        "safety_shoes": "cannot_determine"
+      },
+      "occlusion_level": "partially_occluded",
+      "occlusion_source": [
+        "equipment"
+      ],
+      "unsafe_act": "none",
+      "interaction": "none_visible",
+      "group_flag": "solo",
+      "coordinated_with": [],
+      "role_in_coordination": "",
+      "confidence": 0.9
+    }
+  ],
+  "scene_unsafe_act": "",
+  "action_transition": {
+    "detected": false,
+    "transitions": []
+  },
+  "group_activity": "",
+  "scene_description": "Surveillance footage from a steel mill showing a large steel coil being processed on a rolling mill. A worker in a blue shirt and hard hat stands near a control panel, monitoring the operation. Steam rises from the machinery, and the area is dimly lit with artificial lights.",
+  "annotator_confidence": 0.8,
+  "time_spent_sec": 85.6,
+  "tier": "A",
+  "severity_level": "S2",
+  "calibration_condition": null,
+  "vlm_suggestion_snapshot": {
+    "scene_type": "SA",
+    "num_workers": 1,
+    "first_worker_action": "B7"
+  },
+  "edit_tracking": {
+    "prefilled_from": "vlm",
+    "source_type": "vlm",
+    "fields_modified": [
+      "visibility",
+      "visibility_conditions",
+      "persons[0].action_code",
+      "persons[0].spatial_context",
+      "persons[0].ppe.high_vis_vest",
+      "persons[0].ppe.helmet"
+    ],
+    "modification_count": 6
+  }
+}

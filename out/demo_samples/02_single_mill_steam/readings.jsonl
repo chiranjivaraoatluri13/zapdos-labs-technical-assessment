@@ -1,0 +1,60 @@
+{"frame": 0, "ts": 0.0, "track_id": null}
+{"frame": 3, "ts": 0.12, "track_id": null}
+{"frame": 5, "ts": 0.2, "track_id": null}
+{"frame": 8, "ts": 0.32, "track_id": null}
+{"frame": 10, "ts": 0.4, "track_id": null}
+{"frame": 13, "ts": 0.52, "track_id": 1, "person_id": 1, "box": [1309.5, 349.7, 1363.5, 446.8], "conf": 0.831, "confirmed": false, "head": [1329.0, 351.4, 1362.0, 394.1], "head_src": "head", "p_bare": 0.3566, "ambiguous": [], "torso_cover": 0.0, "foot": [[1336.5, 446.8], "visible"], "readings": {"no_helmet": [false, 0.643, null], "no_vest": [null, 0.0, "person_small"], "zone_entry:demo_review_area": [true, 0.831, null]}}
+{"frame": 15, "ts": 0.6, "track_id": null}
+{"frame": 18, "ts": 0.72, "track_id": 1, "person_id": 1, "box": [1321.5, 344.1, 1384.5, 443.4], "conf": 0.333, "confirmed": false, "head": [1341.8, 345.8, 1374.8, 382.9], "head_src": "head", "p_bare": 0.2597, "ambiguous": [], "torso_cover": 0.0, "foot": [[1353.0, 443.4], "visible"], "readings": {"no_helmet": [false, 0.74, null], "no_vest": [null, 0.0, "person_small"], "zone_entry:demo_review_area": [true, 0.333, null]}}
+{"frame": 20, "ts": 0.8, "track_id": 1, "person_id": 1, "box": [1326.8, 342.0, 1401.8, 447.8], "conf": 0.845, "confirmed": false, "head": [1345.1, 344.2, 1378.9, 382.9], "head_src": "head", "p_bare": 0.1071, "ambiguous": [], "torso_cover": 0.0, "foot": [[1364.2, 447.8], "visible"], "readings": {"no_helmet": [false, 0.893, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.845, null]}}
+{"frame": 23, "ts": 0.92, "track_id": 1, "person_id": 1, "box": [1330.5, 340.0, 1404.0, 445.2], "conf": 0.834, "confirmed": true, "head": [1350.4, 341.6, 1385.6, 382.5], "head_src": "head", "p_bare": 0.0355, "ambiguous": [], "torso_cover": 0.0, "foot": [[1367.2, 445.2], "visible"], "readings": {"no_helmet": [false, 0.965, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.834, null]}}
+{"frame": 25, "ts": 1.0, "track_id": 1, "person_id": 1, "box": [1334.2, 339.4, 1403.2, 444.4], "conf": 0.866, "confirmed": true, "head": [1353.0, 341.2, 1387.5, 381.4], "head_src": "head", "p_bare": 0.0767, "ambiguous": [], "torso_cover": 0.0, "foot": [[1368.8, 444.4], "visible"], "readings": {"no_helmet": [false, 0.923, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.866, null]}}
+{"frame": 28, "ts": 1.12, "track_id": 1, "person_id": 1, "box": [1340.6, 337.7, 1401.4, 445.3], "conf": 0.792, "confirmed": true, "head": [1359.4, 339.7, 1391.6, 381.1], "head_src": "head", "p_bare": 0.0209, "ambiguous": [], "torso_cover": 0.0, "foot": [[1371.0, 445.3], "visible"], "readings": {"no_helmet": [false, 0.979, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.792, null]}}
+{"frame": 30, "ts": 1.2, "track_id": 1, "person_id": 1, "box": [1345.9, 337.3, 1402.1, 444.2], "conf": 0.791, "confirmed": true, "head": [1365.4, 339.3, 1397.6, 380.0], "head_src": "head", "p_bare": 0.0493, "ambiguous": [], "torso_cover": 0.0, "foot": [[1374.0, 444.2], "visible"], "readings": {"no_helmet": [false, 0.951, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.791, null]}}
+{"frame": 33, "ts": 1.32, "track_id": 1, "person_id": 1, "box": [1354.1, 336.6, 1408.9, 452.4], "conf": 0.573, "confirmed": true, "head": [1372.5, 339.0, 1405.5, 379.5], "head_src": "head", "p_bare": 0.0421, "ambiguous": [], "torso_cover": 0.0, "foot": [[1381.5, 452.4], "visible"], "readings": {"no_helmet": [false, 0.958, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.573, null]}}
+{"frame": 35, "ts": 1.4, "track_id": 1, "person_id": 1, "box": [1359.8, 335.3, 1412.2, 442.4], "conf": 0.619, "confirmed": true, "head": [1378.5, 336.8, 1410.0, 375.4], "head_src": "head", "p_bare": 0.0355, "ambiguous": [], "torso_cover": 0.0, "foot": [[1386.0, 442.4], "visible"], "readings": {"no_helmet": [false, 0.965, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.619, null]}}
+{"frame": 38, "ts": 1.52, "track_id": null}
+{"frame": 40, "ts": 1.6, "track_id": null}
+{"frame": 43, "ts": 1.72, "track_id": null}
+{"frame": 45, "ts": 1.8, "track_id": 1, "person_id": 1, "box": [1377.4, 331.7, 1439.6, 442.3], "conf": 0.791, "confirmed": true, "head": [1402.5, 332.6, 1434.0, 368.6], "head_src": "head", "p_bare": 0.0486, "ambiguous": [], "torso_cover": 0.0, "foot": [[1408.5, 442.3], "visible"], "readings": {"no_helmet": [false, 0.951, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.791, null]}}
+{"frame": 48, "ts": 1.92, "track_id": null}
+{"frame": 50, "ts": 2.0, "track_id": 1, "person_id": 1, "box": [1398.8, 335.1, 1452.8, 440.4], "conf": 0.721, "confirmed": true, "head": [1417.9, 336.3, 1447.1, 373.2], "head_src": "head", "p_bare": 0.5929, "ambiguous": [], "torso_cover": 0.0, "foot": [[1425.8, 440.4], "visible"], "readings": {"no_helmet": [false, 0.407, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.721, null]}}
+{"frame": 53, "ts": 2.12, "track_id": 1, "person_id": 1, "box": [1407.8, 334.3, 1461.8, 439.7], "conf": 0.615, "confirmed": true, "head": [1428.4, 336.4, 1457.6, 371.6], "head_src": "head", "p_bare": 0.6984, "ambiguous": [], "torso_cover": 0.0, "foot": [[1434.8, 439.7], "visible"], "readings": {"no_helmet": [false, 0.302, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.615, null]}}
+{"frame": 55, "ts": 2.2, "track_id": 1, "person_id": 1, "box": [1415.2, 334.5, 1466.2, 441.0], "conf": 0.697, "confirmed": true, "head": [1434.4, 337.1, 1463.6, 373.5], "head_src": "head", "p_bare": 0.2334, "ambiguous": [], "torso_cover": 0.0, "foot": [[1440.8, 441.0], "visible"], "readings": {"no_helmet": [false, 0.767, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.697, null]}}
+{"frame": 58, "ts": 2.32, "track_id": 1, "person_id": 1, "box": [1421.6, 337.7, 1476.4, 439.3], "conf": 0.764, "confirmed": true, "head": [1444.1, 339.1, 1474.9, 378.7], "head_src": "head", "p_bare": 0.1739, "ambiguous": [], "torso_cover": 0.0, "foot": [[1449.0, 439.3], "visible"], "readings": {"no_helmet": [false, 0.826, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [true, 0.764, null]}}
+{"frame": 60, "ts": 2.4, "track_id": 1, "person_id": 1, "box": [1424.2, 338.8, 1484.2, 436.7], "conf": 0.752, "confirmed": true, "head": [1448.6, 340.1, 1479.4, 380.2], "head_src": "head", "p_bare": 0.0575, "ambiguous": [], "torso_cover": 0.0, "foot": [[1454.2, 436.7], "visible"], "readings": {"no_helmet": [false, 0.942, null], "no_vest": [null, 0.0, "person_small"], "zone_entry:demo_review_area": [true, 0.752, null]}}
+{"frame": 63, "ts": 2.52, "track_id": 1, "person_id": 1, "box": [1435.9, 342.4, 1492.1, 436.1], "conf": 0.624, "confirmed": true, "head": [1457.6, 344.0, 1488.4, 382.0], "head_src": "head", "p_bare": 0.1344, "ambiguous": [], "torso_cover": 0.0, "foot": [[1464.0, 436.1], "visible"], "readings": {"no_helmet": [false, 0.866, null], "no_vest": [null, 0.0, "person_small"], "zone_entry:demo_review_area": [true, 0.624, null]}}
+{"frame": 65, "ts": 2.6, "track_id": 1, "person_id": 1, "box": [1447.9, 346.0, 1498.1, 438.5], "conf": 0.56, "confirmed": true, "head": [1466.2, 346.2, 1496.2, 379.8], "head_src": "head", "p_bare": 0.5233, "ambiguous": [], "torso_cover": 0.0, "foot": [[1473.0, 438.5], "visible"], "readings": {"no_helmet": [false, 0.477, null], "no_vest": [null, 0.0, "person_small"], "zone_entry:demo_review_area": [true, 0.56, null]}}
+{"frame": 68, "ts": 2.72, "track_id": 1, "person_id": 1, "box": [1459.5, 349.7, 1509.0, 437.8], "conf": 0.782, "confirmed": true, "head": [1477.1, 351.4, 1504.9, 381.4], "head_src": "head", "p_bare": 0.538, "ambiguous": [], "torso_cover": 0.0, "foot": [[1484.2, 437.8], "visible"], "readings": {"no_helmet": [false, 0.462, null], "no_vest": [null, 0.0, "person_small"], "zone_entry:demo_review_area": [false, 0.782, null]}}
+{"frame": 70, "ts": 2.8, "track_id": 1, "person_id": 1, "box": [1469.6, 353.5, 1521.4, 454.2], "conf": 0.132, "confirmed": true, "head": [1486.1, 354.0, 1513.9, 383.2], "head_src": "head", "p_bare": 0.0876, "ambiguous": [], "torso_cover": 0.0, "foot": [[1495.5, 454.2], "visible"], "readings": {"no_helmet": [false, 0.912, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [false, 0.132, null]}}
+{"frame": 73, "ts": 2.92, "track_id": 1, "person_id": 1, "box": [1483.9, 354.8, 1540.1, 439.5], "conf": 0.41, "confirmed": true, "head": [1496.2, 356.7, 1523.2, 388.0], "head_src": "head", "p_bare": 0.3634, "ambiguous": [], "torso_cover": 0.0, "foot": [[1512.0, 439.5], "visible"], "readings": {"no_helmet": [false, 0.637, null], "no_vest": [null, 0.0, "person_small"], "zone_entry:demo_review_area": [false, 0.41, null]}}
+{"frame": 75, "ts": 3.0, "track_id": 1, "person_id": 1, "box": [1492.5, 354.9, 1543.5, 458.1], "conf": 0.243, "confirmed": true, "head": [1504.9, 356.2, 1531.1, 387.8], "head_src": "head", "p_bare": 0.1824, "ambiguous": [], "torso_cover": 0.0, "foot": [[1518.0, 458.1], "visible"], "readings": {"no_helmet": [false, 0.818, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [false, 0.243, null]}}
+{"frame": 78, "ts": 3.12, "track_id": 1, "person_id": 1, "box": [1506.0, 353.8, 1548.0, 534.2], "conf": 0.77, "confirmed": true, "head": [1519.1, 356.2, 1543.9, 387.8], "head_src": "head", "p_bare": 0.1024, "ambiguous": [], "torso_cover": 0.0, "foot": [[1527.0, 534.2], "visible"], "readings": {"no_helmet": [false, 0.898, null], "no_vest": [true, 0.5, null], "zone_entry:demo_review_area": [false, 0.77, null]}}
+{"frame": 80, "ts": 3.2, "track_id": null}
+{"frame": 83, "ts": 3.32, "track_id": null}
+{"frame": 85, "ts": 3.4, "track_id": null}
+{"frame": 88, "ts": 3.52, "track_id": null}
+{"frame": 90, "ts": 3.6, "track_id": null}
+{"frame": 93, "ts": 3.72, "track_id": null}
+{"frame": 95, "ts": 3.8, "track_id": null}
+{"frame": 98, "ts": 3.92, "track_id": null}
+{"frame": 100, "ts": 4.0, "track_id": null}
+{"frame": 103, "ts": 4.12, "track_id": null}
+{"frame": 105, "ts": 4.2, "track_id": null}
+{"frame": 108, "ts": 4.32, "track_id": null}
+{"frame": 110, "ts": 4.4, "track_id": null}
+{"frame": 113, "ts": 4.52, "track_id": null}
+{"frame": 115, "ts": 4.6, "track_id": null}
+{"frame": 118, "ts": 4.72, "track_id": null}
+{"frame": 120, "ts": 4.8, "track_id": null}
+{"frame": 123, "ts": 4.92, "track_id": null}
+{"frame": 125, "ts": 5.0, "track_id": null}
+{"frame": 128, "ts": 5.12, "track_id": null}
+{"frame": 130, "ts": 5.2, "track_id": null}
+{"frame": 133, "ts": 5.32, "track_id": null}
+{"frame": 135, "ts": 5.4, "track_id": null}
+{"frame": 138, "ts": 5.52, "track_id": null}
+{"frame": 140, "ts": 5.6, "track_id": null}
+{"frame": 143, "ts": 5.72, "track_id": null}
+{"frame": 145, "ts": 5.8, "track_id": null}
+{"frame": 148, "ts": 5.92, "track_id": null}

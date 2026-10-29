@@ -1,0 +1,153 @@
+{
+  "clip_id": "clip_CRM_1&2_CONV#2_20251129_000842_0025",
+  "annotator_id": "annotator_3",
+  "annotator_role": "tier_1",
+  "annotator_timestamp": "2026-04-14T11:23:01.790417",
+  "status": "submitted",
+  "source": "human",
+  "annotation_layer": 2,
+  "scene_type": "MAI",
+  "num_workers": 3,
+  "dominant_actions": [
+    "B2",
+    "F1",
+    "A1"
+  ],
+  "overall_ppe_compliance": "partial",
+  "visibility": "clear",
+  "visibility_conditions": [
+    "dust",
+    "glare"
+  ],
+  "visible_equipment": "large rolling mill machinery, conveyor system, metal coils, control panels, gas cylinders, hoses",
+  "persons": [
+    {
+      "person_id": "P1",
+      "position": "left",
+      "action_code": "A1",
+      "action_name": "locomotion.walking",
+      "taxonomy_layer": 1,
+      "physical_description": "Worker in yellow high-visibility jacket and white helmet, medium build, standing still for most of the clip.",
+      "free_text_description": "Worker standing stationary on an elevated metal walkway, observing the area below. Appears to be supervising or waiting for a task to begin.",
+      "spatial_context": [
+        "elevated",
+        "walkway",
+        "near_machinery"
+      ],
+      "ppe": {
+        "helmet": "worn",
+        "high_vis_vest": "not_worn",
+        "welding_protection": "not_applicable",
+        "harness": "cannot_determine",
+        "safety_shoes": "worn"
+      },
+      "occlusion_level": "fully_visible",
+      "occlusion_source": [],
+      "unsafe_act": "none",
+      "interaction": "ground_surface",
+      "group_flag": "solo",
+      "coordinated_with": [],
+      "role_in_coordination": "",
+      "confidence": 0.9
+    },
+    {
+      "person_id": "P2",
+      "position": "right",
+      "action_code": "A1",
+      "action_name": "locomotion.walking",
+      "taxonomy_layer": 1,
+      "physical_description": "Worker in red shirt and white helmet, partially obscured by equipment, appears to be moving slightly but mostly stationary.",
+      "free_text_description": "Worker standing in front of a large control panel or electrical cabinet, appearing to monitor or operate controls. Body orientation suggests interaction with the panel.",
+      "spatial_context": [
+        "ground_level",
+        "near_machinery",
+        "restricted"
+      ],
+      "ppe": {
+        "helmet": "worn",
+        "high_vis_vest": "not_worn",
+        "welding_protection": "not_applicable",
+        "harness": "not_applicable",
+        "safety_shoes": "cannot_determine"
+      },
+      "occlusion_level": "partially_occluded",
+      "occlusion_source": [
+        "atmospheric"
+      ],
+      "unsafe_act": "UA-CRM-04: No use of rubber hand gloves & goggles during operating electrical equipment | UA-G-26: No use of safety goggles at workplace",
+      "interaction": "none_visible",
+      "group_flag": "concurrent",
+      "coordinated_with": [],
+      "role_in_coordination": "",
+      "confidence": 0.75
+    },
+    {
+      "person_id": "P3",
+      "position": "left",
+      "action_code": "A1",
+      "action_name": "locomotion.walking",
+      "taxonomy_layer": 1,
+      "physical_description": "Worker in light blue/grey coveralls and white helmet, thin build, standing near a large steel coil.",
+      "free_text_description": "Worker standing idle near a large steel coil on an elevated platform, possibly waiting for a crane or material handling operation to begin.",
+      "spatial_context": [
+        "elevated",
+        "crane_zone",
+        "storage_area"
+      ],
+      "ppe": {
+        "helmet": "worn",
+        "high_vis_vest": "not_worn",
+        "welding_protection": "not_applicable",
+        "harness": "not_applicable",
+        "safety_shoes": "cannot_determine"
+      },
+      "occlusion_level": "fully_visible",
+      "occlusion_source": [],
+      "unsafe_act": "UA-G-16: Workers at working area without safety helmet | UA-G-26: No use of safety goggles at workplace",
+      "interaction": "none_visible",
+      "group_flag": "concurrent",
+      "coordinated_with": [],
+      "role_in_coordination": "",
+      "confidence": 0.85
+    }
+  ],
+  "scene_unsafe_act": "",
+  "action_transition": {
+    "detected": false,
+    "transitions": []
+  },
+  "group_activity": "",
+  "scene_description": "High-angle view of the CONV#2 area in the CRM 1&2 steel plant, showing multiple workers in an active production zone with heavy machinery, including a large rolling mill and coil handling equipment. The environment is dusty with some glare from overhead lighting.",
+  "annotator_confidence": 0.833,
+  "time_spent_sec": 1142.6,
+  "tier": "B",
+  "severity_level": "S2",
+  "calibration_condition": null,
+  "vlm_suggestion_snapshot": {
+    "scene_type": "MAI",
+    "num_workers": 3,
+    "first_worker_action": "F1"
+  },
+  "edit_tracking": {
+    "prefilled_from": "vlm",
+    "source_type": "vlm",
+    "fields_modified": [
+      "visibility",
+      "persons[0].action_code",
+      "persons[0].ppe.safety_shoes",
+      "persons[0].ppe.high_vis_vest",
+      "persons[0].interaction",
+      "persons[0].group_flag",
+      "persons[1].action_code",
+      "persons[1].occlusion_source",
+      "persons[2].action_code"
+    ],
+    "modification_count": 9,
+    "vlm_prefill_unsafe_acts": [
+      "none",
+      "UA-CRM-04: No use of rubber hand gloves & goggles during operating electrical equipment | UA-G-26: No use of safety goggles at workplace",
+      "UA-G-16: Workers at working area without safety helmet | UA-G-26: No use of safety goggles at workplace"
+    ],
+    "vlm_prefill_scene_unsafe_act": ""
+  }
+}

@@ -10,6 +10,16 @@
 
 Video → SH17 detection → ByteTrack → head-crop helmet classifier → persistent, deduplicated alerts. [Design](docs/DESIGN.md) · [Current audit](docs/ASSESSMENT_AUDIT.md) · [Historical M2 experiments](docs/RESULTS.md).
 
+## Selected demonstration videos
+
+The five selected videos, annotated outputs, evidence links and individual one-line commands are in [TEST_VIDEOS.md](TEST_VIDEOS.md). Their complete sample outputs are under [out/demo_samples](out/demo_samples). After the setup below, run all five with:
+
+```powershell
+python scripts/run_sample.py --all --backend openvino --openvino-device GPU
+```
+
+The helper downloads each pinned source clip, verifies its checksum, runs the pipeline and checks the saved evidence. The selected examples emitted 16 alerts with 16 readable snapshots and clips. They are demonstrations selected after review; `01_single_mill` retains a known identity-continuity issue and possible duplicate alert pair. See the review notes before interpreting alert counts as accuracy.
+
 ## Run
 
 From the project root, Windows CPU / Python 3.12:

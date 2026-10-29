@@ -1,0 +1,7 @@
+{
+  "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_Tippler_3%264_19.1-19.2TEND_20251205_000258_0011.mp4",
+  "sha256": "b588cc7b31c6257ed31ecef41331b3ef743e8e21537adae4bfc68d43d2dafe51",
+  "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+  "review_note": "Recommended dim-aisle demo: one zone and one vest alert on the aisle worker. The second worker is partly hidden and often unknown. Two evidence clips have shortened lead-in; no IR claim is made.",
+  "kind": "selected demonstration, not manual event labels"
+}

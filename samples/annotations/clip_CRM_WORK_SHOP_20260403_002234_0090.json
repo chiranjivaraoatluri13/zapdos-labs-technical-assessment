@@ -1,0 +1,51 @@
+{
+  "clip_id": "clip_CRM_WORK_SHOP_20260403_002234_0090",
+  "annotator_id": "expert_1",
+  "annotator_role": "tier_2",
+  "annotator_timestamp": "2026-04-19T23:14:32.260516",
+  "status": "submitted",
+  "source": "human",
+  "annotation_layer": 1,
+  "scene_type": "MAI",
+  "num_workers": 8,
+  "dominant_actions": [
+    "A1",
+    "B1",
+    "B7",
+    "B9",
+    "E1",
+    "F1",
+    "F2",
+    "B5"
+  ],
+  "overall_ppe_compliance": "partial",
+  "visibility": "clear",
+  "visibility_conditions": [
+    "clear"
+  ],
+  "visible_equipment": "Large motor rotors on floor, welding machines, fans, tool carts, fire extinguishers, metal shelving, overhead crane structure",
+  "persons": [],
+  "scene_unsafe_act": "",
+  "action_transition": {
+    "detected": false,
+    "transitions": []
+  },
+  "group_activity": "",
+  "scene_description": "Wide-angle view of a busy industrial workshop with multiple workers performing various tasks around large machinery components. The area is well-lit with overhead lights and contains numerous tools, equipment, and stored parts.",
+  "annotator_confidence": 0.831,
+  "time_spent_sec": 0.7,
+  "tier": "B",
+  "severity_level": "S2",
+  "calibration_condition": null,
+  "vlm_suggestion_snapshot": {
+    "scene_type": "MAI",
+    "num_workers": 8,
+    "first_worker_action": "A1"
+  },
+  "edit_tracking": {
+    "prefilled_from": "tier_1",
+    "source_type": "tier_1",
+    "fields_modified": [],
+    "modification_count": 0
+  }
+}

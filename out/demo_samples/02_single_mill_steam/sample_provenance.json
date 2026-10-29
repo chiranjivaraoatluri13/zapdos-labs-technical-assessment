@@ -1,0 +1,7 @@
+{
+  "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CRM_1-2_T_MILL_20251111_001524_0056.mp4",
+  "sha256": "a52bbf51daca844343a9a1f4874406f54af8c96fd5a90185418727ed2331d2a7",
+  "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+  "review_note": "Recommended single-person demo: one raw track and one person identity, with one zone alert and one vest alert. A gate partly covers the torso; inspect the evidence. Both clips have shortened lead-in because the source is only six seconds.",
+  "kind": "selected demonstration, not manual event labels"
+}

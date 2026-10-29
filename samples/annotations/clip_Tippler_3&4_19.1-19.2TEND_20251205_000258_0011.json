@@ -1,0 +1,120 @@
+{
+  "clip_id": "clip_Tippler_3&4_19.1-19.2TEND_20251205_000258_0011",
+  "annotator_id": "expert_1",
+  "annotator_role": "tier_2",
+  "annotator_timestamp": "2026-04-21T19:54:35.802071",
+  "status": "submitted",
+  "source": "human",
+  "annotation_layer": 2,
+  "scene_type": "MAI",
+  "num_workers": 2,
+  "dominant_actions": [
+    "B1",
+    "F1"
+  ],
+  "overall_ppe_compliance": "non_compliant",
+  "visibility": "clear",
+  "visibility_conditions": [
+    "dust",
+    "low_light"
+  ],
+  "visible_equipment": "conveyor rollers, metal support structures, cables, lighting fixtures",
+  "persons": [
+    {
+      "person_id": "P1",
+      "position": "center",
+      "action_code": "F1",
+      "action_name": "idle.standing",
+      "taxonomy_layer": 1,
+      "physical_description": "worker in yellow shirt and dark pants, wearing a white helmet, stocky build",
+      "free_text_description": "Worker standing in a narrow passageway, leaning over machinery and using a tool to adjust or inspect a component on the conveyor system.",
+      "spatial_context": [
+        "ground_level",
+        "near_machinery",
+        "restricted"
+      ],
+      "ppe": {
+        "helmet": "worn",
+        "high_vis_vest": "not_worn",
+        "welding_protection": "not_applicable",
+        "harness": "not_worn",
+        "safety_shoes": "cannot_determine"
+      },
+      "occlusion_level": "partially_occluded",
+      "occlusion_source": [
+        "structure",
+        "other_person"
+      ],
+      "unsafe_act": "no_high_vis_vest",
+      "interaction": "none_visible",
+      "group_flag": "concurrent",
+      "coordinated_with": [],
+      "role_in_coordination": "",
+      "confidence": 0.9
+    },
+    {
+      "person_id": "P2",
+      "position": "center",
+      "action_code": "B1",
+      "action_name": "work.standing_operation_tool_use",
+      "taxonomy_layer": 1,
+      "physical_description": "worker in light-colored shirt and dark pants, wearing a white helmet, crouching",
+      "free_text_description": "Worker crouching beside a large conveyor roller, appearing to inspect or work on the lower section of the machinery.",
+      "spatial_context": [
+        "ground_level",
+        "near_machinery",
+        "restricted"
+      ],
+      "ppe": {
+        "helmet": "worn",
+        "high_vis_vest": "not_worn",
+        "welding_protection": "not_applicable",
+        "harness": "not_worn",
+        "safety_shoes": "worn"
+      },
+      "occlusion_level": "partially_occluded",
+      "occlusion_source": [
+        "structure"
+      ],
+      "unsafe_act": "no_high_vis_vest",
+      "interaction": "none_visible",
+      "group_flag": "concurrent",
+      "coordinated_with": [],
+      "role_in_coordination": "",
+      "confidence": 0.85
+    }
+  ],
+  "scene_unsafe_act": "",
+  "action_transition": {
+    "detected": false,
+    "transitions": []
+  },
+  "group_activity": "",
+  "scene_description": "Surveillance footage from an industrial steel plant showing a narrow, muddy passageway between large conveyor rollers. Two workers are visible in the background, one standing and one crouching, both near machinery in a dimly lit, dusty environment.",
+  "annotator_confidence": 0.875,
+  "time_spent_sec": 85.5,
+  "tier": "B",
+  "severity_level": "S2",
+  "calibration_condition": null,
+  "vlm_suggestion_snapshot": {
+    "scene_type": "MAI",
+    "num_workers": 2,
+    "first_worker_action": "B1"
+  },
+  "edit_tracking": {
+    "prefilled_from": "vlm",
+    "source_type": "vlm",
+    "fields_modified": [
+      "visibility",
+      "persons[0].action_code",
+      "persons[1].action_code",
+      "persons[1].ppe.safety_shoes"
+    ],
+    "modification_count": 4,
+    "vlm_prefill_unsafe_acts": [
+      "no_high_vis_vest",
+      "no_high_vis_vest"
+    ],
+    "vlm_prefill_scene_unsafe_act": ""
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "run_id": "20261029T044933Z-522d21",
+  "camera_id": "02_single_mill_steam",
+  "video": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CRM_1-2_T_MILL_20251111_001524_0056.mp4",
+  "zones": "samples/zones/02_single_mill_steam.json",
+  "started": "2026-10-29T04:49:33.263147+00:00",
+  "process_fps": 10,
+  "idle_fps": null,
+  "detector_model": "weights\\sh17\\yolo8s_736x1280_openvino_model",
+  "source_pipeline_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6",
+  "media_note": "H.264 review copies, preserving frame counts; original inference output retained in the local review package."
+}

@@ -1,0 +1,82 @@
+{
+  "dataset": "ThinkingHub/PP",
+  "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+  "license": "CC BY-NC 4.0",
+  "source_pipeline_commit": "f73a1a1d38e2d97267a571503df7d6dd0c5276f6",
+  "selection_note": "Five demonstrations selected by the owner after review of twelve runs. Known tracking and detection limitations are retained; this is not an independent accuracy benchmark.",
+  "samples": {
+    "single_person": {
+      "sample_id": "02_single_mill_steam",
+      "clip_id": "clip_CRM_1&2_CRM_1-2_T_MILL_20251111_001524_0056",
+      "category": "one person / steam",
+      "duration_s": 6.0,
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CRM_1-2_T_MILL_20251111_001524_0056.mp4",
+      "workers": 1,
+      "conditions": [
+        "steam",
+        "dust"
+      ],
+      "sha256": "a52bbf51daca844343a9a1f4874406f54af8c96fd5a90185418727ed2331d2a7",
+      "zones": "samples/zones/02_single_mill_steam.json",
+      "review_note": "Recommended single-person demo: one raw track and one person identity, with one zone alert and one vest alert. A gate partly covers the torso; inspect the evidence. Both clips have shortened lead-in because the source is only six seconds."
+    },
+    "crowded": {
+      "sample_id": "10_crowded_workshop_alt",
+      "clip_id": "clip_CRM_WORK_SHOP_20260403_002234_0090",
+      "category": "many people",
+      "duration_s": 15.0,
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_WORK_SHOP_20260403_002234_0090.mp4",
+      "workers": 8,
+      "conditions": [
+        "clear"
+      ],
+      "sha256": "7ab063d33ed5eda8751c2b9972ff55ab6d8752ea461a13f2c50caeb00ff1172e",
+      "zones": "samples/zones/10_crowded_workshop_alt.json",
+      "review_note": "Recommended crowd demo: one zone and six vest alerts, with evidence boxes on visible workers in the sampled alert images. Occlusion, possible ID changes and reflective clothing still need full human review. There are no per-person dataset PPE labels for this crowded clip."
+    },
+    "low_light": {
+      "sample_id": "12_tippler_low_light",
+      "clip_id": "clip_Tippler_3&4_19.1-19.2TEND_20251205_000258_0011",
+      "category": "bad lighting / two people",
+      "duration_s": 8.0,
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_Tippler_3%264_19.1-19.2TEND_20251205_000258_0011.mp4",
+      "workers": 2,
+      "conditions": [
+        "dust",
+        "low_light"
+      ],
+      "sha256": "b588cc7b31c6257ed31ecef41331b3ef743e8e21537adae4bfc68d43d2dafe51",
+      "zones": "samples/zones/12_tippler_low_light.json",
+      "review_note": "Recommended dim-aisle demo: one zone and one vest alert on the aisle worker. The second worker is partly hidden and often unknown. Two evidence clips have shortened lead-in; no IR claim is made."
+    },
+    "single_mill": {
+      "sample_id": "01_single_mill",
+      "clip_id": "clip_CRM_1&2_CRM_1-2_T_MILL_20251111_000115_0005",
+      "category": "one person",
+      "duration_s": 15.0,
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CRM_1-2_T_MILL_20251111_000115_0005.mp4",
+      "workers": 1,
+      "conditions": [
+        "clear"
+      ],
+      "sha256": "8a51fa33b7061b7a56cbed3afcfac68a6f11588546e7cf936189432e4da7b405",
+      "zones": "samples/zones/01_single_mill.json",
+      "review_note": "Owner-selected demonstration with a known limitation: the same operator appears under a new identity late in the clip and receives another zone/vest alert pair. Inspect identity continuity; do not claim zero duplicates from this unlabelled demonstration."
+    },
+    "conveyor_group": {
+      "sample_id": "07_conveyor_group",
+      "clip_id": "clip_CRM_1&2_CONV#2_20251129_000842_0025",
+      "category": "industrial / three people",
+      "duration_s": 15.0,
+      "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CONV%232_20251129_000842_0025.mp4",
+      "workers": 3,
+      "conditions": [
+        "dust",
+        "glare"
+      ],
+      "sha256": "acb81aeaa7b497b933f46f5a6ba1461289565e8504fb61ce60c56b506f69f66d",
+      "zones": "samples/zones/07_conveyor_group.json",
+      "review_note": "Owner-selected industrial/group demonstration: one vest alert on a worker box. Strong glare, small distant people and partial detection coverage remain; the configured foreground zone emitted no entry alert."
+    }
+  }
+}

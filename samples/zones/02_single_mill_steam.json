@@ -1,0 +1,32 @@
+{
+  "camera_id": "02_single_mill_steam",
+  "frame_size": [
+    1920,
+    1080
+  ],
+  "reference": "02_single_mill_steam.jpg",
+  "zones": [
+    {
+      "zone_id": "demo_review_area",
+      "note": "Illustrative demonstration polygon, not a site-approved restriction.",
+      "polygon": [
+        [
+          1110,
+          360
+        ],
+        [
+          1470,
+          360
+        ],
+        [
+          1470,
+          670
+        ],
+        [
+          1130,
+          670
+        ]
+      ]
+    }
+  ]
+}

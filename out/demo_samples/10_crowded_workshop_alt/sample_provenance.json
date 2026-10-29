@@ -1,0 +1,7 @@
+{
+  "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_WORK_SHOP_20260403_002234_0090.mp4",
+  "sha256": "7ab063d33ed5eda8751c2b9972ff55ab6d8752ea461a13f2c50caeb00ff1172e",
+  "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+  "review_note": "Recommended crowd demo: one zone and six vest alerts, with evidence boxes on visible workers in the sampled alert images. Occlusion, possible ID changes and reflective clothing still need full human review. There are no per-person dataset PPE labels for this crowded clip.",
+  "kind": "selected demonstration, not manual event labels"
+}

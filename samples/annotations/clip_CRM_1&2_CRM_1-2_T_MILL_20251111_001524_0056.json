@@ -1,0 +1,84 @@
+{
+  "clip_id": "clip_CRM_1&2_CRM_1-2_T_MILL_20251111_001524_0056",
+  "annotator_id": "annotator_3",
+  "annotator_role": "tier_1",
+  "annotator_timestamp": "2026-04-22T06:49:28.709882",
+  "status": "submitted",
+  "source": "human",
+  "annotation_layer": 2,
+  "scene_type": "SA",
+  "num_workers": 1,
+  "dominant_actions": [
+    "A1"
+  ],
+  "overall_ppe_compliance": "partial",
+  "visibility": "clear",
+  "visibility_conditions": [
+    "steam",
+    "dust"
+  ],
+  "visible_equipment": "steel coil on processing line, conveyor rollers, control panel, safety railing",
+  "persons": [
+    {
+      "person_id": "P1",
+      "position": "right",
+      "action_code": "A1",
+      "action_name": "locomotion.walking",
+      "taxonomy_layer": 1,
+      "physical_description": "worker in blue long-sleeve shirt, light-colored pants, white hard hat, average build",
+      "free_text_description": "Worker standing beside a control panel, appearing to monitor or operate it while observing the steel coil processing line.",
+      "spatial_context": [
+        "near_machinery",
+        "walkway"
+      ],
+      "ppe": {
+        "helmet": "worn",
+        "high_vis_vest": "not_worn",
+        "welding_protection": "not_applicable",
+        "harness": "not_applicable",
+        "safety_shoes": "worn"
+      },
+      "occlusion_level": "fully_visible",
+      "occlusion_source": [],
+      "unsafe_act": "UA-G-16: Worker is not wearing a high-visibility vest in a plant area with moving equipment and potential vehicle movement (UA-CRM-01).",
+      "interaction": "ground_surface",
+      "group_flag": "solo",
+      "coordinated_with": [],
+      "role_in_coordination": "",
+      "confidence": 0.9
+    }
+  ],
+  "scene_unsafe_act": "",
+  "action_transition": {
+    "detected": false,
+    "transitions": []
+  },
+  "group_activity": "",
+  "scene_description": "A single worker in a blue shirt and white helmet is walking near a large steel coil on a processing line in the CRM 1-2 T MILL area. Steam and dust are visible around the machinery.",
+  "annotator_confidence": 0.9,
+  "time_spent_sec": 213.5,
+  "tier": "B",
+  "severity_level": "S2",
+  "calibration_condition": null,
+  "vlm_suggestion_snapshot": {
+    "scene_type": "SA",
+    "num_workers": 1,
+    "first_worker_action": "B2"
+  },
+  "edit_tracking": {
+    "prefilled_from": "vlm",
+    "source_type": "vlm",
+    "fields_modified": [
+      "visibility",
+      "persons[0].action_code",
+      "persons[0].spatial_context",
+      "persons[0].ppe.safety_shoes",
+      "persons[0].interaction"
+    ],
+    "modification_count": 5,
+    "vlm_prefill_unsafe_acts": [
+      "UA-G-16: Worker is not wearing a high-visibility vest in a plant area with moving equipment and potential vehicle movement (UA-CRM-01)."
+    ],
+    "vlm_prefill_scene_unsafe_act": ""
+  }
+}

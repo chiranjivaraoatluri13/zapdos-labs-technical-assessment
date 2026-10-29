@@ -1,0 +1,32 @@
+{
+  "camera_id": "12_tippler_low_light",
+  "frame_size": [
+    1920,
+    1080
+  ],
+  "reference": "12_tippler_low_light.jpg",
+  "zones": [
+    {
+      "zone_id": "demo_review_area",
+      "note": "Illustrative demonstration polygon, not a site-approved restriction.",
+      "polygon": [
+        [
+          780,
+          235
+        ],
+        [
+          1090,
+          235
+        ],
+        [
+          1190,
+          800
+        ],
+        [
+          680,
+          800
+        ]
+      ]
+    }
+  ]
+}

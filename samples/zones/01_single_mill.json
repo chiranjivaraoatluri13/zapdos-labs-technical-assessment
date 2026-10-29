@@ -1,0 +1,32 @@
+{
+  "camera_id": "01_single_mill",
+  "frame_size": [
+    1920,
+    1080
+  ],
+  "reference": "01_single_mill.jpg",
+  "zones": [
+    {
+      "zone_id": "demo_review_area",
+      "note": "Illustrative demonstration polygon, not a site-approved restriction.",
+      "polygon": [
+        [
+          1110,
+          360
+        ],
+        [
+          1470,
+          360
+        ],
+        [
+          1470,
+          670
+        ],
+        [
+          1130,
+          670
+        ]
+      ]
+    }
+  ]
+}

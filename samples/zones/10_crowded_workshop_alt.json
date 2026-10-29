@@ -1,0 +1,32 @@
+{
+  "camera_id": "10_crowded_workshop_alt",
+  "frame_size": [
+    1920,
+    1080
+  ],
+  "reference": "10_crowded_workshop_alt.jpg",
+  "zones": [
+    {
+      "zone_id": "demo_review_area",
+      "note": "Illustrative demonstration polygon, not a site-approved restriction.",
+      "polygon": [
+        [
+          380,
+          530
+        ],
+        [
+          740,
+          530
+        ],
+        [
+          700,
+          1040
+        ],
+        [
+          200,
+          1040
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "source_url": "https://huggingface.co/datasets/ThinkingHub/PP/resolve/2a927fb86450332942fb5f4ffac8a20700cd539a/sample/clips/clip_CRM_1%262_CONV%232_20251129_000842_0025.mp4",
+  "sha256": "acb81aeaa7b497b933f46f5a6ba1461289565e8504fb61ce60c56b506f69f66d",
+  "dataset_revision": "2a927fb86450332942fb5f4ffac8a20700cd539a",
+  "review_note": "Owner-selected industrial/group demonstration: one vest alert on a worker box. Strong glare, small distant people and partial detection coverage remain; the configured foreground zone emitted no entry alert.",
+  "kind": "selected demonstration, not manual event labels"
+}
