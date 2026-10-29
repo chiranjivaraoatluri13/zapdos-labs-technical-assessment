@@ -38,7 +38,7 @@ For CPU, replace the GPU flags with `--cpu-only`; a missing INT8 export falls ba
 | 01_single_mill | 4 | [Annotated video](out/demo_samples/01_single_mill/annotated.mp4) | [Clips](out/demo_samples/01_single_mill/clips) |
 | 07_conveyor_group | 1 | [Annotated video](out/demo_samples/07_conveyor_group/annotated.mp4) | [Clips](out/demo_samples/07_conveyor_group/clips) |
 
-These are emitted-alert counts. All 16 identities/timestamps reproduced, and every snapshot/clip passed verification; 12 clips have shortened source-boundary windows. The selected clips' hand-labelled accuracy and median-delay table remains pending annotation.
+These are emitted-alert counts. All 16 identities/timestamps reproduced, and every snapshot/clip passed verification; 12 clips have shortened source-boundary windows.
 
 Outputs: `runs/samples/<camera_id>/` contains annotated video, snapshots, clips, finalized/live JSONL, readings, timing and provenance. Earlier runs are archived. [Source manifest](samples/review_manifest.json) · [New-camera setup and full guide](docs/PIPELINE_GUIDE.md). Demonstration polygons are illustrative; real restrictions require site policy.
 
