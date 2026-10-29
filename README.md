@@ -42,6 +42,18 @@ These are emitted-alert counts. All 16 identities/timestamps reproduced, and eve
 
 Outputs: `runs/samples/<camera_id>/` contains annotated video, snapshots, clips, finalized/live JSONL, readings, timing and provenance. Earlier runs are archived. [Source manifest](samples/review_manifest.json) · [New-camera setup and full guide](docs/PIPELINE_GUIDE.md). Demonstration polygons are illustrative; real restrictions require site policy.
 
+## Recorded event evaluation
+
+These three development clips include low-light footage. Values are copied from the recorded full-inference OpenVINO GPU benchmark at 10 sampled FPS, before the later identity/display fixes. They are scores against the [existing event annotations](labels), whose creation and independent human verification are not established here; they are separate from the five demonstrations above.
+
+| Clip | Labelled events | Alerts | True | False | Duplicates | Missed | Median delay (s) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| sb_crm_workshop_0109 | 8 | 8 | 7 | 0 | 0 | 1 | 1.52 |
+| sb_red_lrs1_0007 | 3 | 1 | 1 | 0 | 0 | 2 | 2.22 |
+| sb_tippler_lowlight_0062 | 3 | 3 | 3 | 0 | 0 | 0 | 3.32 |
+
+Workshop includes one alert marked ignored by the evaluator, so its alerts exceed true + false + duplicates by one. Across these development clips: 11/14 labelled events caught, precision 1.00 (ignoring that excluded alert), recall 0.786, zero scored false alerts and zero duplicates. Median delays use matched annotation onset times. [Recorded results](eval/results/bench_openvino_gpu.json); these are development-set scores, not new or independent validation.
+
 ## Performance and checks
 
 Six-clip Windows benchmark: 81 seconds of video; Intel Core Ultra 7 256V (8 cores/8 threads) and Intel iGPU; detector input 736 × 1280. Mean timings use 10 FPS sampling, no idle skipping and exclude loading/warm-up. These benchmarks predate the identity/display fixes.
