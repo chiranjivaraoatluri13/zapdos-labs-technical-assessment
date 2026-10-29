@@ -1,0 +1,1205 @@
+{
+  "note": "Approximate hand-box diagnostics at IoU >= 0.3; not official MOT metrics.",
+  "variants": {
+    "baseline": {
+      "settings": {
+        "track_high_thresh": 0.25,
+        "track_low_thresh": 0.1,
+        "new_track_thresh": 0.3,
+        "match_thresh": 0.8,
+        "fuse_score": true,
+        "track_buffer_s": 3.0
+      },
+      "development": {
+        "sb_crm_workshop_0109": {
+          "A": {
+            "frames": 141,
+            "tracked": 0.86,
+            "matched_frames": 121,
+            "ids": [
+              3,
+              22
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              0.5
+            ]
+          },
+          "B": {
+            "frames": 141,
+            "tracked": 0.69,
+            "matched_frames": 97,
+            "ids": [
+              2
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "C": {
+            "frames": 141,
+            "tracked": 0.03,
+            "matched_frames": 4,
+            "ids": [
+              11
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "D": {
+            "frames": 141,
+            "tracked": 0.13,
+            "matched_frames": 18,
+            "ids": [
+              11
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "E": {
+            "frames": 141,
+            "tracked": 0.59,
+            "matched_frames": 83,
+            "ids": [
+              1
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_red_lrs1_0007": {
+          "P1": {
+            "frames": 141,
+            "tracked": 0.39,
+            "matched_frames": 55,
+            "ids": [
+              4
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "Q1": {
+            "frames": 141,
+            "tracked": 0.2,
+            "matched_frames": 28,
+            "ids": [
+              1,
+              9
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              3.8
+            ]
+          },
+          "Q2": {
+            "frames": 141,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "Q3": {
+            "frames": 31,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_tippler_lowlight_0062": {
+          "T1": {
+            "frames": 111,
+            "tracked": 0.63,
+            "matched_frames": 70,
+            "ids": [
+              5,
+              15
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              0.1
+            ]
+          },
+          "T2": {
+            "frames": 111,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "T3": {
+            "frames": 111,
+            "tracked": 0.14,
+            "matched_frames": 16,
+            "ids": [
+              6,
+              17
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              4.6
+            ]
+          }
+        }
+      },
+      "heldout": {
+        "sb_bf_cdi_cc2_0031": {
+          "W": {
+            "frames": 150,
+            "tracked": 0.88,
+            "matched_frames": 132,
+            "ids": [
+              2
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_rers1_0012": {
+          "R1": {
+            "frames": 31,
+            "tracked": 1.0,
+            "matched_frames": 31,
+            "ids": [
+              1
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R2": {
+            "frames": 140,
+            "tracked": 0.39,
+            "matched_frames": 55,
+            "ids": [
+              2,
+              18,
+              26
+            ],
+            "switches": 2,
+            "switch_gaps_s": [
+              2.2,
+              4.3
+            ]
+          },
+          "R3": {
+            "frames": 140,
+            "tracked": 0.17,
+            "matched_frames": 24,
+            "ids": [
+              8,
+              22,
+              24
+            ],
+            "switches": 2,
+            "switch_gaps_s": [
+              2.5,
+              1.3
+            ]
+          },
+          "R4": {
+            "frames": 140,
+            "tracked": 0.75,
+            "matched_frames": 105,
+            "ids": [
+              4,
+              16,
+              21
+            ],
+            "switches": 3,
+            "switch_gaps_s": [
+              1.2,
+              0.1,
+              0.1
+            ]
+          },
+          "R5": {
+            "frames": 61,
+            "tracked": 0.57,
+            "matched_frames": 35,
+            "ids": [
+              15
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_tar_lowlight_0000": {
+          "L": {
+            "frames": 51,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        }
+      },
+      "summary": {
+        "development": {
+          "people": 12,
+          "never_tracked": 3,
+          "one_id": 5,
+          "switches": 4,
+          "tracked": 0.3298
+        },
+        "heldout": {
+          "people": 7,
+          "never_tracked": 1,
+          "one_id": 3,
+          "switches": 7,
+          "tracked": 0.5358
+        }
+      }
+    },
+    "fuse_False_match_0.8_buffer_3": {
+      "settings": {
+        "track_high_thresh": 0.25,
+        "track_low_thresh": 0.1,
+        "new_track_thresh": 0.3,
+        "match_thresh": 0.8,
+        "fuse_score": false,
+        "track_buffer_s": 3
+      },
+      "development": {
+        "sb_crm_workshop_0109": {
+          "A": {
+            "frames": 141,
+            "tracked": 0.9,
+            "matched_frames": 127,
+            "ids": [
+              3
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "B": {
+            "frames": 141,
+            "tracked": 0.69,
+            "matched_frames": 97,
+            "ids": [
+              2
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "C": {
+            "frames": 141,
+            "tracked": 0.08,
+            "matched_frames": 11,
+            "ids": [
+              9
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "D": {
+            "frames": 141,
+            "tracked": 0.13,
+            "matched_frames": 18,
+            "ids": [
+              9
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "E": {
+            "frames": 141,
+            "tracked": 0.59,
+            "matched_frames": 83,
+            "ids": [
+              1
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_red_lrs1_0007": {
+          "P1": {
+            "frames": 141,
+            "tracked": 0.41,
+            "matched_frames": 58,
+            "ids": [
+              4
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "Q1": {
+            "frames": 141,
+            "tracked": 0.2,
+            "matched_frames": 28,
+            "ids": [
+              1,
+              7
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              3.8
+            ]
+          },
+          "Q2": {
+            "frames": 141,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "Q3": {
+            "frames": 31,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_tippler_lowlight_0062": {
+          "T1": {
+            "frames": 111,
+            "tracked": 0.67,
+            "matched_frames": 74,
+            "ids": [
+              2,
+              9
+            ],
+            "switches": 2,
+            "switch_gaps_s": [
+              0.1,
+              0.1
+            ]
+          },
+          "T2": {
+            "frames": 111,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "T3": {
+            "frames": 111,
+            "tracked": 0.16,
+            "matched_frames": 18,
+            "ids": [
+              4,
+              10
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              4.4
+            ]
+          }
+        }
+      },
+      "heldout": {
+        "sb_bf_cdi_cc2_0031": {
+          "W": {
+            "frames": 150,
+            "tracked": 0.88,
+            "matched_frames": 132,
+            "ids": [
+              2
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_rers1_0012": {
+          "R1": {
+            "frames": 31,
+            "tracked": 1.0,
+            "matched_frames": 31,
+            "ids": [
+              1
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R2": {
+            "frames": 140,
+            "tracked": 0.42,
+            "matched_frames": 59,
+            "ids": [
+              2,
+              14
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              4.3
+            ]
+          },
+          "R3": {
+            "frames": 140,
+            "tracked": 0.22,
+            "matched_frames": 31,
+            "ids": [
+              8
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R4": {
+            "frames": 140,
+            "tracked": 0.83,
+            "matched_frames": 116,
+            "ids": [
+              4
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R5": {
+            "frames": 61,
+            "tracked": 0.57,
+            "matched_frames": 35,
+            "ids": [
+              11
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_tar_lowlight_0000": {
+          "L": {
+            "frames": 51,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        }
+      },
+      "summary": {
+        "development": {
+          "people": 12,
+          "never_tracked": 3,
+          "one_id": 6,
+          "switches": 4,
+          "tracked": 0.3445
+        },
+        "heldout": {
+          "people": 7,
+          "never_tracked": 1,
+          "one_id": 5,
+          "switches": 1,
+          "tracked": 0.5666
+        }
+      }
+    },
+    "fuse_False_match_0.75_buffer_3": {
+      "settings": {
+        "track_high_thresh": 0.25,
+        "track_low_thresh": 0.1,
+        "new_track_thresh": 0.3,
+        "match_thresh": 0.75,
+        "fuse_score": false,
+        "track_buffer_s": 3
+      },
+      "development": {
+        "sb_crm_workshop_0109": {
+          "A": {
+            "frames": 141,
+            "tracked": 0.9,
+            "matched_frames": 127,
+            "ids": [
+              3
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "B": {
+            "frames": 141,
+            "tracked": 0.69,
+            "matched_frames": 97,
+            "ids": [
+              2
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "C": {
+            "frames": 141,
+            "tracked": 0.08,
+            "matched_frames": 11,
+            "ids": [
+              9
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "D": {
+            "frames": 141,
+            "tracked": 0.13,
+            "matched_frames": 18,
+            "ids": [
+              9
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "E": {
+            "frames": 141,
+            "tracked": 0.59,
+            "matched_frames": 83,
+            "ids": [
+              1
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_red_lrs1_0007": {
+          "P1": {
+            "frames": 141,
+            "tracked": 0.4,
+            "matched_frames": 56,
+            "ids": [
+              4
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "Q1": {
+            "frames": 141,
+            "tracked": 0.2,
+            "matched_frames": 28,
+            "ids": [
+              1,
+              7
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              3.8
+            ]
+          },
+          "Q2": {
+            "frames": 141,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "Q3": {
+            "frames": 31,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_tippler_lowlight_0062": {
+          "T1": {
+            "frames": 111,
+            "tracked": 0.67,
+            "matched_frames": 74,
+            "ids": [
+              2,
+              9
+            ],
+            "switches": 2,
+            "switch_gaps_s": [
+              0.1,
+              0.1
+            ]
+          },
+          "T2": {
+            "frames": 111,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "T3": {
+            "frames": 111,
+            "tracked": 0.16,
+            "matched_frames": 18,
+            "ids": [
+              4,
+              10
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              4.4
+            ]
+          }
+        }
+      },
+      "heldout": {
+        "sb_bf_cdi_cc2_0031": {
+          "W": {
+            "frames": 150,
+            "tracked": 0.88,
+            "matched_frames": 132,
+            "ids": [
+              2
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_rers1_0012": {
+          "R1": {
+            "frames": 31,
+            "tracked": 1.0,
+            "matched_frames": 31,
+            "ids": [
+              1
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R2": {
+            "frames": 140,
+            "tracked": 0.41,
+            "matched_frames": 58,
+            "ids": [
+              2,
+              15
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              4.3
+            ]
+          },
+          "R3": {
+            "frames": 140,
+            "tracked": 0.22,
+            "matched_frames": 31,
+            "ids": [
+              8
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R4": {
+            "frames": 140,
+            "tracked": 0.83,
+            "matched_frames": 116,
+            "ids": [
+              4
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R5": {
+            "frames": 61,
+            "tracked": 0.57,
+            "matched_frames": 35,
+            "ids": [
+              11
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_tar_lowlight_0000": {
+          "L": {
+            "frames": 51,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        }
+      },
+      "summary": {
+        "development": {
+          "people": 12,
+          "never_tracked": 3,
+          "one_id": 6,
+          "switches": 4,
+          "tracked": 0.3432
+        },
+        "heldout": {
+          "people": 7,
+          "never_tracked": 1,
+          "one_id": 5,
+          "switches": 1,
+          "tracked": 0.5652
+        }
+      }
+    },
+    "fuse_False_match_0.85_buffer_3": {
+      "settings": {
+        "track_high_thresh": 0.25,
+        "track_low_thresh": 0.1,
+        "new_track_thresh": 0.3,
+        "match_thresh": 0.85,
+        "fuse_score": false,
+        "track_buffer_s": 3
+      },
+      "development": {
+        "sb_crm_workshop_0109": {
+          "A": {
+            "frames": 141,
+            "tracked": 0.9,
+            "matched_frames": 127,
+            "ids": [
+              3
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "B": {
+            "frames": 141,
+            "tracked": 0.69,
+            "matched_frames": 97,
+            "ids": [
+              2
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "C": {
+            "frames": 141,
+            "tracked": 0.07,
+            "matched_frames": 10,
+            "ids": [
+              9,
+              18
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              1.0
+            ]
+          },
+          "D": {
+            "frames": 141,
+            "tracked": 0.13,
+            "matched_frames": 18,
+            "ids": [
+              9
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "E": {
+            "frames": 141,
+            "tracked": 0.6,
+            "matched_frames": 84,
+            "ids": [
+              1,
+              9
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              3.6
+            ]
+          }
+        },
+        "sb_red_lrs1_0007": {
+          "P1": {
+            "frames": 141,
+            "tracked": 0.42,
+            "matched_frames": 59,
+            "ids": [
+              4
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "Q1": {
+            "frames": 141,
+            "tracked": 0.2,
+            "matched_frames": 28,
+            "ids": [
+              1,
+              7
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              3.8
+            ]
+          },
+          "Q2": {
+            "frames": 141,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "Q3": {
+            "frames": 31,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_tippler_lowlight_0062": {
+          "T1": {
+            "frames": 111,
+            "tracked": 0.67,
+            "matched_frames": 74,
+            "ids": [
+              2,
+              8
+            ],
+            "switches": 2,
+            "switch_gaps_s": [
+              0.1,
+              0.1
+            ]
+          },
+          "T2": {
+            "frames": 111,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "T3": {
+            "frames": 111,
+            "tracked": 0.16,
+            "matched_frames": 18,
+            "ids": [
+              4,
+              9
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              4.4
+            ]
+          }
+        }
+      },
+      "heldout": {
+        "sb_bf_cdi_cc2_0031": {
+          "W": {
+            "frames": 150,
+            "tracked": 0.88,
+            "matched_frames": 132,
+            "ids": [
+              2
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_rers1_0012": {
+          "R1": {
+            "frames": 31,
+            "tracked": 1.0,
+            "matched_frames": 31,
+            "ids": [
+              1
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R2": {
+            "frames": 140,
+            "tracked": 0.42,
+            "matched_frames": 59,
+            "ids": [
+              2,
+              14
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              4.3
+            ]
+          },
+          "R3": {
+            "frames": 140,
+            "tracked": 0.22,
+            "matched_frames": 31,
+            "ids": [
+              8
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R4": {
+            "frames": 140,
+            "tracked": 0.83,
+            "matched_frames": 116,
+            "ids": [
+              4
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R5": {
+            "frames": 61,
+            "tracked": 0.57,
+            "matched_frames": 35,
+            "ids": [
+              11
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_tar_lowlight_0000": {
+          "L": {
+            "frames": 51,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        }
+      },
+      "summary": {
+        "development": {
+          "people": 12,
+          "never_tracked": 3,
+          "one_id": 4,
+          "switches": 6,
+          "tracked": 0.3452
+        },
+        "heldout": {
+          "people": 7,
+          "never_tracked": 1,
+          "one_id": 5,
+          "switches": 1,
+          "tracked": 0.5666
+        }
+      }
+    },
+    "fuse_False_match_0.8_buffer_5": {
+      "settings": {
+        "track_high_thresh": 0.25,
+        "track_low_thresh": 0.1,
+        "new_track_thresh": 0.3,
+        "match_thresh": 0.8,
+        "fuse_score": false,
+        "track_buffer_s": 5
+      },
+      "development": {
+        "sb_crm_workshop_0109": {
+          "A": {
+            "frames": 141,
+            "tracked": 0.9,
+            "matched_frames": 127,
+            "ids": [
+              3
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "B": {
+            "frames": 141,
+            "tracked": 0.69,
+            "matched_frames": 97,
+            "ids": [
+              2
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "C": {
+            "frames": 141,
+            "tracked": 0.08,
+            "matched_frames": 11,
+            "ids": [
+              8
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "D": {
+            "frames": 141,
+            "tracked": 0.13,
+            "matched_frames": 18,
+            "ids": [
+              8
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "E": {
+            "frames": 141,
+            "tracked": 0.59,
+            "matched_frames": 83,
+            "ids": [
+              1
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_red_lrs1_0007": {
+          "P1": {
+            "frames": 141,
+            "tracked": 0.41,
+            "matched_frames": 58,
+            "ids": [
+              4
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "Q1": {
+            "frames": 141,
+            "tracked": 0.21,
+            "matched_frames": 30,
+            "ids": [
+              1
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "Q2": {
+            "frames": 141,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "Q3": {
+            "frames": 31,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_tippler_lowlight_0062": {
+          "T1": {
+            "frames": 111,
+            "tracked": 0.67,
+            "matched_frames": 74,
+            "ids": [
+              2,
+              9
+            ],
+            "switches": 2,
+            "switch_gaps_s": [
+              0.1,
+              0.1
+            ]
+          },
+          "T2": {
+            "frames": 111,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "T3": {
+            "frames": 111,
+            "tracked": 0.16,
+            "matched_frames": 18,
+            "ids": [
+              4,
+              10
+            ],
+            "switches": 1,
+            "switch_gaps_s": [
+              4.4
+            ]
+          }
+        }
+      },
+      "heldout": {
+        "sb_bf_cdi_cc2_0031": {
+          "W": {
+            "frames": 150,
+            "tracked": 0.88,
+            "matched_frames": 132,
+            "ids": [
+              2
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_rers1_0012": {
+          "R1": {
+            "frames": 31,
+            "tracked": 1.0,
+            "matched_frames": 31,
+            "ids": [
+              1
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R2": {
+            "frames": 140,
+            "tracked": 0.44,
+            "matched_frames": 61,
+            "ids": [
+              2
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R3": {
+            "frames": 140,
+            "tracked": 0.22,
+            "matched_frames": 31,
+            "ids": [
+              8
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R4": {
+            "frames": 140,
+            "tracked": 0.83,
+            "matched_frames": 116,
+            "ids": [
+              4
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          },
+          "R5": {
+            "frames": 61,
+            "tracked": 0.57,
+            "matched_frames": 35,
+            "ids": [
+              11
+            ],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        },
+        "sb_tar_lowlight_0000": {
+          "L": {
+            "frames": 51,
+            "tracked": 0.0,
+            "matched_frames": 0,
+            "ids": [],
+            "switches": 0,
+            "switch_gaps_s": []
+          }
+        }
+      },
+      "summary": {
+        "development": {
+          "people": 12,
+          "never_tracked": 3,
+          "one_id": 7,
+          "switches": 3,
+          "tracked": 0.3458
+        },
+        "heldout": {
+          "people": 7,
+          "never_tracked": 1,
+          "one_id": 6,
+          "switches": 0,
+          "tracked": 0.5694
+        }
+      }
+    }
+  }
+}

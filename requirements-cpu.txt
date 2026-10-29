@@ -1,0 +1,14 @@
+# Working Windows CPU environment, Python 3.12. Separate from the historical M2 pins.
+ultralytics==8.4.190
+torch==2.8.0
+torchvision==0.23.0
+opencv-python==5.0.0.93
+onnxruntime==1.27.0
+onnx==1.23.2
+numpy==2.5.0
+PyYAML==6.0.3
+lap==0.5.13
+pytest==9.2.0
+scipy==1.18.0
+openvino==2026.4.1  # INT8 detector on the CPU (--cpu-only) and Intel integrated GPU / NPU (--backend openvino)
+nncf==3.4.0         # only to build the INT8 detector: scripts/export_models.py --detector --openvino --int8

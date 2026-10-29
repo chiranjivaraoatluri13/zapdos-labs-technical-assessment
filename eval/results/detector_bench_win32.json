@@ -1,0 +1,69 @@
+{
+  "frames": 30,
+  "reference": "v8s torch-reference 1280",
+  "rows": [
+    {
+      "model": "v8s torch-reference 1280",
+      "mean_ms": 273.6,
+      "p95_ms": 315.5,
+      "person": "55/55",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "4/4"
+    },
+    {
+      "model": "v8s onnxruntime-cpu 736x1280",
+      "mean_ms": 246.7,
+      "p95_ms": 260.0,
+      "person": "55/55",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "4/4"
+    },
+    {
+      "model": "v8s torch-cpu 1280",
+      "mean_ms": 272.2,
+      "p95_ms": 286.8,
+      "person": "55/55",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "4/4"
+    },
+    {
+      "model": "v8s openvino-cpu 736x1280",
+      "mean_ms": 510.5,
+      "p95_ms": 582.3,
+      "person": "55/55",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "4/4"
+    },
+    {
+      "model": "v8s openvino-int8-cpu 736x1280",
+      "mean_ms": 176.3,
+      "p95_ms": 215.1,
+      "person": "55/55",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "4/4"
+    },
+    {
+      "model": "v8s openvino-gpu 736x1280",
+      "mean_ms": 20.7,
+      "p95_ms": 24.5,
+      "person": "55/55",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "4/4"
+    },
+    {
+      "model": "v8s openvino-int8-gpu 736x1280",
+      "mean_ms": 16.9,
+      "p95_ms": 18.5,
+      "person": "53/55",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "4/4"
+    }
+  ]
+}

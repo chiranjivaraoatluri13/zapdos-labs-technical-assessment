@@ -1,0 +1,64 @@
+{
+  "clip": "sb_rers1_0012",
+  "roll_deg": 2.0,
+  "pan": 0.05,
+  "runs": {
+    "original": {
+      "alerts": {
+        "no_vest": 5,
+        "zone_entry": 2
+      },
+      "zone_alerts": [
+        {
+          "track_id": 7,
+          "zone_id": "roll_stand",
+          "alert_ts": 3.12
+        },
+        {
+          "track_id": 4,
+          "zone_id": "roll_stand",
+          "alert_ts": 6.52
+        }
+      ],
+      "camera_moved": [],
+      "throughput_fps": 29.2
+    },
+    "reangled_no_check": {
+      "alerts": {
+        "no_vest": 6,
+        "zone_entry": 1
+      },
+      "zone_alerts": [
+        {
+          "track_id": 5,
+          "zone_id": "roll_stand",
+          "alert_ts": 3.12
+        }
+      ],
+      "camera_moved": [],
+      "throughput_fps": 32.5
+    },
+    "reangled_check": {
+      "alerts": {
+        "no_vest": 6,
+        "zone_entry": 1,
+        "camera_moved": 1
+      },
+      "zone_alerts": [
+        {
+          "track_id": 5,
+          "zone_id": "roll_stand",
+          "alert_ts": 3.12
+        }
+      ],
+      "camera_moved": [
+        {
+          "start_ts": 0.0,
+          "alert_ts": 4.0,
+          "note": "zone corners moved 103 px; zone alerts paused"
+        }
+      ],
+      "throughput_fps": 33.4
+    }
+  }
+}

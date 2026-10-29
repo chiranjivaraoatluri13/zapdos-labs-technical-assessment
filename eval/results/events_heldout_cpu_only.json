@@ -1,0 +1,213 @@
+{
+  "total": {
+    "labelled": 10,
+    "alerts": 9,
+    "true": 7,
+    "false": 2,
+    "duplicates": 0,
+    "ignored": 0,
+    "missed": 3,
+    "precision": 0.778,
+    "recall": 0.7
+  },
+  "clips": {
+    "sb_bf_cdi_cc2_0031": {
+      "labelled": 3,
+      "alerts": 3,
+      "true": 3,
+      "false": 0,
+      "duplicates": 0,
+      "ignored": 0,
+      "missed": 0,
+      "median_delay_s": 1.92,
+      "by_type": {
+        "no_helmet": {
+          "labelled": 1,
+          "true": 1,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 0
+        },
+        "no_vest": {
+          "labelled": 1,
+          "true": 1,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 0
+        },
+        "zone_entry": {
+          "labelled": 1,
+          "true": 1,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 0
+        }
+      },
+      "alerts_detail": [
+        [
+          "sb_bf_cdi_cc2_0031-001",
+          "zone_entry",
+          "hopper_grate",
+          0.92,
+          1,
+          "true",
+          "W"
+        ],
+        [
+          "sb_bf_cdi_cc2_0031-002",
+          "no_vest",
+          null,
+          1.92,
+          1,
+          "true",
+          "W"
+        ],
+        [
+          "sb_bf_cdi_cc2_0031-003",
+          "no_helmet",
+          null,
+          3.92,
+          1,
+          "true",
+          "W"
+        ]
+      ],
+      "missed_detail": []
+    },
+    "sb_rers1_0012": {
+      "labelled": 6,
+      "alerts": 6,
+      "true": 4,
+      "false": 2,
+      "duplicates": 0,
+      "ignored": 0,
+      "missed": 2,
+      "median_delay_s": 1.52,
+      "by_type": {
+        "no_helmet": {
+          "labelled": 1,
+          "true": 0,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 1
+        },
+        "no_vest": {
+          "labelled": 3,
+          "true": 2,
+          "false": 2,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 1
+        },
+        "zone_entry": {
+          "labelled": 2,
+          "true": 2,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 0
+        }
+      },
+      "alerts_detail": [
+        [
+          "sb_rers1_0012-001",
+          "no_vest",
+          null,
+          1.52,
+          1,
+          "true",
+          "R1"
+        ],
+        [
+          "sb_rers1_0012-002",
+          "no_vest",
+          null,
+          1.52,
+          2,
+          "true",
+          "R2"
+        ],
+        [
+          "sb_rers1_0012-003",
+          "no_vest",
+          null,
+          2.12,
+          4,
+          "false",
+          "R4"
+        ],
+        [
+          "sb_rers1_0012-004",
+          "zone_entry",
+          "roll_stand",
+          3.12,
+          7,
+          "true",
+          "R3"
+        ],
+        [
+          "sb_rers1_0012-005",
+          "zone_entry",
+          "roll_stand",
+          6.52,
+          4,
+          "true",
+          "R4"
+        ],
+        [
+          "sb_rers1_0012-006",
+          "no_vest",
+          null,
+          8.92,
+          13,
+          "false",
+          "R5"
+        ]
+      ],
+      "missed_detail": [
+        [
+          "no_helmet",
+          null,
+          "R1"
+        ],
+        [
+          "no_vest",
+          null,
+          "R3"
+        ]
+      ]
+    },
+    "sb_tar_lowlight_0000": {
+      "labelled": 1,
+      "alerts": 0,
+      "true": 0,
+      "false": 0,
+      "duplicates": 0,
+      "ignored": 0,
+      "missed": 1,
+      "median_delay_s": null,
+      "by_type": {
+        "zone_entry": {
+          "labelled": 1,
+          "true": 0,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 1
+        }
+      },
+      "alerts_detail": [],
+      "missed_detail": [
+        [
+          "zone_entry",
+          "under_platform",
+          "L"
+        ]
+      ]
+    }
+  }
+}

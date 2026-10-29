@@ -1,0 +1,16 @@
+{
+  "input": 64,
+  "ctx": 1.6,
+  "threshold": 0.8533419966697693,
+  "valid_recall_at_thr": 0.8658865886588659,
+  "false_bare_at_thr": 0.021645021645021644,
+  "threshold_set_on": "steel-plant calibration helmets",
+  "calibration_cameras": [
+    "BF_CDI_CC-6_Tail_End",
+    "RMHP_JN-5_ALFA"
+  ],
+  "epoch": 4,
+  "train_crops": 37581,
+  "data": "Hard Hat Workers v2 (Roboflow, via HF keremberke/hard-hat-detection) + SteelBench weak labels (data/cache/sb_heads.npz)",
+  "base": "torchvision mobilenet_v3_small IMAGENET1K_V1"
+}

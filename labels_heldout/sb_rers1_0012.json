@@ -1,0 +1,386 @@
+{
+ "video": "clips/sb_rers1_0012.mp4",
+ "source": "SteelBench sample/clip_RERS_RERS-1_20251118_000308_0012 (14 s, 1080p, 25 fps; glare, cluttered mill floor)",
+ "zones": "zones/sb_rers1_0012.json",
+ "method": "Held out: none of these cameras was used to develop or debug the rules (they are in the 50-clip set, which the clip-level sweeps saw only as totals). Zones drawn and events labelled by eye from the raw frames at 1 fps (no pipeline overlay), with zoomed crops of each person, before the pipeline was run on them. Boxes are in source pixels; a person's box at time t is interpolated between keyframes.",
+ "people": {
+  "R1": {
+   "desc": "near-left walker, bare head (dark hair), navy jacket, jeans; walks out of the left edge by ~3.5 s",
+   "boxes": {
+    "0": [
+     60,
+     772,
+     158,
+     972
+    ],
+    "1": [
+     35,
+     722,
+     122,
+     952
+    ],
+    "2": [
+     5,
+     668,
+     82,
+     888
+    ],
+    "3": [
+     0,
+     628,
+     52,
+     825
+    ]
+   }
+  },
+  "R2": {
+   "desc": "centre walker, yellow helmet, grey t-shirt, jeans; walks to the back, partly hidden by a column from 5 s",
+   "boxes": {
+    "0": [
+     718,
+     422,
+     785,
+     590
+    ],
+    "1": [
+     688,
+     410,
+     745,
+     575
+    ],
+    "2": [
+     665,
+     392,
+     724,
+     546
+    ],
+    "3": [
+     650,
+     380,
+     703,
+     530
+    ],
+    "4": [
+     634,
+     365,
+     682,
+     512
+    ],
+    "5": [
+     618,
+     355,
+     666,
+     482
+    ],
+    "6": [
+     602,
+     350,
+     662,
+     470
+    ],
+    "8": [
+     622,
+     350,
+     675,
+     482
+    ],
+    "9": [
+     622,
+     350,
+     655,
+     485
+    ],
+    "12": [
+     622,
+     345,
+     665,
+     485
+    ],
+    "13": [
+     620,
+     340,
+     668,
+     480
+    ],
+    "14": [
+     625,
+     318,
+     672,
+     472
+    ]
+   }
+  },
+  "R3": {
+   "desc": "on the roll stand, light-blue helmet, plain navy jacket (no reflective tape); climbs onto the walkway behind it, upper body only from 3 s",
+   "boxes": {
+    "0": [
+     1298,
+     300,
+     1362,
+     500
+    ],
+    "1": [
+     1250,
+     295,
+     1295,
+     420
+    ],
+    "3": [
+     1205,
+     250,
+     1280,
+     340
+    ],
+    "4": [
+     1191,
+     249,
+     1254,
+     330
+    ],
+    "5": [
+     1206,
+     245,
+     1275,
+     332
+    ],
+    "6": [
+     1221,
+     251,
+     1278,
+     339
+    ],
+    "7": [
+     1218,
+     251,
+     1274,
+     332
+    ],
+    "8": [
+     1195,
+     245,
+     1239,
+     295
+    ],
+    "9": [
+     1185,
+     245,
+     1240,
+     330
+    ],
+    "10": [
+     1181,
+     248,
+     1238,
+     335
+    ],
+    "11": [
+     1184,
+     248,
+     1240,
+     323
+    ],
+    "12": [
+     1192,
+     248,
+     1255,
+     323
+    ],
+    "13": [
+     1201,
+     241,
+     1239,
+     298
+    ],
+    "14": [
+     1191,
+     241,
+     1241,
+     310
+    ]
+   }
+  },
+  "R4": {
+   "desc": "yellow helmet, blue coverall with reflective tape; on the access stairs, steps onto the roll stand at ~5.5 s and climbs it",
+   "boxes": {
+    "0": [
+     1645,
+     440,
+     1705,
+     615
+    ],
+    "1": [
+     1598,
+     435,
+     1688,
+     622
+    ],
+    "2": [
+     1598,
+     440,
+     1682,
+     630
+    ],
+    "3": [
+     1600,
+     448,
+     1690,
+     615
+    ],
+    "4": [
+     1603,
+     450,
+     1689,
+     614
+    ],
+    "5": [
+     1600,
+     380,
+     1686,
+     556
+    ],
+    "6": [
+     1560,
+     388,
+     1636,
+     556
+    ],
+    "7": [
+     1527,
+     388,
+     1610,
+     515
+    ],
+    "8": [
+     1530,
+     390,
+     1601,
+     511
+    ],
+    "9": [
+     1535,
+     312,
+     1605,
+     505
+    ],
+    "10": [
+     1530,
+     300,
+     1606,
+     505
+    ],
+    "11": [
+     1527,
+     300,
+     1606,
+     501
+    ],
+    "12": [
+     1510,
+     292,
+     1595,
+     470
+    ],
+    "13": [
+     1520,
+     245,
+     1605,
+     455
+    ],
+    "14": [
+     1515,
+     245,
+     1605,
+     455
+    ]
+   }
+  },
+  "R5": {
+   "desc": "yellow helmet, blue coverall with reflective tape; head and shoulders above the bottom edge, ~6-12.5 s",
+   "boxes": {
+    "6": [
+     437,
+     1025,
+     496,
+     1080
+    ],
+    "7": [
+     450,
+     985,
+     565,
+     1080
+    ],
+    "8": [
+     472,
+     952,
+     582,
+     1080
+    ],
+    "9": [
+     475,
+     940,
+     590,
+     1080
+    ],
+    "10": [
+     470,
+     945,
+     580,
+     1080
+    ],
+    "11": [
+     442,
+     955,
+     515,
+     1080
+    ],
+    "12": [
+     450,
+     1010,
+     530,
+     1080
+    ]
+   }
+  }
+ },
+ "events": [
+  {
+   "type": "no_helmet",
+   "person": "R1",
+   "start": 0.0,
+   "end": 3.5
+  },
+  {
+   "type": "no_vest",
+   "person": "R1",
+   "start": 0.0,
+   "end": 3.5
+  },
+  {
+   "type": "no_vest",
+   "person": "R2",
+   "start": 0.0,
+   "end": 14.0
+  },
+  {
+   "type": "no_vest",
+   "person": "R3",
+   "start": 0.0,
+   "end": 14.0
+  },
+  {
+   "type": "zone_entry",
+   "zone": "roll_stand",
+   "person": "R3",
+   "start": 0.0,
+   "end": 14.0
+  },
+  {
+   "type": "zone_entry",
+   "zone": "roll_stand",
+   "person": "R4",
+   "start": 5.0,
+   "end": 14.0
+  }
+ ],
+ "ignore": []
+}

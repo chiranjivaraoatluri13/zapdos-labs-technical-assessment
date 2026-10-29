@@ -1,0 +1,28 @@
+{
+  "video": "clips/sb_red_lrs1_0007.mp4",
+  "source": "SteelBench sample/clip_RED_LRS-1_20251111_000204_0007 (15 s, 1080p, 25 fps; dust haze)",
+  "zones": "zones/sb_red_lrs1_0007.json",
+  "method": "Labelled by eye from the raw frames at 1 fps (no pipeline overlay), with zoomed crops of the near aisle and the far lane. Boxes are in source pixels; a person's box at time t is interpolated between keyframes.",
+  "people": {
+    "P1": {"desc": "near worker, white helmet, light grey shirt; walks in from the bottom edge at ~0 s and works at the welder",
+           "boxes": {"0": [342, 1012, 388, 1080], "1": [392, 937, 492, 1080], "2": [429, 891, 508, 1078], "3": [429, 845, 525, 1078],
+                     "5": [421, 857, 504, 1040], "8": [390, 855, 480, 1035], "12": [421, 833, 529, 1050], "14": [400, 916, 525, 1080]}},
+    "Q1": {"desc": "far, crouching by the ladle, light helmet, blue clothes", "boxes": {"0": [478, 563, 522, 632], "14": [478, 563, 522, 632]}},
+    "Q2": {"desc": "far, yellow helmet, blue clothes; walks left along the lane and stands at the aisle edge",
+           "boxes": {"0": [652, 562, 690, 610], "2": [568, 558, 592, 622], "3": [508, 568, 527, 622], "5": [438, 572, 462, 652],
+                     "14": [428, 572, 452, 652]}},
+    "Q3": {"desc": "far, blue jacket, on a two-wheeler riding left to right along the lane, ~6-10 s",
+           "boxes": {"6": [530, 565, 580, 605], "7": [720, 565, 770, 605], "8": [920, 570, 980, 615], "9": [1100, 570, 1200, 640]}}
+  },
+  "events": [
+    {"type": "no_vest", "person": "P1", "start": 0.5, "end": 15.0},
+    {"type": "zone_entry", "zone": "ladle_lane", "person": "Q2", "start": 0.0, "end": 2.8},
+    {"type": "zone_entry", "zone": "ladle_lane", "person": "Q3", "start": 6.5, "end": 9.8}
+  ],
+  "ignore": [
+    {"type": "no_vest", "person": "Q1", "why": "~65 px tall in dust haze; vest state not judgeable"},
+    {"type": "no_vest", "person": "Q2", "why": "~50-80 px tall in dust haze"},
+    {"type": "no_vest", "person": "Q3", "why": "~45-70 px, motion-blurred"},
+    {"type": "no_helmet", "person": "Q3", "why": "head ~10 px and motion-blurred"}
+  ]
+}

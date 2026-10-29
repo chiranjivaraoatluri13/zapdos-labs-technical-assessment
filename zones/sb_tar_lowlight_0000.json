@@ -1,0 +1,12 @@
+{
+  "camera_id": "sb_tar_lowlight_0000",
+  "frame_size": [1920, 1080],
+  "reference": "sb_tar_lowlight_0000.jpg",
+  "zones": [
+    {
+      "zone_id": "under_platform",
+      "note": "Floor under the green conveyor platform: no entry while the conveyor runs",
+      "polygon": [[490, 900], [900, 900], [900, 1080], [490, 1080]]
+    }
+  ]
+}

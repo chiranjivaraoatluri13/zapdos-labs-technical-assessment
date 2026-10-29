@@ -1,0 +1,87 @@
+{
+  "frames": 30,
+  "reference": "v8s torch-mps 1280",
+  "rows": [
+    {
+      "model": "v8s torch-mps 1280",
+      "mean_ms": 53.2,
+      "p95_ms": 54.9,
+      "person": "53/53",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "6/6"
+    },
+    {
+      "model": "v8s coreml-fp16 736x1280",
+      "mean_ms": 21.7,
+      "p95_ms": 28.6,
+      "person": "53/53",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "6/6"
+    },
+    {
+      "model": "v8s coreml-fp16 cpu-only 736x1280",
+      "mean_ms": 71.0,
+      "p95_ms": 78.3,
+      "person": "53/53",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "6/6"
+    },
+    {
+      "model": "v8s coreml-fp16 1280x1280",
+      "mean_ms": 29.7,
+      "p95_ms": 32.6,
+      "person": "51/53",
+      "head": "22/23",
+      "helmet": "12/12",
+      "vest": "5/6"
+    },
+    {
+      "model": "v8s coreml-fp16 960x960",
+      "mean_ms": 23.1,
+      "p95_ms": 24.9,
+      "person": "40/53",
+      "head": "18/23",
+      "helmet": "6/12",
+      "vest": "2/6"
+    },
+    {
+      "model": "v8n coreml-fp16 736x1280",
+      "mean_ms": 14.7,
+      "p95_ms": 15.8,
+      "person": "45/53",
+      "head": "20/23",
+      "helmet": "8/12",
+      "vest": "0/6"
+    },
+    {
+      "model": "v8s onnxruntime-cpu 736x1280",
+      "mean_ms": 242.4,
+      "p95_ms": 253.0,
+      "person": "53/53",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "6/6"
+    },
+    {
+      "model": "v8n onnxruntime-cpu 736x1280",
+      "mean_ms": 88.5,
+      "p95_ms": 92.1,
+      "person": "45/53",
+      "head": "21/23",
+      "helmet": "8/12",
+      "vest": "0/6"
+    },
+    {
+      "model": "v8s torch-cpu 1280",
+      "mean_ms": 187.1,
+      "p95_ms": 202.9,
+      "person": "53/53",
+      "head": "23/23",
+      "helmet": "12/12",
+      "vest": "6/6"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+ "video": "clips/sb_tar_lowlight_0000.mp4",
+ "source": "SteelBench sample/clip_TAR_Plant_DC-Floor_left_20251115_000000_0000 (10 s, 1080p, 25 fps; low light, lamp glare, fisheye)",
+ "zones": "zones/sb_tar_lowlight_0000.json",
+ "method": "Held out: none of these cameras was used to develop or debug the rules (they are in the 50-clip set, which the clip-level sweeps saw only as totals). Zones drawn and events labelled by eye from the raw frames at 1 fps (no pipeline overlay), with zoomed crops of each person, before the pipeline was run on them. Boxes are in source pixels; a person's box at time t is interpolated between keyframes.",
+ "people": {
+  "L": {
+   "desc": "worker under the green platform; only legs and a plaid shirt hem visible, 0-5 s, then out of view",
+   "boxes": {
+    "0": [
+     612,
+     905,
+     790,
+     1060
+    ],
+    "1": [
+     630,
+     905,
+     810,
+     1060
+    ],
+    "2": [
+     630,
+     905,
+     800,
+     1050
+    ],
+    "3": [
+     635,
+     920,
+     720,
+     1060
+    ],
+    "4": [
+     630,
+     920,
+     690,
+     1060
+    ],
+    "5": [
+     630,
+     950,
+     680,
+     1020
+    ]
+   }
+  }
+ },
+ "events": [
+  {
+   "type": "zone_entry",
+   "zone": "under_platform",
+   "person": "L",
+   "start": 0.0,
+   "end": 5.0
+  }
+ ],
+ "ignore": [
+  {
+   "type": "no_helmet",
+   "person": "L",
+   "why": "head hidden behind the platform the whole time"
+  },
+  {
+   "type": "no_vest",
+   "person": "L",
+   "why": "only the shirt hem below the platform is visible"
+  }
+ ]
+}

@@ -1,0 +1,514 @@
+{
+  "sb_crm_workshop_0109": [
+    {
+      "type": "no_helmet",
+      "person": "E",
+      "frames": 145,
+      "stages": {
+        "unconfirmed": 3,
+        "violating": 52,
+        "unknown:no_head_box": 22,
+        "compliant": 6,
+        "no_track": 62
+      },
+      "p_bare": [
+        0.706,
+        0.977,
+        0.386,
+        0.421,
+        0.541,
+        0.686,
+        0.953,
+        0.945,
+        0.852,
+        0.665,
+        0.87,
+        0.957,
+        0.984,
+        0.963,
+        0.974,
+        0.992,
+        0.986,
+        0.986,
+        0.993,
+        0.986,
+        0.988,
+        0.984,
+        0.99,
+        0.991,
+        0.968,
+        0.968,
+        0.951,
+        0.977,
+        0.977,
+        0.982,
+        0.964,
+        0.977,
+        0.988,
+        0.982,
+        0.98,
+        0.977,
+        0.975,
+        0.945,
+        0.948,
+        0.953,
+        0.986,
+        0.965,
+        0.909,
+        0.943,
+        0.962,
+        0.956,
+        0.914,
+        0.964,
+        0.926,
+        0.951,
+        0.966,
+        0.957,
+        0.956,
+        0.922,
+        0.896,
+        0.957,
+        0.91,
+        0.89,
+        0.861
+      ],
+      "head_px_median": 36.3,
+      "longest_violating_run_s": 4.68,
+      "last_ts": 14.4,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "no_vest",
+      "person": "A",
+      "frames": 145,
+      "stages": {
+        "no_track": 11,
+        "unconfirmed": 5,
+        "violating": 104,
+        "unknown:person_small": 21,
+        "compliant": 4
+      },
+      "head_px_median": 22.6,
+      "longest_violating_run_s": 4.8,
+      "last_ts": 14.4,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "no_vest",
+      "person": "B",
+      "frames": 145,
+      "stages": {
+        "unconfirmed": 4,
+        "violating": 103,
+        "compliant": 1,
+        "unknown:person_small": 1,
+        "no_track": 36
+      },
+      "head_px_median": 30.0,
+      "longest_violating_run_s": 8.4,
+      "last_ts": 14.4,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "no_vest",
+      "person": "E",
+      "frames": 91,
+      "stages": {
+        "unconfirmed": 3,
+        "violating": 79,
+        "no_track": 8,
+        "unknown:torso_hidden": 1
+      },
+      "head_px_median": 36.3,
+      "longest_violating_run_s": 8.52,
+      "last_ts": 9.0,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "zone_entry",
+      "person": "B",
+      "frames": 145,
+      "stages": {
+        "unconfirmed": 4,
+        "violating": 105,
+        "no_track": 36
+      },
+      "head_px_median": 30.0,
+      "longest_violating_run_s": 8.4,
+      "last_ts": 14.4,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "zone_entry",
+      "person": "C",
+      "frames": 145,
+      "stages": {
+        "no_track": 116,
+        "unconfirmed": 4,
+        "violating": 25
+      },
+      "head_px_median": 34.2,
+      "longest_violating_run_s": 1.2,
+      "last_ts": 14.4,
+      "verdict": "temporal rule: vote/evidence gap (violating runs long enough, but no alert)",
+      "missed": true
+    },
+    {
+      "type": "zone_entry",
+      "person": "D",
+      "frames": 145,
+      "stages": {
+        "no_track": 120,
+        "unconfirmed": 4,
+        "violating": 21
+      },
+      "head_px_median": 34.8,
+      "longest_violating_run_s": 1.2,
+      "last_ts": 14.4,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "zone_entry",
+      "person": "E",
+      "frames": 115,
+      "stages": {
+        "compliant": 3,
+        "violating": 50,
+        "no_track": 62
+      },
+      "head_px_median": 29.7,
+      "longest_violating_run_s": 4.92,
+      "last_ts": 14.4,
+      "verdict": "caught",
+      "missed": false
+    }
+  ],
+  "sb_red_lrs1_0007": [
+    {
+      "type": "no_vest",
+      "person": "P1",
+      "frames": 140,
+      "stages": {
+        "no_track": 80,
+        "unconfirmed": 4,
+        "violating": 52,
+        "unknown:torso_truncated": 4
+      },
+      "head_px_median": 29.4,
+      "longest_violating_run_s": 2.88,
+      "last_ts": 14.4,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "zone_entry",
+      "person": "Q2",
+      "frames": 29,
+      "stages": {
+        "no_track": 29
+      },
+      "head_px_median": null,
+      "longest_violating_run_s": 0.0,
+      "last_ts": 2.8,
+      "verdict": "perception: no_track",
+      "missed": true
+    },
+    {
+      "type": "zone_entry",
+      "person": "Q3",
+      "frames": 30,
+      "stages": {
+        "no_track": 30
+      },
+      "head_px_median": null,
+      "longest_violating_run_s": 0.0,
+      "last_ts": 9.4,
+      "verdict": "perception: no_track",
+      "missed": true
+    }
+  ],
+  "sb_tippler_lowlight_0062": [
+    {
+      "type": "no_vest",
+      "person": "T1",
+      "frames": 115,
+      "stages": {
+        "no_track": 38,
+        "unconfirmed": 7,
+        "violating": 70
+      },
+      "head_px_median": 19.6,
+      "longest_violating_run_s": 4.56,
+      "last_ts": 11.4,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "no_vest",
+      "person": "T3",
+      "frames": 115,
+      "stages": {
+        "no_track": 97,
+        "unconfirmed": 7,
+        "violating": 11
+      },
+      "head_px_median": 43.8,
+      "longest_violating_run_s": 0.36,
+      "last_ts": 11.4,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "zone_entry",
+      "person": "T1",
+      "frames": 115,
+      "stages": {
+        "no_track": 38,
+        "unconfirmed": 7,
+        "violating": 69,
+        "compliant": 1
+      },
+      "head_px_median": 19.6,
+      "longest_violating_run_s": 4.56,
+      "last_ts": 11.4,
+      "verdict": "caught",
+      "missed": false
+    }
+  ],
+  "sb_bf_cdi_cc2_0031": [
+    {
+      "type": "no_helmet",
+      "person": "W",
+      "frames": 150,
+      "stages": {
+        "no_track": 17,
+        "unconfirmed": 3,
+        "compliant": 34,
+        "violating": 9,
+        "unknown:no_head_box": 87
+      },
+      "p_bare": [
+        0.827,
+        0.939,
+        0.895,
+        0.788,
+        0.947,
+        0.806,
+        0.65,
+        0.498,
+        0.519,
+        0.607,
+        0.364,
+        0.211,
+        0.799,
+        0.345,
+        0.881,
+        0.933,
+        0.966,
+        0.923,
+        0.951,
+        0.722,
+        0.119,
+        0.905,
+        0.849,
+        0.809,
+        0.318,
+        0.941,
+        0.221,
+        0.457,
+        0.363,
+        0.201,
+        0.131,
+        0.541,
+        0.193,
+        0.163,
+        0.063,
+        0.265,
+        0.152,
+        0.244,
+        0.216,
+        0.114,
+        0.135,
+        0.069,
+        0.073,
+        0.066,
+        0.857,
+        0.595
+      ],
+      "head_px_median": 63.6,
+      "longest_violating_run_s": 0.24,
+      "last_ts": 14.92,
+      "verdict": "temporal rule: longest violating run 0.2s < min_duration_s 1.5",
+      "missed": true
+    },
+    {
+      "type": "no_vest",
+      "person": "W",
+      "frames": 150,
+      "stages": {
+        "no_track": 17,
+        "unconfirmed": 3,
+        "violating": 104,
+        "unknown:torso_truncated": 26
+      },
+      "head_px_median": 63.6,
+      "longest_violating_run_s": 8.64,
+      "last_ts": 14.92,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "zone_entry",
+      "person": "W",
+      "frames": 135,
+      "stages": {
+        "no_track": 12,
+        "unconfirmed": 3,
+        "violating": 87,
+        "unknown:feet_unknown": 33
+      },
+      "head_px_median": 63.6,
+      "longest_violating_run_s": 8.64,
+      "last_ts": 13.4,
+      "verdict": "caught",
+      "missed": false
+    }
+  ],
+  "sb_rers1_0012": [
+    {
+      "type": "no_helmet",
+      "person": "R1",
+      "frames": 35,
+      "stages": {
+        "unconfirmed": 3,
+        "compliant": 18,
+        "unknown:edge_cut": 14
+      },
+      "p_bare": [
+        0.241,
+        0.417,
+        0.556,
+        0.831,
+        0.754,
+        0.51,
+        0.499,
+        0.289,
+        0.335,
+        0.094,
+        0.173,
+        0.318,
+        0.051,
+        0.081,
+        0.259,
+        0.276,
+        0.297,
+        0.082,
+        0.086,
+        0.113,
+        0.106
+      ],
+      "head_px_median": 30.7,
+      "longest_violating_run_s": 0.0,
+      "last_ts": 3.4,
+      "verdict": "perception: compliant",
+      "missed": true
+    },
+    {
+      "type": "no_vest",
+      "person": "R1",
+      "frames": 35,
+      "stages": {
+        "unconfirmed": 3,
+        "violating": 18,
+        "unknown:edge_cut": 14
+      },
+      "head_px_median": 30.7,
+      "longest_violating_run_s": 2.16,
+      "last_ts": 3.4,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "no_vest",
+      "person": "R2",
+      "frames": 140,
+      "stages": {
+        "unconfirmed": 3,
+        "violating": 58,
+        "no_track": 79
+      },
+      "head_px_median": 25.5,
+      "longest_violating_run_s": 5.52,
+      "last_ts": 13.92,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "no_vest",
+      "person": "R3",
+      "frames": 140,
+      "stages": {
+        "no_track": 108,
+        "unconfirmed": 3,
+        "violating": 21,
+        "unknown:person_small": 8
+      },
+      "head_px_median": 18.1,
+      "longest_violating_run_s": 1.08,
+      "last_ts": 13.92,
+      "verdict": "temporal rule: longest violating run 1.1s < min_duration_s 1.5",
+      "missed": true
+    },
+    {
+      "type": "zone_entry",
+      "person": "R3",
+      "frames": 140,
+      "stages": {
+        "no_track": 108,
+        "unconfirmed": 3,
+        "violating": 29
+      },
+      "head_px_median": 18.1,
+      "longest_violating_run_s": 1.32,
+      "last_ts": 13.92,
+      "verdict": "caught",
+      "missed": false
+    },
+    {
+      "type": "zone_entry",
+      "person": "R4",
+      "frames": 90,
+      "stages": {
+        "compliant": 7,
+        "violating": 67,
+        "no_track": 16
+      },
+      "head_px_median": 31.1,
+      "longest_violating_run_s": 3.72,
+      "last_ts": 13.92,
+      "verdict": "caught",
+      "missed": false
+    }
+  ],
+  "sb_tar_lowlight_0000": [
+    {
+      "type": "zone_entry",
+      "person": "L",
+      "frames": 51,
+      "stages": {
+        "no_track": 51
+      },
+      "head_px_median": null,
+      "longest_violating_run_s": 0.0,
+      "last_ts": 5.0,
+      "verdict": "perception: no_track",
+      "missed": true
+    }
+  ]
+}

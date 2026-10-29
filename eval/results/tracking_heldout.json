@@ -1,0 +1,92 @@
+{
+ "total": {
+  "people": 7,
+  "never_tracked": 1,
+  "one_id": 3,
+  "switches": 5,
+  "switches_after_buffer": 1,
+  "tracked": 0.55
+ },
+ "clips": {
+  "sb_bf_cdi_cc2_0031": {
+   "W": {
+    "frames": 150,
+    "tracked": 0.89,
+    "ids": [
+     1
+    ],
+    "switches": 0,
+    "switch_gaps_s": []
+   }
+  },
+  "sb_rers1_0012": {
+   "R1": {
+    "frames": 31,
+    "tracked": 1.0,
+    "ids": [
+     1
+    ],
+    "switches": 0,
+    "switch_gaps_s": []
+   },
+   "R2": {
+    "frames": 140,
+    "tracked": 0.41,
+    "ids": [
+     2,
+     15,
+     24,
+     26
+    ],
+    "switches": 3,
+    "switch_gaps_s": [
+     2.2,
+     4.2,
+     1.4
+    ]
+   },
+   "R3": {
+    "frames": 140,
+    "tracked": 0.19,
+    "ids": [
+     7,
+     19
+    ],
+    "switches": 1,
+    "switch_gaps_s": [
+     2.5
+    ]
+   },
+   "R4": {
+    "frames": 140,
+    "tracked": 0.79,
+    "ids": [
+     4,
+     17
+    ],
+    "switches": 1,
+    "switch_gaps_s": [
+     0.2
+    ]
+   },
+   "R5": {
+    "frames": 61,
+    "tracked": 0.57,
+    "ids": [
+     12
+    ],
+    "switches": 0,
+    "switch_gaps_s": []
+   }
+  },
+  "sb_tar_lowlight_0000": {
+   "L": {
+    "frames": 51,
+    "tracked": 0.0,
+    "ids": [],
+    "switches": 0,
+    "switch_gaps_s": []
+   }
+  }
+ }
+}

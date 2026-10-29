@@ -1,0 +1,197 @@
+{
+  "default": {
+    "rows": [
+      {
+        "streams": 1,
+        "min_fps": 36.2,
+        "mean_fps": 36.2,
+        "total_fps": 36.2,
+        "detect_p95_ms": 30.9,
+        "wall_s": 21.7,
+        "keeps_up": true
+      },
+      {
+        "streams": 2,
+        "min_fps": 23.9,
+        "mean_fps": 23.9,
+        "total_fps": 47.9,
+        "detect_p95_ms": 49.7,
+        "wall_s": 30.2,
+        "keeps_up": true
+      },
+      {
+        "streams": 4,
+        "min_fps": 10.5,
+        "mean_fps": 10.6,
+        "total_fps": 42.6,
+        "detect_p95_ms": 159.1,
+        "wall_s": 63.5,
+        "keeps_up": true
+      },
+      {
+        "streams": 6,
+        "min_fps": 2.1,
+        "mean_fps": 2.1,
+        "total_fps": 12.8,
+        "detect_p95_ms": 621.9,
+        "wall_s": 301.1,
+        "keeps_up": false
+      }
+    ],
+    "one_stream_perf": {
+      "input_res": "1920x1080",
+      "source_fps": 25.0,
+      "process_fps": 10,
+      "detector": "yolo8s_736x1280.mlpackage on coreml",
+      "helmet_classifier": "onnxruntime-cpu",
+      "frames_decoded": 1501,
+      "frames_processed": 601,
+      "wall_s": 16.62,
+      "video_s": 60.04,
+      "throughput_fps": 36.2,
+      "pipeline_ms_per_frame": 27.1,
+      "streams_at_process_fps": 3.69,
+      "stages": {
+        "decode": {
+          "mean_ms": 2.1,
+          "p95_ms": 6.0
+        },
+        "detect": {
+          "mean_ms": 21.8,
+          "p95_ms": 30.9
+        },
+        "track": {
+          "mean_ms": 0.4,
+          "p95_ms": 0.6
+        },
+        "helmet": {
+          "mean_ms": 2.7,
+          "p95_ms": 3.8
+        },
+        "rules": {
+          "mean_ms": 0.1,
+          "p95_ms": 0.1
+        },
+        "media": {
+          "mean_ms": 0.6,
+          "p95_ms": 0.6
+        }
+      }
+    }
+  },
+  "cpu_only": {
+    "rows": [
+      {
+        "streams": 2,
+        "min_fps": 8.7,
+        "mean_fps": 8.7,
+        "total_fps": 17.4,
+        "detect_p95_ms": 140.5,
+        "wall_s": 74.8,
+        "keeps_up": false
+      }
+    ],
+    "one_stream_perf": {
+      "input_res": "1920x1080",
+      "source_fps": 25.0,
+      "process_fps": 10,
+      "detector": "yolo8s_736x1280.mlpackage on coreml-cpu_only",
+      "helmet_classifier": "onnxruntime-cpu",
+      "frames_decoded": 1501,
+      "frames_processed": 601,
+      "wall_s": 54.13,
+      "video_s": 60.04,
+      "throughput_fps": 11.1,
+      "pipeline_ms_per_frame": 89.3,
+      "streams_at_process_fps": 1.12,
+      "stages": {
+        "decode": {
+          "mean_ms": 2.2,
+          "p95_ms": 6.2
+        },
+        "detect": {
+          "mean_ms": 83.4,
+          "p95_ms": 122.7
+        },
+        "track": {
+          "mean_ms": 0.5,
+          "p95_ms": 0.7
+        },
+        "helmet": {
+          "mean_ms": 3.1,
+          "p95_ms": 4.7
+        },
+        "rules": {
+          "mean_ms": 0.1,
+          "p95_ms": 0.1
+        },
+        "media": {
+          "mean_ms": 0.8,
+          "p95_ms": 1.0
+        }
+      }
+    }
+  },
+  "cpu": {
+    "rows": [
+      {
+        "streams": 1,
+        "min_fps": 4.5,
+        "mean_fps": 4.5,
+        "total_fps": 4.5,
+        "detect_p95_ms": 296.5,
+        "wall_s": 142.1,
+        "keeps_up": false
+      },
+      {
+        "streams": 2,
+        "min_fps": 2.8,
+        "mean_fps": 2.8,
+        "total_fps": 5.6,
+        "detect_p95_ms": 430.0,
+        "wall_s": 218.6,
+        "keeps_up": false
+      }
+    ],
+    "one_stream_perf": {
+      "input_res": "1920x1080",
+      "source_fps": 25.0,
+      "process_fps": 10,
+      "detector": "yolo8s.pt on torch-cpu",
+      "helmet_classifier": "onnxruntime-cpu",
+      "frames_decoded": 1501,
+      "frames_processed": 601,
+      "wall_s": 134.49,
+      "video_s": 60.04,
+      "throughput_fps": 4.5,
+      "pipeline_ms_per_frame": 223.1,
+      "streams_at_process_fps": 0.45,
+      "stages": {
+        "decode": {
+          "mean_ms": 2.1,
+          "p95_ms": 4.3
+        },
+        "detect": {
+          "mean_ms": 217.0,
+          "p95_ms": 296.5
+        },
+        "track": {
+          "mean_ms": 0.6,
+          "p95_ms": 0.7
+        },
+        "helmet": {
+          "mean_ms": 3.3,
+          "p95_ms": 4.8
+        },
+        "rules": {
+          "mean_ms": 0.1,
+          "p95_ms": 0.1
+        },
+        "media": {
+          "mean_ms": 0.7,
+          "p95_ms": 0.8
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+ "video": "clips/sb_bf_cdi_cc2_0031.mp4",
+ "source": "SteelBench sample/clip_BF_CDI_Ground_CC2_20251111_000745_0031 (15 s, 1080p, 25 fps; clear, low sun)",
+ "zones": "zones/sb_bf_cdi_cc2_0031.json",
+ "method": "Held out: none of these cameras was used to develop or debug the rules (they are in the 50-clip set, which the clip-level sweeps saw only as totals). Zones drawn and events labelled by eye from the raw frames at 1 fps (no pipeline overlay), with zoomed crops of each person, before the pipeline was run on them. Boxes are in source pixels; a person's box at time t is interpolated between keyframes.",
+ "people": {
+  "W": {
+   "desc": "worker with a rod on the hopper grate, cloth head-wrap (no hard hat), white t-shirt; walks toward the camera, bends at 10-11 s, steps off the grate bottom-left at ~13.5 s",
+   "boxes": {
+    "0": [
+     712,
+     320,
+     842,
+     675
+    ],
+    "1": [
+     735,
+     355,
+     860,
+     700
+    ],
+    "2": [
+     705,
+     370,
+     860,
+     730
+    ],
+    "3": [
+     680,
+     380,
+     870,
+     785
+    ],
+    "4": [
+     700,
+     445,
+     860,
+     795
+    ],
+    "5": [
+     705,
+     410,
+     880,
+     845
+    ],
+    "6": [
+     735,
+     440,
+     910,
+     925
+    ],
+    "7": [
+     735,
+     490,
+     945,
+     965
+    ],
+    "8": [
+     760,
+     535,
+     1005,
+     1050
+    ],
+    "9": [
+     785,
+     605,
+     1035,
+     1080
+    ],
+    "10": [
+     805,
+     790,
+     1060,
+     1080
+    ],
+    "11": [
+     795,
+     800,
+     1045,
+     1080
+    ],
+    "12": [
+     790,
+     655,
+     1080,
+     1080
+    ],
+    "13": [
+     665,
+     630,
+     1085,
+     1080
+    ],
+    "14": [
+     560,
+     700,
+     820,
+     1080
+    ],
+    "15": [
+     500,
+     940,
+     720,
+     1080
+    ]
+   }
+  }
+ },
+ "events": [
+  {
+   "type": "no_helmet",
+   "person": "W",
+   "start": 0.0,
+   "end": 15.0
+  },
+  {
+   "type": "no_vest",
+   "person": "W",
+   "start": 0.0,
+   "end": 15.0
+  },
+  {
+   "type": "zone_entry",
+   "zone": "hopper_grate",
+   "person": "W",
+   "start": 0.0,
+   "end": 13.5
+  }
+ ],
+ "ignore": []
+}

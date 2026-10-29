@@ -1,0 +1,43 @@
+{
+  "setting": null,
+  "overrides": [
+    "sampling.process_fps=3.2"
+  ],
+  "helmet_threshold": 0.8533419966697693,
+  "no_helmet": {
+    "alerts": 4,
+    "alerts_unlabelled": 2,
+    "pos_clips": 5,
+    "tp_clips": 2,
+    "violators": 5,
+    "matched": 2,
+    "certain_fp": 0,
+    "alerts_labelled": 2,
+    "neg_clips": 25,
+    "fp_clips": 0,
+    "clip_recall": 0.4,
+    "clip_fp_rate": 0.0,
+    "person_recall_ub": 0.4,
+    "precision_ub": 1.0,
+    "unlabelled_alerts_per_min": 0.568,
+    "median_delay_s": 2.5
+  },
+  "no_vest": {
+    "alerts": 78,
+    "alerts_unlabelled": 51,
+    "pos_clips": 26,
+    "tp_clips": 19,
+    "violators": 45,
+    "matched": 23,
+    "certain_fp": 3,
+    "alerts_labelled": 27,
+    "neg_clips": 3,
+    "fp_clips": 1,
+    "clip_recall": 0.731,
+    "clip_fp_rate": 0.333,
+    "person_recall_ub": 0.511,
+    "precision_ub": 0.852,
+    "unlabelled_alerts_per_min": 14.485,
+    "median_delay_s": 1.6
+  }
+}

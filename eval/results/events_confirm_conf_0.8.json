@@ -1,0 +1,241 @@
+{
+  "total": {
+    "labelled": 14,
+    "alerts": 12,
+    "true": 11,
+    "false": 0,
+    "duplicates": 0,
+    "ignored": 1,
+    "missed": 3,
+    "precision": 1.0,
+    "recall": 0.786
+  },
+  "clips": {
+    "sb_crm_workshop_0109": {
+      "labelled": 8,
+      "alerts": 8,
+      "true": 7,
+      "false": 0,
+      "duplicates": 0,
+      "ignored": 1,
+      "missed": 1,
+      "median_delay_s": 1.52,
+      "by_type": {
+        "no_helmet": {
+          "labelled": 1,
+          "true": 1,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 0
+        },
+        "no_vest": {
+          "labelled": 3,
+          "true": 3,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 1,
+          "missed": 0
+        },
+        "zone_entry": {
+          "labelled": 4,
+          "true": 3,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 1
+        }
+      },
+      "alerts_detail": [
+        [
+          "sb_crm_workshop_0109-001",
+          "zone_entry",
+          "motor_bay",
+          0.92,
+          2,
+          "true",
+          "B"
+        ],
+        [
+          "sb_crm_workshop_0109-002",
+          "no_vest",
+          null,
+          1.52,
+          1,
+          "true",
+          "E"
+        ],
+        [
+          "sb_crm_workshop_0109-003",
+          "no_vest",
+          null,
+          1.52,
+          2,
+          "true",
+          "B"
+        ],
+        [
+          "sb_crm_workshop_0109-004",
+          "no_vest",
+          null,
+          2.32,
+          4,
+          "true",
+          "A"
+        ],
+        [
+          "sb_crm_workshop_0109-005",
+          "zone_entry",
+          "motor_bay",
+          3.92,
+          1,
+          "true",
+          "E"
+        ],
+        [
+          "sb_crm_workshop_0109-006",
+          "no_helmet",
+          null,
+          4.12,
+          1,
+          "true",
+          "E"
+        ],
+        [
+          "sb_crm_workshop_0109-007",
+          "zone_entry",
+          "motor_bay",
+          8.92,
+          11,
+          "true",
+          "D"
+        ],
+        [
+          "sb_crm_workshop_0109-008",
+          "no_vest",
+          null,
+          9.92,
+          11,
+          "ignored",
+          "D"
+        ]
+      ],
+      "missed_detail": [
+        [
+          "zone_entry",
+          "motor_bay",
+          "C"
+        ]
+      ]
+    },
+    "sb_red_lrs1_0007": {
+      "labelled": 3,
+      "alerts": 1,
+      "true": 1,
+      "false": 0,
+      "duplicates": 0,
+      "ignored": 0,
+      "missed": 2,
+      "median_delay_s": 2.22,
+      "by_type": {
+        "no_vest": {
+          "labelled": 1,
+          "true": 1,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 0
+        },
+        "zone_entry": {
+          "labelled": 2,
+          "true": 0,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 2
+        }
+      },
+      "alerts_detail": [
+        [
+          "sb_red_lrs1_0007-001",
+          "no_vest",
+          null,
+          2.72,
+          5,
+          "true",
+          "P1"
+        ]
+      ],
+      "missed_detail": [
+        [
+          "zone_entry",
+          "ladle_lane",
+          "Q2"
+        ],
+        [
+          "zone_entry",
+          "ladle_lane",
+          "Q3"
+        ]
+      ]
+    },
+    "sb_tippler_lowlight_0062": {
+      "labelled": 3,
+      "alerts": 3,
+      "true": 3,
+      "false": 0,
+      "duplicates": 0,
+      "ignored": 0,
+      "missed": 0,
+      "median_delay_s": 1.72,
+      "by_type": {
+        "no_vest": {
+          "labelled": 2,
+          "true": 2,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 0
+        },
+        "zone_entry": {
+          "labelled": 1,
+          "true": 1,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 0
+        }
+      },
+      "alerts_detail": [
+        [
+          "sb_tippler_lowlight_0062-001",
+          "no_vest",
+          null,
+          1.72,
+          2,
+          "true",
+          "T1"
+        ],
+        [
+          "sb_tippler_lowlight_0062-002",
+          "zone_entry",
+          "tippler_trench",
+          1.72,
+          2,
+          "true",
+          "T1"
+        ],
+        [
+          "sb_tippler_lowlight_0062-003",
+          "no_vest",
+          null,
+          3.32,
+          4,
+          "true",
+          "T3"
+        ]
+      ],
+      "missed_detail": []
+    }
+  }
+}

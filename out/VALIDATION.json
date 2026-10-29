@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-28",
+  "labelled_samples": "full inference with run.py --cpu-only: OpenVINO INT8 detector on the CPU (all 8 threads), 10 sampled fps with adaptive frame skipping (2 fps while nobody is in view); perf.json in each camera folder is measured, including media writing",
+  "event_scores": "eval/results/events.json (development) and eval/results/events_heldout.json (additional cameras)",
+  "speed": "eval/results/bench_*.json (repeated runs over all six clips)",
+  "int8_calibration": "198 frames from 33 SteelBench sample clips on 15 cameras, none of them an evaluation camera",
+  "hme_new": "earlier PyTorch CPU output archived under out/hme_new/archive/; the source video is not in this checkout, so it was not rerun",
+  "weights_sha256": "dfaf451bdda3f92fe4012327e337225929ad7af22146b00e0d6989c2f4e40a4b",
+  "cmot": "skipped at owner request"
+}

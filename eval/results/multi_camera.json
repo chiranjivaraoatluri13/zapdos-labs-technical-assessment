@@ -1,0 +1,164 @@
+[
+  {
+    "cameras": 1,
+    "process_fps": 10.0,
+    "wall_s": 14.5,
+    "total_fps": 41.4,
+    "min_camera_fps": 41.4,
+    "keeps_up": true,
+    "peak_rss_gb": 1.08
+  },
+  {
+    "cameras": 2,
+    "process_fps": 10.0,
+    "wall_s": 29.3,
+    "total_fps": 41.0,
+    "min_camera_fps": 20.5,
+    "keeps_up": true,
+    "peak_rss_gb": 1.33
+  },
+  {
+    "cameras": 3,
+    "process_fps": 10.0,
+    "wall_s": 47.8,
+    "total_fps": 37.7,
+    "min_camera_fps": 12.6,
+    "keeps_up": true,
+    "peak_rss_gb": 1.62
+  },
+  {
+    "cameras": 4,
+    "process_fps": 10.0,
+    "wall_s": 69.4,
+    "total_fps": 34.6,
+    "min_camera_fps": 8.7,
+    "keeps_up": false,
+    "peak_rss_gb": 1.95
+  },
+  {
+    "cameras": 5,
+    "process_fps": 10.0,
+    "wall_s": 98.7,
+    "total_fps": 30.5,
+    "min_camera_fps": 6.1,
+    "keeps_up": false,
+    "peak_rss_gb": 1.87
+  },
+  {
+    "cameras": 6,
+    "process_fps": 10.0,
+    "wall_s": 118.6,
+    "total_fps": 30.4,
+    "min_camera_fps": 5.1,
+    "keeps_up": false,
+    "peak_rss_gb": 2.23
+  },
+  {
+    "cameras": 7,
+    "process_fps": 10.0,
+    "wall_s": 184.7,
+    "total_fps": 22.8,
+    "min_camera_fps": 3.3,
+    "keeps_up": false,
+    "peak_rss_gb": 1.7
+  },
+  {
+    "cameras": 8,
+    "process_fps": 10.0,
+    "wall_s": 250.9,
+    "total_fps": 19.2,
+    "min_camera_fps": 2.4,
+    "keeps_up": false,
+    "peak_rss_gb": 1.62
+  },
+  {
+    "cameras": 10,
+    "process_fps": 10.0,
+    "wall_s": 487.5,
+    "total_fps": 12.3,
+    "min_camera_fps": 1.2,
+    "keeps_up": false,
+    "peak_rss_gb": 1.38
+  },
+  {
+    "cameras": 1,
+    "process_fps": 5.0,
+    "wall_s": 7.8,
+    "total_fps": 38.8,
+    "min_camera_fps": 38.8,
+    "keeps_up": true,
+    "peak_rss_gb": 0.89
+  },
+  {
+    "cameras": 2,
+    "process_fps": 5.0,
+    "wall_s": 16.1,
+    "total_fps": 37.5,
+    "min_camera_fps": 18.7,
+    "keeps_up": true,
+    "peak_rss_gb": 1.14
+  },
+  {
+    "cameras": 3,
+    "process_fps": 5.0,
+    "wall_s": 26.5,
+    "total_fps": 34.1,
+    "min_camera_fps": 11.4,
+    "keeps_up": true,
+    "peak_rss_gb": 1.39
+  },
+  {
+    "cameras": 4,
+    "process_fps": 5.0,
+    "wall_s": 44.2,
+    "total_fps": 27.3,
+    "min_camera_fps": 6.8,
+    "keeps_up": true,
+    "peak_rss_gb": 1.59
+  },
+  {
+    "cameras": 5,
+    "process_fps": 5.0,
+    "wall_s": 61.3,
+    "total_fps": 24.6,
+    "min_camera_fps": 4.9,
+    "keeps_up": false,
+    "peak_rss_gb": 1.74
+  },
+  {
+    "cameras": 6,
+    "process_fps": 5.0,
+    "wall_s": 77.0,
+    "total_fps": 23.5,
+    "min_camera_fps": 3.9,
+    "keeps_up": false,
+    "peak_rss_gb": 1.75
+  },
+  {
+    "cameras": 7,
+    "process_fps": 5.0,
+    "wall_s": 109.9,
+    "total_fps": 19.2,
+    "min_camera_fps": 2.7,
+    "keeps_up": false,
+    "peak_rss_gb": 1.81
+  },
+  {
+    "cameras": 8,
+    "process_fps": 5.0,
+    "wall_s": 222.5,
+    "total_fps": 10.8,
+    "min_camera_fps": 1.4,
+    "keeps_up": false,
+    "peak_rss_gb": 1.39
+  },
+  {
+    "cameras": 10,
+    "process_fps": 5.0,
+    "wall_s": 229.9,
+    "total_fps": 13.1,
+    "min_camera_fps": 1.3,
+    "keeps_up": false,
+    "peak_rss_gb": 2.33
+  }
+]

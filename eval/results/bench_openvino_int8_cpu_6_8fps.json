@@ -1,0 +1,257 @@
+{
+  "machine": "Intel64 Family 6 Model 189 Stepping 1, GenuineIntel",
+  "python": "3.12.7",
+  "repeats": 1,
+  "clips": [
+    "sb_crm_workshop_0109",
+    "sb_red_lrs1_0007",
+    "sb_tippler_lowlight_0062",
+    "sb_bf_cdi_cc2_0031",
+    "sb_rers1_0012",
+    "sb_tar_lowlight_0000"
+  ],
+  "rows": [
+    {
+      "variant": "ov-int8-cpu-skip-8fps",
+      "overrides": [
+        "detector.backend=openvino",
+        "detector.openvino_device=CPU",
+        "sampling.process_fps=8"
+      ],
+      "detector": "weights\\sh17\\yolo8s_736x1280_int8_openvino_model on openvino-cpu-int8",
+      "process_fps": 8,
+      "idle_fps": 2,
+      "frames": 583,
+      "frames_skipped": 65,
+      "video_s": 81.0,
+      "wall_s_per_repeat": [
+        71.01
+      ],
+      "throughput_fps": 8.21,
+      "sampled_fps": 9.13,
+      "realtime_x": 1.14,
+      "throughput_fps_min": 8.21,
+      "stages": {
+        "decode": {
+          "mean_ms": 6.2,
+          "p95_ms": 6.4
+        },
+        "detect": {
+          "mean_ms": 111.5,
+          "p95_ms": 155.8
+        },
+        "track": {
+          "mean_ms": 0.8,
+          "p95_ms": 1.3
+        },
+        "helmet": {
+          "mean_ms": 0.8,
+          "p95_ms": 2.1
+        },
+        "rules": {
+          "mean_ms": 0.1,
+          "p95_ms": 0.3
+        },
+        "media": {
+          "mean_ms": 1.7,
+          "p95_ms": 1.5
+        }
+      },
+      "events": {
+        "labelled": 24,
+        "alerts": 19,
+        "true": 17,
+        "false": 1,
+        "duplicates": 0,
+        "ignored": 1,
+        "missed": 7,
+        "precision": 0.944,
+        "recall": 0.708
+      },
+      "per_clip": {
+        "sb_crm_workshop_0109": {
+          "labelled": 8,
+          "alerts": 8,
+          "true": 7,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 1,
+          "missed": 1,
+          "median_delay_s": 1.52
+        },
+        "sb_red_lrs1_0007": {
+          "labelled": 3,
+          "alerts": 1,
+          "true": 1,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 2,
+          "median_delay_s": 2.38
+        },
+        "sb_tippler_lowlight_0062": {
+          "labelled": 3,
+          "alerts": 3,
+          "true": 3,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 0,
+          "median_delay_s": 3.28
+        },
+        "sb_bf_cdi_cc2_0031": {
+          "labelled": 3,
+          "alerts": 2,
+          "true": 2,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 1,
+          "median_delay_s": 1.66
+        },
+        "sb_rers1_0012": {
+          "labelled": 6,
+          "alerts": 5,
+          "true": 4,
+          "false": 1,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 2,
+          "median_delay_s": 1.52
+        },
+        "sb_tar_lowlight_0000": {
+          "labelled": 1,
+          "alerts": 0,
+          "true": 0,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 1,
+          "median_delay_s": null
+        }
+      },
+      "pipeline_ms_per_frame": 121.1
+    },
+    {
+      "variant": "ov-int8-cpu-skip-6fps",
+      "overrides": [
+        "detector.backend=openvino",
+        "detector.openvino_device=CPU",
+        "sampling.process_fps=6"
+      ],
+      "detector": "weights\\sh17\\yolo8s_736x1280_int8_openvino_model on openvino-cpu-int8",
+      "process_fps": 6,
+      "idle_fps": 2,
+      "frames": 441,
+      "frames_skipped": 45,
+      "video_s": 81.0,
+      "wall_s_per_repeat": [
+        54.0
+      ],
+      "throughput_fps": 8.17,
+      "sampled_fps": 9.0,
+      "realtime_x": 1.5,
+      "throughput_fps_min": 8.17,
+      "stages": {
+        "decode": {
+          "mean_ms": 6.6,
+          "p95_ms": 7.6
+        },
+        "detect": {
+          "mean_ms": 111.7,
+          "p95_ms": 154.7
+        },
+        "track": {
+          "mean_ms": 0.8,
+          "p95_ms": 1.2
+        },
+        "helmet": {
+          "mean_ms": 0.8,
+          "p95_ms": 2.1
+        },
+        "rules": {
+          "mean_ms": 0.1,
+          "p95_ms": 0.2
+        },
+        "media": {
+          "mean_ms": 1.6,
+          "p95_ms": 1.4
+        }
+      },
+      "events": {
+        "labelled": 24,
+        "alerts": 18,
+        "true": 17,
+        "false": 1,
+        "duplicates": 0,
+        "ignored": 0,
+        "missed": 7,
+        "precision": 0.944,
+        "recall": 0.708
+      },
+      "per_clip": {
+        "sb_crm_workshop_0109": {
+          "labelled": 8,
+          "alerts": 7,
+          "true": 7,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 1,
+          "median_delay_s": 1.52
+        },
+        "sb_red_lrs1_0007": {
+          "labelled": 3,
+          "alerts": 1,
+          "true": 1,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 2,
+          "median_delay_s": 3.02
+        },
+        "sb_tippler_lowlight_0062": {
+          "labelled": 3,
+          "alerts": 3,
+          "true": 3,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 0,
+          "median_delay_s": 3.36
+        },
+        "sb_bf_cdi_cc2_0031": {
+          "labelled": 3,
+          "alerts": 2,
+          "true": 2,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 1,
+          "median_delay_s": 1.7
+        },
+        "sb_rers1_0012": {
+          "labelled": 6,
+          "alerts": 5,
+          "true": 4,
+          "false": 1,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 2,
+          "median_delay_s": 1.86
+        },
+        "sb_tar_lowlight_0000": {
+          "labelled": 1,
+          "alerts": 0,
+          "true": 0,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 1,
+          "median_delay_s": null
+        }
+      },
+      "pipeline_ms_per_frame": 121.6
+    }
+  ]
+}

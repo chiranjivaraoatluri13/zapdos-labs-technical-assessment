@@ -1,0 +1,12 @@
+{
+  "camera_id": "sb_tippler_lowlight_0062",
+  "frame_size": [1920, 1080],
+  "reference": "sb_tippler_lowlight_0062.jpg",
+  "zones": [
+    {
+      "zone_id": "tippler_trench",
+      "note": "Trench beside the conveyor under the tippler: confined space, permit-only entry",
+      "polygon": [[935, 260], [1075, 260], [1100, 345], [915, 345]]
+    }
+  ]
+}

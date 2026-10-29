@@ -1,0 +1,43 @@
+{
+  "setting": null,
+  "overrides": [
+    "ppe.helmet_method=detector"
+  ],
+  "helmet_threshold": 0.8533419966697693,
+  "no_helmet": {
+    "alerts": 89,
+    "alerts_unlabelled": 57,
+    "pos_clips": 5,
+    "tp_clips": 4,
+    "violators": 5,
+    "matched": 4,
+    "certain_fp": 26,
+    "alerts_labelled": 32,
+    "neg_clips": 25,
+    "fp_clips": 16,
+    "clip_recall": 0.8,
+    "clip_fp_rate": 0.64,
+    "person_recall_ub": 0.8,
+    "precision_ub": 0.125,
+    "unlabelled_alerts_per_min": 16.286,
+    "median_delay_s": 1.52
+  },
+  "no_vest": {
+    "alerts": 85,
+    "alerts_unlabelled": 52,
+    "pos_clips": 26,
+    "tp_clips": 21,
+    "violators": 45,
+    "matched": 27,
+    "certain_fp": 5,
+    "alerts_labelled": 33,
+    "neg_clips": 3,
+    "fp_clips": 2,
+    "clip_recall": 0.808,
+    "clip_fp_rate": 0.667,
+    "person_recall_ub": 0.6,
+    "precision_ub": 0.818,
+    "unlabelled_alerts_per_min": 14.857,
+    "median_delay_s": 1.52
+  }
+}

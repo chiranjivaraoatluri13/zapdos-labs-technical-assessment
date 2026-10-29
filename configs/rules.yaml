@@ -1,0 +1,140 @@
+# Pipeline settings. The helmet classifier's threshold ships with its weights (ppe.classifier); fixed
+# constants are named and explained in the code. Times are in seconds, so the rules keep their meaning
+# when the processing fps changes.
+
+detector:
+  backend: auto       # auto: CoreML on Apple when exported, otherwise torch; onnx is opt-in
+  onnx: weights/sh17/yolo8s_736x1280.onnx
+  onnx_threads: 4
+  # --backend openvino: export per device (scripts/export_models.py --detector --openvino --int8).
+  # CPU uses the INT8 copy (calibrated on 15 non-evaluation cameras); the GPU keeps fp32, where INT8
+  # dropped 2 of 55 reference persons (scripts/bench_detector.py)
+  openvino:
+    CPU: weights/sh17/yolo8s_736x1280_int8_openvino_model
+    GPU: weights/sh17/yolo8s_736x1280_openvino_model
+    NPU: weights/sh17/yolo8s_736x1280_openvino_model
+  openvino_device: CPU  # CPU | GPU (Intel integrated/discrete) | NPU
+  openvino_threads: 0   # CPU inference threads: 0 = every logical core; null = OpenVINO's default (performance cores only on hybrid CPUs)
+  weights: weights/sh17/yolo8s.pt   # SH17: person, head, helmet, safety-vest (+13 unused classes)
+  # at 640 it finds 8 of the 33 helmets and 29 of the 183 heads it finds at 1280 (eval/pixel_budget.py)
+  imgsz: 1280
+  device: mps          # mps | cpu | cuda:0 (for the .pt)
+  # macOS only, used when present (scripts/export_models.py --detector): fp16, 736x1280 input, same
+  # detections as the .pt (scripts/bench_detector.py). null = always use the .pt
+  coreml: weights/sh17/yolo8s_736x1280.mlpackage
+  # detector ms per frame (scripts/bench_detector.py): Neural Engine 22, cpu_only 71 (run.py --cpu-only);
+  # the .pt on MPS 53, on CPU 187
+  coreml_units: cpu_and_ne  # cpu_and_ne | cpu_only
+  conf: 0.10           # low floor so ByteTrack's second stage can use weak person boxes
+  classes: {person: 0, helmet: 10, head: 12, vest: 16}
+  min_conf: {head: 0.30, helmet: 0.25, vest: 0.30}
+
+sampling:
+  process_fps: 10      # frames per second actually sent to the detector; the rest are only decoded
+  # adaptive frame skipping: once no person has been detected or tracked for idle_after_s, only
+  # idle_fps of those samples are processed, until someone appears again. null = always process_fps
+  idle_fps: 2
+  idle_after_s: 1.0
+
+tracker:               # ultralytics BYTETracker, persons only
+  track_high_thresh: 0.25
+  track_low_thresh: 0.10
+  new_track_thresh: 0.30
+  match_thresh: 0.8
+  fuse_score: false    # cached dev replay: confidence fusion fragmented low-score workers
+  track_buffer_s: 5.0  # dev-selected occlusion buffer; held-out results reported separately
+  # A track may alert (helmet, vest or zone) only once it is a confirmed person: min_hits detections
+  # at >= min_conf with a person-like box, and min_age_s since it appeared. Earlier readings still
+  # count as evidence, so confirmation adds delay only when it comes after min_duration_s.
+  confirm:
+    min_conf: 0.5      # the old zone-only gate used the same 0.5 (dev clips: no zone entry lost up to 0.8)
+    min_hits: 3
+    min_age_s: 0.3
+    min_height_px: 24
+    aspect: [0.5, 6.0] # box height / width; crouching ~1, standing ~2.5-4
+
+ppe:
+  helmet_method: classifier  # classifier | detector (SH17 helmet-over-head rule, the baseline)
+  classifier:
+    # threshold: read from the .json next to the weights (set on two steel-plant calibration cameras)
+    weights: weights/helmet_cls/mnv3s_64_sb2.pt
+    # heads shorter than this read "can't tell". 10 -> 18 on the 43 sample clips from cameras outside
+    # the held-out set: false-alarm clips 1/25 -> 0/25, violation clips caught stay 2/2
+    min_head_px: 18
+    # no head or helmet box -> "can't tell" (50 clips: caught 1/5 -> 3/5, false-alarm clips 3/25 -> 1/25)
+    require_head_det: true
+    # optional [lo, hi]: p(bare) >= hi = bare, <= lo = helmet, between = "can't tell". null = the single
+    # shipped threshold. Choose lo/hi on development cameras only, never on the evaluation clips.
+    unknown_band: null
+  head_region: 0.40    # a head must sit in the top 40% of its person box
+  # a head/helmet/vest box whose two best owners score within this much of each other (band distance,
+  # person-size units) is ambiguous: both people read "can't tell" for that item
+  ambiguity_margin: 0.15
+  edge_margin_px: 3    # box this close to the left/right edge: helmet and vest "can't tell"; top edge: helmet
+  # detector method only:
+  helmet_expand: 0.6   # grow the head box upward by this x head height before checking helmet overlap
+  helmet_overlap: 0.30 # >= this fraction of a helmet box inside the grown head box = helmet worn
+  min_head_px: 14      # heads shorter than this read "can't tell"
+  vest:
+    enabled: true
+    # shorter people: vest "can't tell" (50 clips: 120 -> 100 px raised person recall .47 -> .60 at the
+    # same precision)
+    min_person_px: 100
+    torso: [0.15, 0.75]  # vest centre must fall in this vertical band of the person box
+    # "no vest box" only counts as no_vest when the torso is visible enough to have shown one:
+    max_torso_overlap: 0.30   # share of the torso covered by other people's boxes or occluder polygons
+    min_torso_in_frame: 0.95  # share of the torso band inside the frame
+
+zones:
+  hysteresis: 0.10     # ground point must be 0.10 x person height inside to enter, outside to leave
+  hidden_feet_ratio: 0.75  # box shorter than 75% of the track's tallest recent height = feet hidden
+  height_decay_per_s: 0.817  # decay per second of that tallest-height memory (0.98 per frame at 10 fps)
+  # hidden feet are estimated from a full-body sighting no older than this; with none, or when the
+  # estimate is off the image, the zone reads "can't tell" for that frame
+  feet_history_s: 3.0
+
+view:                  # has the camera moved since its zones were drawn? (cameras with zones only)
+  check_every_s: 1.0   # match the frame to the zone file's reference view this often (~10 ms, off the frame loop)
+  width: 640           # both views are matched at this width
+  features: 1000       # ORB keypoints per view (500 lost matches between days)
+  min_inliers: 20      # fewer matches agreeing on one transform = view unrecognisable = moved
+  max_shift: 0.02      # a zone corner moving more than 2% of the frame width (38 px at 1080p) = moved
+  persist_s: 3.0       # moved (or back) for this long before it counts: a passing truck isn't a move
+
+events:
+  default:
+    window_s: 2.0      # sliding vote window
+    threshold: 0.7     # share of readable frames in the window that must be violating
+    min_observed_s: 0.6  # readable frames needed in the window, in seconds of frames (6 at 10 fps, 3 at 5)
+    min_duration_s: 1.5  # violation must have persisted this long before alerting
+    max_evidence_gap_s: 0.6  # longer unreadable/lost gaps restart pre-alert evidence; episodes end separately
+    # ...but never shorter than this many dropped processed frames (at 3.2 fps one drop is a 0.625 s gap)
+    max_missed_frames: 1
+    end_after_s: 3.0   # violation unseen this long = episode over
+    cooldown_s: 60     # same person + type won't re-alert within this long of the episode ending
+  identity:            # when is a new tracker ID the same worker as an earlier one? (events.py)
+    window_s: 5.0      # a lost worker can be re-linked this long after their last detection...
+    radius: 1.0        # ...if the new box is within 1 person-height of where their motion predicts
+    stationary_window_s: 10.0  # someone standing still can be re-linked in place for longer
+    stationary_speed: 0.1      # person-heights per second; slower = standing still
+    stationary_overlap: 0.5    # in place = new box overlaps the last box by this much (of the smaller)
+    max_size_ratio: 1.5        # box height may change by at most this factor
+    margin: 0.3        # the best candidate must beat the next by this cost; otherwise a new identity
+    nested_overlap: 0.8  # a new box >= 80% inside one visible person's box = a second box on them
+    appearance_min_px: 96      # torso colour is compared only for people at least this tall
+    appearance_max_dist: 0.6   # Bhattacharyya distance above this = different-looking people: no link
+  zone_entry:
+    window_s: 1.0
+    threshold: 0.6
+    min_observed_s: 0.4
+    min_duration_s: 0.5
+
+output:
+  clip_pre_s: 3.0      # alert clip: from 3 s before the violation started...
+  clip_post_s: 3.0     # ...to 3 s after the alert fired
+  clip_width: 960
+  buffer_extra_s: 5.0  # extra history kept so a late-confirmed alert still gets its pre-roll
+  video_width: 1280    # --save-video / --show
+  hidden_s: 1.0        # draw a lost-but-remembered track (dashed, predicted box) this long after its last detection
+  readings_log: false  # also write readings.jsonl: every person-frame's readings with the reason for each "can't tell"
+  overwrite: false     # false: an earlier run in the same camera folder is moved to archive/<run_id>/, not deleted

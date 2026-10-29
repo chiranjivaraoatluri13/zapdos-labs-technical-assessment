@@ -1,0 +1,30 @@
+{
+  "video": "clips/sb_crm_workshop_0109.mp4",
+  "source": "SteelBench sample/clip_CRM_Work_Shop_20251115_002718_0109 (15 s, 1080p, 25 fps)",
+  "zones": "zones/sb_crm_workshop_0109.json",
+  "method": "Labelled by eye from the raw frames at 1 fps (no pipeline overlay), with zoomed crops of the work area. Boxes are in source pixels; a person's box at time t is interpolated between keyframes.",
+  "people": {
+    "A": {"desc": "crouching at left, yellow helmet, checked jacket", "boxes": {"0": [385, 615, 470, 775], "14": [385, 615, 470, 775]}},
+    "B": {"desc": "standing at the open motor, white helmet, blue shirt; feet hidden by the rotor", "boxes": {"0": [612, 545, 700, 690], "14": [612, 545, 700, 690]}},
+    "C": {"desc": "seated at the motor, yellow helmet, mostly hidden behind D", "boxes": {"0": [662, 625, 732, 695], "14": [662, 625, 732, 695]}},
+    "D": {"desc": "seated at the motor, blue helmet, dark shirt", "boxes": {"0": [658, 655, 748, 740], "14": [658, 655, 748, 740]}},
+    "E": {"desc": "walking man, dark jacket, white shirt, jeans, no helmet; walks to the motor and goes behind it at ~9 s",
+          "boxes": {"0": [765, 430, 855, 680], "1": [775, 475, 875, 690], "2": [785, 505, 875, 705], "3": [760, 475, 870, 730],
+                    "4": [755, 475, 830, 740], "5": [745, 480, 825, 735], "6": [690, 475, 790, 720], "7": [665, 470, 750, 660],
+                    "8": [600, 465, 675, 680], "9": [590, 480, 650, 600], "14": [590, 480, 650, 600]}}
+  },
+  "events": [
+    {"type": "no_helmet", "person": "E", "start": 0.0, "end": 15.0},
+    {"type": "no_vest", "person": "A", "start": 0.0, "end": 15.0},
+    {"type": "no_vest", "person": "B", "start": 0.0, "end": 15.0},
+    {"type": "no_vest", "person": "E", "start": 0.0, "end": 9.0},
+    {"type": "zone_entry", "zone": "motor_bay", "person": "B", "start": 0.0, "end": 15.0},
+    {"type": "zone_entry", "zone": "motor_bay", "person": "C", "start": 0.0, "end": 15.0},
+    {"type": "zone_entry", "zone": "motor_bay", "person": "D", "start": 0.0, "end": 15.0},
+    {"type": "zone_entry", "zone": "motor_bay", "person": "E", "start": 3.0, "end": 15.0}
+  ],
+  "ignore": [
+    {"type": "no_vest", "person": "C", "why": "torso hidden behind D and the rotor"},
+    {"type": "no_vest", "person": "D", "why": "torso hidden by the rotor"}
+  ]
+}

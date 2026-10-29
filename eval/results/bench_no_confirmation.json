@@ -1,0 +1,135 @@
+{
+  "machine": "Intel64 Family 6 Model 189 Stepping 1, GenuineIntel",
+  "python": "3.12.7",
+  "repeats": 1,
+  "clips": [
+    "sb_crm_workshop_0109",
+    "sb_red_lrs1_0007",
+    "sb_tippler_lowlight_0062",
+    "sb_bf_cdi_cc2_0031",
+    "sb_rers1_0012",
+    "sb_tar_lowlight_0000"
+  ],
+  "rows": [
+    {
+      "variant": "openvino-gpu-noconfirm",
+      "overrides": [
+        "detector.backend=openvino",
+        "detector.openvino_device=GPU",
+        "tracker.confirm.min_hits=1",
+        "tracker.confirm.min_age_s=0",
+        "tracker.confirm.min_conf=0",
+        "tracker.confirm.min_height_px=0"
+      ],
+      "detector": "weights\\sh17\\yolo8s_736x1280_openvino_model on openvino-gpu",
+      "process_fps": 10,
+      "frames": 810,
+      "video_s": 81.0,
+      "wall_s_per_repeat": [
+        33.14
+      ],
+      "throughput_fps": 24.44,
+      "throughput_fps_min": 24.44,
+      "stages": {
+        "decode": {
+          "mean_ms": 7.6,
+          "p95_ms": 9.3
+        },
+        "detect": {
+          "mean_ms": 29.2,
+          "p95_ms": 34.4
+        },
+        "track": {
+          "mean_ms": 1.0,
+          "p95_ms": 1.7
+        },
+        "helmet": {
+          "mean_ms": 0.9,
+          "p95_ms": 2.8
+        },
+        "rules": {
+          "mean_ms": 0.2,
+          "p95_ms": 0.3
+        },
+        "media": {
+          "mean_ms": 1.8,
+          "p95_ms": 1.8
+        }
+      },
+      "events": {
+        "labelled": 24,
+        "alerts": 23,
+        "true": 17,
+        "false": 5,
+        "duplicates": 0,
+        "ignored": 1,
+        "missed": 7,
+        "precision": 0.773,
+        "recall": 0.708
+      },
+      "per_clip": {
+        "sb_crm_workshop_0109": {
+          "labelled": 8,
+          "alerts": 8,
+          "true": 7,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 1,
+          "missed": 1,
+          "median_delay_s": 1.52
+        },
+        "sb_red_lrs1_0007": {
+          "labelled": 3,
+          "alerts": 1,
+          "true": 1,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 2,
+          "median_delay_s": 2.22
+        },
+        "sb_tippler_lowlight_0062": {
+          "labelled": 3,
+          "alerts": 3,
+          "true": 3,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 0,
+          "median_delay_s": 3.32
+        },
+        "sb_bf_cdi_cc2_0031": {
+          "labelled": 3,
+          "alerts": 6,
+          "true": 2,
+          "false": 4,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 1,
+          "median_delay_s": 1.42
+        },
+        "sb_rers1_0012": {
+          "labelled": 6,
+          "alerts": 5,
+          "true": 4,
+          "false": 1,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 2,
+          "median_delay_s": 1.52
+        },
+        "sb_tar_lowlight_0000": {
+          "labelled": 1,
+          "alerts": 0,
+          "true": 0,
+          "false": 0,
+          "duplicates": 0,
+          "ignored": 0,
+          "missed": 1,
+          "median_delay_s": null
+        }
+      },
+      "pipeline_ms_per_frame": 40.7
+    }
+  ]
+}

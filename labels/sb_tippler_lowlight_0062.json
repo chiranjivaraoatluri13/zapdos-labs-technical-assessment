@@ -1,0 +1,22 @@
+{
+  "video": "clips/sb_tippler_lowlight_0062.mp4",
+  "source": "SteelBench sample/clip_Tippler_3&4_19.1-19.2TEND_20251205_001622_0062 (12 s, 1080p, 25 fps; dark tunnel, hard point lights)",
+  "zones": "zones/sb_tippler_lowlight_0062.json",
+  "method": "Labelled by eye from the raw frames at 1 fps (no pipeline overlay), with zoomed crops of the trench and the right-hand walkway. Boxes are in source pixels; a person's box at time t is interpolated between keyframes.",
+  "people": {
+    "T1": {"desc": "in the trench, green helmet, white singlet, blue shorts, shovelling", "boxes": {"0": [970, 145, 1030, 318], "8": [970, 145, 1035, 318], "11": [975, 160, 1050, 318]}},
+    "T2": {"desc": "far end of the trench, dark clothes, bent over most of the clip", "boxes": {"0": [1000, 110, 1060, 200], "11": [1000, 110, 1060, 200]}},
+    "T3": {"desc": "right walkway, yellow helmet, white t-shirt; partly hidden by the column and a cable",
+           "boxes": {"0": [1640, 285, 1685, 495], "2": [1650, 284, 1726, 521], "3": [1624, 297, 1688, 571], "5": [1617, 333, 1708, 598],
+                     "7": [1643, 284, 1680, 521], "8": [1644, 275, 1717, 503], "10": [1643, 242, 1675, 379], "11": [1648, 278, 1680, 479]}}
+  },
+  "events": [
+    {"type": "no_vest", "person": "T1", "start": 0.0, "end": 12.0},
+    {"type": "no_vest", "person": "T3", "start": 0.0, "end": 12.0},
+    {"type": "zone_entry", "zone": "tippler_trench", "person": "T1", "start": 0.0, "end": 12.0}
+  ],
+  "ignore": [
+    {"type": "no_helmet", "person": "T2", "why": "head ~12 px against a back light"},
+    {"type": "no_vest", "person": "T2", "why": "bent over, far, torso not visible"}
+  ]
+}

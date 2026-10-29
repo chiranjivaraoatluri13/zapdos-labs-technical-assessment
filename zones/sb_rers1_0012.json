@@ -1,0 +1,12 @@
+{
+  "camera_id": "sb_rers1_0012",
+  "frame_size": [1920, 1080],
+  "reference": "sb_rers1_0012.jpg",
+  "zones": [
+    {
+      "zone_id": "roll_stand",
+      "note": "Roll stand and its housing (access stairs excluded): no climbing on it while the mill runs",
+      "polygon": [[1180, 260], [1640, 260], [1640, 650], [1180, 700]]
+    }
+  ]
+}

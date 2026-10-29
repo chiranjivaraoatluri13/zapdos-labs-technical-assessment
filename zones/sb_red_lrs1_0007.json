@@ -1,0 +1,12 @@
+{
+  "camera_id": "sb_red_lrs1_0007",
+  "frame_size": [1920, 1080],
+  "reference": "sb_red_lrs1_0007.jpg",
+  "zones": [
+    {
+      "zone_id": "ladle_lane",
+      "note": "Aisle behind the relining ladles that ladles are moved along: no pedestrians or vehicles",
+      "polygon": [[560, 592], [1250, 592], [1250, 668], [560, 668]]
+    }
+  ]
+}

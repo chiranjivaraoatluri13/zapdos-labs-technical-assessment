@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+
+# Large inputs: datasets, videos, caches (scripts/download_data.py fetches them; keep the folders)
+data/raw/**
+!data/raw/**/.gitkeep
+data/cache/
+clips/*
+!clips/.gitkeep
+
+# Weights: SH17 detector is downloaded, CoreML is exported locally (scripts/export_models.py);
+# the trained helmet classifier is small and committed so the pipeline runs from a fresh clone
+weights/*
+!weights/.gitkeep
+!weights/helmet_cls/
+weights/helmet_cls/*
+!weights/helmet_cls/mnv3s_64_sb2.pt
+!weights/helmet_cls/mnv3s_64_sb2.onnx
+!weights/helmet_cls/mnv3s_64_sb2.json
+*.engine
+
+# Scratch run outputs; out/ holds the committed alerts for the six labelled clips
+runs/
+out/*/archive/
+out/*/readings.jsonl
+
+# OS
+.DS_Store

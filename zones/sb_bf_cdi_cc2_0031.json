@@ -1,0 +1,12 @@
+{
+  "camera_id": "sb_bf_cdi_cc2_0031",
+  "frame_size": [1920, 1080],
+  "reference": "sb_bf_cdi_cc2_0031.jpg",
+  "zones": [
+    {
+      "zone_id": "hopper_grate",
+      "note": "Grizzly grate over the hopper: fall-through and burial hazard, no walking on it",
+      "polygon": [[715, 605], [1475, 585], [1700, 900], [1700, 1080], [825, 1080]]
+    }
+  ]
+}

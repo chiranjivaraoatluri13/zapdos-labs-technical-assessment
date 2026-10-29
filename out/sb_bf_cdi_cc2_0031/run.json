@@ -1,0 +1,10 @@
+{
+  "run_id": "20261028T191545Z-67c161",
+  "camera_id": "sb_bf_cdi_cc2_0031",
+  "video": "clips/sb_bf_cdi_cc2_0031.mp4",
+  "zones": "zones/sb_bf_cdi_cc2_0031.json",
+  "started": "2026-10-28T19:15:45.846548+00:00",
+  "process_fps": 10,
+  "idle_fps": 2,
+  "detector_model": "weights\\sh17\\yolo8s_736x1280_int8_openvino_model"
+}

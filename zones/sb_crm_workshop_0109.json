@@ -1,0 +1,12 @@
+{
+  "camera_id": "sb_crm_workshop_0109",
+  "frame_size": [1920, 1080],
+  "reference": "sb_crm_workshop_0109.jpg",
+  "zones": [
+    {
+      "zone_id": "motor_bay",
+      "note": "Floor between the open motor housing and the rotor stand: no entry while the motor is open",
+      "polygon": [[540, 600], [800, 600], [850, 770], [520, 770]]
+    }
+  ]
+}
