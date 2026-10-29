@@ -52,7 +52,9 @@ These three development clips include low-light footage. Values are copied from 
 | [sb_red_lrs1_0007](TEST_VIDEOS.md#sb_red_lrs1_0007) | 3 | 1 | 1 | 0 | 0 | 2 | 2.22 |
 | [sb_tippler_lowlight_0062](TEST_VIDEOS.md#sb_tippler_lowlight_0062) | 3 | 3 | 3 | 0 | 0 | 0 | 3.32 |
 
-Workshop includes one alert marked ignored by the evaluator, so its alerts exceed true + false + duplicates by one. Across these development clips: 11/14 labelled events caught, precision 1.00 (ignoring that excluded alert), recall 0.786, zero scored false alerts and zero duplicates. Median delays use matched annotation onset times. [Recorded results](eval/results/bench_openvino_gpu.json); these are development-set scores, not new or independent validation.
+Across these three development clips, the pipeline detected **11 of 14 labelled events**: **100% precision** and **78.6% recall**, with three missed events and no scored false or duplicate alerts. The workshop produced eight alerts: seven matched labelled events and one was excluded under the annotations' ignore rules for obscured torsos. That excluded alert is not counted as true, false or duplicate.
+
+Median delay is measured from the annotated violation start to the matching alert, using video timestamps. For violations already present at the first frame, it measures delay from the clip start. These [recorded results](eval/results/bench_openvino_gpu.json) precede the later identity/display fixes and describe performance against the existing annotations on these development clips; they do not establish accuracy on the five demonstration videos.
 
 ## Performance and checks
 
