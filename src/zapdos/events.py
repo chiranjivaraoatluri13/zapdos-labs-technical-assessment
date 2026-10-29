@@ -4,8 +4,9 @@ Three things are kept apart:
 
 person identity - which tracker IDs are one worker. A tracker ID is attached to an identity the
     first time it is seen, and only then:
-      * nested: its box lies inside exactly one visible identity's box (a second detection of part
-        of the same body). Inside two visible people's boxes is ambiguous: a new identity.
+      * nested: a small new box lies inside exactly one visible identity's box, or a larger new box
+        nearly contains an existing box and passes conservative appearance and geometry checks.
+        Plausible overlap with multiple visible identities is ambiguous: a new identity.
       * re-linked: otherwise every *lost* identity is scored against it: distance from where that
         identity's recent motion predicts it to be (in person heights), box-size change, and, when
         both crops are big enough, torso colour. Gates: within identity.window_s and identity.radius,
@@ -37,6 +38,8 @@ from .track import appearance_distance
 
 MOTION_WINDOW_S = 1.0    # velocity from the detections of the last second
 MIN_MOTION_SPAN_S = 0.3  # ...when they span at least this long; less = assume standing still
+LARGER_NESTED_OVERLAP = 0.95  # larger new boxes need stronger containment than small partial boxes
+LARGER_NESTED_CENTRE_HEIGHTS = 0.25  # centre distance relative to the smaller person's height
 
 
 @dataclass
@@ -166,6 +169,8 @@ class EventEngine:
         self.ids = {}         # person id -> _Identity
         self.track_pid = {}   # tracker id -> person id
         self.alias = set()    # tracker ids attached as a nested second box of someone else
+        self.alias_host = {}  # alias tracker id -> original visible tracker that it overlapped
+        self.frame_representatives = {}  # person id -> tracker id used for this frame's readings
         self.closed = []      # events whose episode closed since the last pop_closed()
         self._params = {}
 
@@ -188,11 +193,15 @@ class EventEngine:
         self._end_episodes(ts)
         pids = self._resolve(observations, ts)
         new, fed = [], set()
-        for o in sorted(observations, key=lambda o: -_area(o.box)):
+        self.frame_representatives = {}
+        # When both boxes are present, prefer the established track's observation.
+        # A larger duplicate must not replace its PPE or location evidence.
+        for o in sorted(observations, key=lambda o: (o.track_id in self.alias, -_area(o.box))):
             pid = pids[o.track_id]
             if pid in fed:
                 continue  # a second, nested box of someone already read this frame
             fed.add(pid)
+            self.frame_representatives[pid] = o.track_id
             ident = self.ids[pid]
             ident.observe(ts, o.box, o.desc, o.confirmed)
             for key, r in o.readings.items():
@@ -228,20 +237,26 @@ class EventEngine:
         self._split_aliases(known, ts)
         visible = {self.track_pid[o.track_id]: o for o in known}
         new = [o for o in observations if o.track_id not in self.track_pid]
-        plausible = {}
+        plausible, nested = {}, {}
         for o in new:
-            hosts = {pid for pid, v in visible.items()
-                     if _area(o.box) <= _area(v.box) and _nested(o.box, v.box) >= self.idcfg["nested_overlap"]}
+            hosts = {pid for pid, v in visible.items() if self._nested_duplicate(o, v)}
             if len(hosts) == 1:
                 pid = hosts.pop()
-                self.track_pid[o.track_id] = pid
-                self.alias.add(o.track_id)
+                nested[o.track_id] = pid
                 continue
             if hosts:
                 self._new_identity(o.track_id, ts, {"how": "ambiguous", "nested_in": sorted(hosts)})
                 continue
             plausible[o.track_id] = sorted((c, pid) for pid, ident in self.ids.items()
                                            if pid not in visible and (c := self._link_cost(o, ident, ts)) is not None)
+        nested_claims = Counter(nested.values())
+        for tid, pid in nested.items():
+            if nested_claims[pid] == 1:
+                self.track_pid[tid] = pid
+                self.alias.add(tid)
+                self.alias_host[tid] = visible[pid].track_id
+            else:
+                self._new_identity(tid, ts, {"how": "ambiguous", "nested_in": [pid]})
         claims = Counter(pid for cands in plausible.values() for _, pid in cands)
         for tid, cands in plausible.items():
             if not cands:
@@ -258,18 +273,44 @@ class EventEngine:
 
     def _split_aliases(self, known, ts):
         """A nested second box that now stands apart from its host was a different person after all."""
-        by_pid = {}
-        for o in known:
-            by_pid.setdefault(self.track_pid[o.track_id], []).append(o)
-        for group in by_pid.values():
-            if len(group) < 2:
-                continue
-            host = max(group, key=lambda o: _area(o.box))
-            for o in group:
-                if o is not host and o.track_id in self.alias and \
-                        _nested(o.box, host.box) < self.idcfg["nested_overlap"]:
-                    self.alias.discard(o.track_id)
-                    self._new_identity(o.track_id, ts, {"how": "split", "from": self.track_pid[o.track_id]})
+        by_tid = {o.track_id: o for o in known}
+        for tid in list(self.alias):
+            alias = by_tid.get(tid)
+            host = by_tid.get(self.alias_host.get(tid))
+            if (alias is not None and host is not None and
+                    self.track_pid[tid] == self.track_pid[host.track_id] and
+                    _nested(alias.box, host.box) < self.idcfg["nested_overlap"]):
+                old_pid = self.track_pid[tid]
+                self.alias.discard(tid)
+                self.alias_host.pop(tid, None)
+                self._new_identity(tid, ts, {"how": "split", "from": old_pid})
+
+    def _nested_duplicate(self, candidate, known):
+        """Decide whether a new box is a duplicate of one visible known track.
+
+        Existing partial-box behaviour is kept. For the reverse case, where a
+        larger new box covers the old one, require close containment, similar
+        height/centre and compatible available appearance. These gates reduce
+        accidental merges of occluding workers; missing appearance abstains.
+        """
+        overlap = _nested(candidate.box, known.box)
+        if overlap < self.idcfg["nested_overlap"]:
+            return False
+        h_new = candidate.box[3] - candidate.box[1]
+        h_known = known.box[3] - known.box[1]
+        both_desc = candidate.desc is not None and known.desc is not None
+        if both_desc and min(h_new, h_known) >= self.idcfg["appearance_min_px"]:
+            if appearance_distance(candidate.desc, known.desc) > self.idcfg["appearance_max_dist"]:
+                return False
+        if _area(candidate.box) <= _area(known.box):
+            return True
+        if (not both_desc or h_new <= 0 or h_known <= 0 or
+                min(h_new, h_known) < self.idcfg["appearance_min_px"]):
+            return False
+        height_ratio = max(h_new, h_known) / min(h_new, h_known)
+        return (overlap >= max(self.idcfg["nested_overlap"], LARGER_NESTED_OVERLAP) and
+                height_ratio <= self.idcfg["max_size_ratio"] and
+                _centre_distance(candidate.box, known.box) <= LARGER_NESTED_CENTRE_HEIGHTS * min(h_new, h_known))
 
     def _new_identity(self, tid, ts, link):
         pid = len(self.ids) + 1
@@ -371,6 +412,11 @@ class EventEngine:
 
 def _area(a):
     return max(a[2] - a[0], 0) * max(a[3] - a[1], 0)
+
+
+def _centre_distance(a, b):
+    return math.hypot((a[0] + a[2] - b[0] - b[2]) / 2,
+                      (a[1] + a[3] - b[1] - b[3]) / 2)
 
 
 def _nested(a, b):

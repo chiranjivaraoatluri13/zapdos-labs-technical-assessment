@@ -106,6 +106,37 @@ def observe(tracks, meas, readings, zones, ts=0.0, confirm=None, descs=None):
     return observations, people
 
 
+def overlay_people(people, hidden, engine):
+    """Display the same observed track that supplied each person's rule evidence.
+
+    Several raw tracker IDs can represent one person. Keep their IDs in the
+    diagnostic log, but do not draw multiple overlapping boxes or show a lost
+    alias when another observation of the same person is visible.
+    """
+    rendered, visible = [], set()
+    reps = engine.frame_representatives
+    for person in people:
+        tid = person["tid"]
+        pid = engine.person_of(tid)
+        if pid in reps and reps[pid] != tid:
+            continue
+        entry = {k: person[k] for k in ("tid", "box", "flags", "foot", "head", "confirmed")}
+        entry["person_id"] = pid
+        rendered.append(entry)
+        if pid >= 0:
+            visible.add(pid)
+    hidden_seen = set()
+    for row in hidden:
+        tid = int(row[4])
+        pid = engine.person_of(tid)
+        if pid >= 0 and (pid in visible or pid in hidden_seen):
+            continue
+        rendered.append({"tid": tid, "person_id": pid, "box": list(row[:4]), "flags": {}, "hidden": True})
+        if pid >= 0:
+            hidden_seen.add(pid)
+    return rendered
+
+
 def _archive_previous(out, overwrite):
     """Move (or with overwrite, delete) an earlier run's files so nothing is silently replaced."""
     old = [p for p in (*(out / f for f in RUN_FILES), *out.glob("snapshots/*.jpg"), *out.glob("clips/*.mp4"))
@@ -243,8 +274,7 @@ class Camera:
             self._log_readings(frame_idx, ts, people, meas)
 
         hidden = self.tracker.hidden(int(round(self.cfg["output"]["hidden_s"] * self.fps)))
-        overlay = {"ts": ts, "people": [{k: p[k] for k in ("tid", "box", "flags", "foot", "head")} for p in people]
-                   + [{"tid": int(h[4]), "box": list(h[:4]), "flags": {}, "hidden": True} for h in hidden]}
+        overlay = {"ts": ts, "people": overlay_people(people, hidden, self.engine)}
         if self.zones.suspended:
             overlay["banner"] = "CAMERA MOVED: zones paused"
         for ev in alerts:

@@ -337,3 +337,85 @@ def test_one_missed_frame_at_low_fps_keeps_pending_evidence():
     for i in range(12):
         frames.append([] if i in (3, 6) else [(1, box(100), True)])
     assert len(feed(EventEngine(CFG["events"], "cam", fps), frames, fps)) == 1
+
+
+def test_larger_new_box_of_same_worker_does_not_duplicate_episode():
+    import numpy as np
+    small = [180.938, 573.188, 239.062, 733.312]  # observed track 1 at 2s
+    large = [181.688, 573.375, 275.062, 733.125]  # observed track 9 at 2s
+    desc = np.ones(128, np.float32)
+    key = ("zone_entry", "z")
+    engine = EventEngine(CFG["events"], "cam", FPS)
+    alerts = []
+    for i in range(60):
+        # Track 9 is a larger overlapping duplicate, then reappears while track 1 is lost.
+        both = 20 <= i <= 22
+        obs = [Observation(1, small, {key: (True, .9)}, desc=desc)] if i <= 30 else []
+        if both or i >= 45:
+            obs.append(Observation(9, large, {key: (True, .9)}, desc=desc))
+        alerts += engine.step(i, i / FPS, obs)
+    assert engine.person_of(1) == engine.person_of(9)
+    assert len(alerts) == 1
+    assert alerts[0].merged_track_ids == [9]
+
+
+def test_larger_alias_splits_if_workers_separate():
+    import numpy as np
+    desc = np.ones(128, np.float32)
+    small = [180, 573, 239, 733]
+    large = [181, 573, 275, 733]
+    apart = [340, 573, 434, 733]
+    key = ("no_vest", None)
+    engine = EventEngine(CFG["events"], "cam", FPS)
+    engine.step(0, 0, [Observation(1, small, {key: (True, .9)}, desc=desc)])
+    engine.step(1, .1, [Observation(1, small, {key: (True, .9)}, desc=desc),
+                        Observation(9, large, {key: (True, .9)}, desc=desc)])
+    assert engine.person_of(9) == engine.person_of(1)
+    engine.step(2, .2, [Observation(1, small, {key: (True, .9)}, desc=desc),
+                        Observation(9, apart, {key: (True, .9)}, desc=desc)])
+    assert engine.person_of(9) != engine.person_of(1)
+    assert engine.ids[engine.person_of(9)].link["how"] == "split"
+
+
+def test_larger_overlapping_tracks_with_different_or_missing_appearance_stay_separate():
+    import numpy as np
+    red = np.zeros(128, np.float32); red[0] = 1
+    blue = np.zeros(128, np.float32); blue[100] = 1
+    small, large = [180, 573, 239, 733], [181, 573, 275, 733]
+    key = ("no_vest", None)
+    for new_desc in (blue, None):
+        engine = EventEngine(CFG["events"], "cam", FPS)
+        engine.step(0, 0, [Observation(1, small, {key: (True, .9)}, desc=red)])
+        engine.step(1, .1, [Observation(1, small, {key: (True, .9)}, desc=red),
+                            Observation(9, large, {key: (True, .9)}, desc=new_desc)])
+        assert engine.person_of(9) != engine.person_of(1)
+
+
+def test_existing_track_readings_win_over_larger_duplicate():
+    import numpy as np
+    desc = np.ones(128, np.float32)
+    small, large = [180, 573, 239, 733], [181, 573, 275, 733]
+    key = ("no_vest", None)
+    engine = EventEngine(CFG["events"], "cam", FPS)
+    alerts = []
+    for i in range(30):
+        obs = [Observation(1, small, {key: (True, .9)}, desc=desc)]
+        if i >= 10:
+            obs.append(Observation(9, large, {key: (False, .9)}, desc=desc))
+        alerts += engine.step(i, i / FPS, obs)
+        assert engine.frame_representatives == {engine.person_of(1): 1}
+    assert len(alerts) == 1 and alerts[0].track_id == 1
+    engine.step(30, 3, [])
+    assert engine.frame_representatives == {}
+
+
+def test_multiple_new_boxes_claiming_same_person_remain_separate():
+    import numpy as np
+    desc = np.ones(128, np.float32)
+    small, large = [180, 573, 239, 733], [181, 573, 275, 733]
+    engine = EventEngine(CFG["events"], "cam", FPS)
+    engine.step(0, 0, [Observation(1, small, {}, desc=desc)])
+    engine.step(1, .1, [Observation(1, small, {}, desc=desc),
+                        Observation(9, large, {}, desc=desc),
+                        Observation(10, large, {}, desc=desc)])
+    assert len({engine.person_of(1), engine.person_of(9), engine.person_of(10)}) == 3

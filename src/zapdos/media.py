@@ -21,10 +21,104 @@ RED, GREEN, GREY, AMBER, WHITE = (40, 40, 230), (60, 200, 60), (160, 160, 160), 
 SHORT = {"no_helmet": "NO HELMET", "no_vest": "NO VEST", "zone_entry": "IN ZONE", "camera_moved": "CAMERA MOVED"}
 
 
+def _identity_label(person):
+    """The stable event identity is primary; the raw tracker ID remains inspectable."""
+    tid = person["tid"]
+    pid = person.get("person_id")
+    return f"P{pid} / T{tid}" if pid is not None and pid > 0 else f"T{tid}"
+
+
+def _status(flags, key):
+    """Convert a violation reading into an explicit state, retaining abstentions."""
+    value = flags.get(key)
+    value = None if value is None else bool(value)
+    if key == "no_helmet":
+        return "HELMET: MISSING" if value is True else "HELMET: ON" if value is False else "HELMET: UNKNOWN"
+    if key == "no_vest":
+        return "VEST: MISSING" if value is True else "VEST: ON" if value is False else "VEST: UNKNOWN"
+    return "ZONE: INSIDE" if value is True else "ZONE: OUTSIDE" if value is False else "ZONE: UNKNOWN"
+
+
+def _with_head_crops(frame, overlay, scale=1.0):
+    """Attach small native-frame crops to a copy of this frame's overlay.
+
+    Copies retain only the head region, so evidence buffers do not retain full
+    1080p source frames. Magnification reveals existing pixels, not new detail.
+    """
+    enriched = dict(overlay)
+    people = []
+    height, width = frame.shape[:2]
+    for original in overlay["people"]:
+        p = dict(original)
+        head = p.get("head")
+        if head is not None and not p.get("hidden") and p.get("head_crop") is None:
+            x1, y1, x2, y2 = (float(v) * scale for v in head[:4])
+            pad = max(x2 - x1, y2 - y1) * 0.4
+            left, right = max(0, int(x1 - pad)), min(width, int(np.ceil(x2 + pad)))
+            top, bottom = max(0, int(y1 - pad)), min(height, int(np.ceil(y2 + pad)))
+            if right > left and bottom > top:
+                p["head_crop"] = frame[top:bottom, left:right].copy()
+        people.append(p)
+    enriched["people"] = people
+    return enriched
+
+
+def _panel_people(overlay, highlight=None, limit=3):
+    """Show confirmed visible people only; one entry per stable person identity."""
+    people = [p for p in overlay["people"] if not p.get("hidden") and p.get("confirmed", True)]
+    people.sort(key=lambda p: (p["tid"] != highlight, p["tid"]))
+    selected, identities = [], set()
+    for p in people:
+        pid = p.get("person_id")
+        key = ("person", pid) if pid is not None and pid > 0 else ("track", p["tid"])
+        if key not in identities:
+            identities.add(key)
+            selected.append(p)
+        if len(selected) == limit:
+            break
+    return selected
+
+
+def _draw_status_panel(img, people, zones):
+    """Place readable PPE states and honest nearest-neighbour head magnification bottom-right."""
+    if not people or img.shape[1] < 320 or img.shape[0] < 240:
+        return
+    unit = max(1.0, min(1.3, img.shape[1] / 1280))
+    width, row = int(405 * unit), int(104 * unit)
+    people = people[:max(1, (img.shape[0] - int(42 * unit)) // row)]
+    width = min(width, img.shape[1] - 10)
+    top = max(0, img.shape[0] - (int(42 * unit) + row * len(people)))
+    left = img.shape[1] - width
+    cv2.rectangle(img, (left, top), (img.shape[1] - 1, img.shape[0] - 1), (22, 22, 22), -1)
+    cv2.putText(img, "MODEL PPE  |  HEAD VIEW ENLARGED", (left + 8, top + int(20 * unit)),
+                cv2.FONT_HERSHEY_SIMPLEX, .45 * unit, WHITE, 1, cv2.LINE_AA)
+    for i, p in enumerate(people):
+        y = top + int(28 * unit) + i * row
+        thumb = int(82 * unit)
+        crop = p.get("head_crop")
+        if crop is not None and crop.size:
+            # Preserve proportions and enlarge nearest-neighbour: no invented detail.
+            h, w = crop.shape[:2]
+            factor = min(thumb / w, thumb / h)
+            small = cv2.resize(crop, (max(1, round(w * factor)), max(1, round(h * factor))),
+                               interpolation=cv2.INTER_NEAREST)
+            img[y:y + small.shape[0], left + 8:left + 8 + small.shape[1]] = small
+        text_x = left + thumb + int(20 * unit)
+        flags = p.get("flags", {})
+        lines = [_identity_label(p), _status(flags, "no_helmet"), _status(flags, "no_vest")]
+        if zones:
+            lines.append(_status(flags, "zone_entry"))
+        for j, line in enumerate(lines):
+            color = RED if "MISSING" in line or "INSIDE" in line else GREY if "UNKNOWN" in line else WHITE
+            cv2.putText(img, line, (text_x, y + int((14 + 20 * j) * unit)),
+                        cv2.FONT_HERSHEY_SIMPLEX, .49 * unit, color, 1, cv2.LINE_AA)
+
+
 def draw(frame, overlay, zones, scale=1.0, highlight=None, log=None):
     """overlay: {"ts": float, "people": [person], "banner": optional text}. A person is
     {"tid", "box", "flags": {type: value}, "foot": (point or None, visible|estimated|unknown), "head": box}, or
     {"tid", "box", "flags": {}, "hidden": True} for a track that is lost for a moment."""
+    overlay = _with_head_crops(frame, overlay, scale)
     img = frame.copy()
     t = max(1, round(2 * scale))  # line/font weight: 2 at full 1080p, 1 on downscaled clips
     for zid, poly in zones.items():
@@ -36,19 +130,25 @@ def draw(frame, overlay, zones, scale=1.0, highlight=None, log=None):
         x1, y1, x2, y2 = (int(v * scale) for v in p["box"])
         if p.get("hidden"):  # lost for a moment; the tracker still holds the ID at its predicted box
             _dashed_rect(img, (x1, y1), (x2, y2), WHITE, t + 1)
-            cv2.putText(img, f"#{p['tid']} hidden", (x1, max(y1 - 5, 12)), cv2.FONT_HERSHEY_SIMPLEX, 0.5 * t,
+            cv2.putText(img, f"{_identity_label(p)} hidden", (x1, max(y1 - 5, 12)), cv2.FONT_HERSHEY_SIMPLEX, 0.5 * t,
                         WHITE, t + 1)
             continue
         flags = p["flags"]
         bad = [SHORT.get(k, k) for k, v in flags.items() if v]
-        color = RED if bad else (GREEN if any(v is False for v in flags.values()) else GREY)
+        relevant = [flags.get("no_helmet"), flags.get("no_vest")]
+        if zones:
+            relevant.append(flags.get("zone_entry"))
+        confirmed = p.get("confirmed", True)
+        color = (GREY if not confirmed else RED if bad else
+                 GREEN if all(v is False for v in relevant) else GREY)
         thick = 3 * t if p["tid"] == highlight else t
         cv2.rectangle(img, (x1, y1), (x2, y2), color, thick)
-        label = f"#{p['tid']} " + " ".join(bad)
+        label = _identity_label(p) + (" " + " ".join(bad) if confirmed else " unconfirmed")
         cv2.putText(img, label, (x1, max(y1 - 5, 12)), cv2.FONT_HERSHEY_SIMPLEX, 0.5 * t, color, t)
         if p.get("head") is not None:  # the region the helmet decision looked at
             hx1, hy1, hx2, hy2 = (int(v * scale) for v in p["head"])
-            hc = RED if flags.get("no_helmet") else (GREEN if flags.get("no_helmet") is False else GREY)
+            hc = (GREY if not confirmed else RED if flags.get("no_helmet") else
+                  GREEN if flags.get("no_helmet") is False else GREY)
             cv2.rectangle(img, (hx1, hy1), (hx2, hy2), hc, 1)
         if p.get("foot") and p["foot"][0] is not None:
             (fx, fy), source = p["foot"]
@@ -58,6 +158,7 @@ def draw(frame, overlay, zones, scale=1.0, highlight=None, log=None):
         cv2.putText(img, overlay["banner"], (10, 50 * t), cv2.FONT_HERSHEY_SIMPLEX, 0.7 * t, RED, 2 * t)
     if log:
         _draw_log(img, log, t)
+    _draw_status_panel(img, _panel_people(overlay, highlight), zones)
     return img
 
 
@@ -115,6 +216,7 @@ class MediaRecorder:
             self.video = _writer(out_dir / "annotated.mp4", fps, size)
 
     def push(self, frame, overlay):
+        overlay = _with_head_crops(frame, overlay)
         small = cv2.resize(frame, None, fx=self.clip_scale, fy=self.clip_scale, interpolation=cv2.INTER_AREA)
         self.buf.append((overlay["ts"], small, overlay))
         for item in self.pending:
@@ -137,7 +239,7 @@ class MediaRecorder:
         snap = self.out / "snapshots" / f"{ev.event_id}.jpg"
         ev.snapshot = f"snapshots/{snap.name}"
         try:
-            ok = cv2.imwrite(str(snap), draw(frame, overlay, self.zones, 1.0, highlight=ev.track_id),
+            ok = cv2.imwrite(str(snap), draw(frame, _with_head_crops(frame, overlay), self.zones, 1.0, highlight=ev.track_id),
                              [cv2.IMWRITE_JPEG_QUALITY, 85])
         except cv2.error:
             ok = False
