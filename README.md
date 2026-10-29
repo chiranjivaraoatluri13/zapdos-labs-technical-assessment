@@ -67,5 +67,3 @@ I would review alerted and non-alerted tracks against independent labels from se
 Data/models: [SH17](https://github.com/ahmadmughees/SH17dataset), [SteelBench](https://huggingface.co/datasets/ThinkingHub/PP) (CC BY-NC 4.0), [Hard Hat Workers](https://huggingface.co/datasets/keremberke/hard-hat-detection). Training/export scripts and metadata are included. Libraries: Ultralytics, PyTorch/torchvision, OpenCV, OpenVINO, ONNX Runtime, NumPy, SciPy, PyYAML, pytest.
 
 I used **ChatGPT 6.1 Sol Light and Cursor** for coding assistance and review. **Time spent: 6.5 hours.**
-
-**Screen recording (≤3 minutes): pending.** It must show a run, the alert log and one failure; annotated output videos alone do not replace it.
